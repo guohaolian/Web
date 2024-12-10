@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>多行文本和lable</title>
+</head>
+<body>
+    <textarea cols="30"  rows="10">个人介绍</textarea>
+<hr/>
+    <!--
+    lable使用方法：
+        1.直接使用lable标签包裹input
+        2.通过label的for指向按钮的id来绑定，for和id属性的值要相同
+    -->
+    <p> <label>用户名：<input  type="text"/></label></p>
+    <p> <label>密码：<input  type="password"/></label></p>
+    <hr/>
+    <label for="pwd">记住密码</label>
+    <input type="checkbox" name="pwd" id="pwd" />
+    <fieldset>
+        <legend>健康信息</legend>
+        身高：<input type="text" /><br>
+        体重：<input type="text" />
+    </fieldset>
+
+</body>
+</html>
