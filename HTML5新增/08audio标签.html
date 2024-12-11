@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>音频</title>
+</head>
+<body>
+    <!--
+    audio  支持的格式：
+        ogg
+        mp3
+        wav
+       注意：loop  属性值  正数(代表播放次数)  负数或者不加任何属性值(代表无限播放)
+    -->
+     <audio src="images/1.mp3" autoplay  controls loop="2" muted></audio>
+    <hr/>
+    如果浏览器不支持某种格式的音频，可以将一种音频转换成3中格式
+    <audio controls>
+        <source  src="images/1.mp3"/>
+        <source  src="images/1.ogg"/>
+        您的浏览器不支持音频播放
+    </audio>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>画布</title>
+    <style  type="text/css">
+        canvas{
+          background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    canvas标签：
+        1.canvas必须配合js在网页上绘制图像
+        2.画布是一个矩形区域，我们可以控制其每一个像素
+        3.canvas拥有多种绘制路径、矩形、圆形...
+
+      颜色的表示方式：
+        1.直接用颜色名称:"red"  "green"
+        2.十六进制颜色值："#eeeeff"
+        3.rgb(1-255,1-255,1-255)
+      属性：
+         fillStyle 填充绘画的颜色、渐变或模式
+         strokeStyle  用于笔触的颜色、渐变或模式
+         shadowColor  用于阴影颜色
+         shadowOffsetX 水平距离偏移量
+         shadowOffsetY  垂直距离偏移量
+         shadowBlur    模糊级别
+     方法：
+      getContext():返回一个对象，这个方法封装了很多的绘图方法和属性。
+            但是现在只能提供2d的绘画环境。
+     rect():创建矩形。
+    fillRect():绘制填充的矩形
+    createLinearGradient()：创建线性渐变
+    addColorStop():  渐变对象中颜色和停止位置
+
+    -->
+    <canvas id="mycanvas" width="400px"  height="400px">
+        您的浏览器版本太低
+    </canvas>
+    <script type="text/javascript">
+    //js代码块
+    var canvas=document.getElementById("mycanvas");
+    var obj=canvas.getContext("2d");
+
+    // var colorobj= obj.createLinearGradient(0,0,100,0);
+    var colorobj=obj.createRadialGradient(50,50,10,50,50,50);
+    colorobj.addColorStop(0,"red");
+    colorobj.addColorStop(0.5,"blue");
+    colorobj.addColorStop(1,"green");
+    //obj.rect(0,0,100,100);
+    obj.shadowColor="rgb(11,25,9)";
+    obj.shadowOffsetX=3;
+    obj.shadowOffsetY=3;
+    obj.shadowBlur=5;
+
+     obj.fillStyle=colorobj;
+    obj.strokeStyle="green";
+     obj.fillRect(0,0,100,100);
+      obj.strokeRect(100,100,100,100);
+    </script>
+</body>
+</html>
