@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>HTML5新增属性</title>
 </head>
+
 <body>
-     <form action="">
-         <p>用户名：<input  type="text" required name="name" autofocus  placeholder="请输入用户名："/></p>
-         <p>邮箱：<input type="email" multiple name="email" required /></p>
-        <p>密码：<input type="text" minlength="6"  maxlength="12"/></p>
-         <p><input type="submit"/></p>
-     </form>
+    <!-- placeholder 默认提示
+     multiple 支持在一个域中输入多个值逗号隔开，一般配合邮箱和URL使用
+     autofocus 自动获取焦点 
+     required 防止空表单
+     minlength和maxlength 元素允许的最小字符数和最大字符数
+     min和max 允许元素的最小数字和最大数字-->
+    <form action="">
+        <p>用户名：<input type="text" required name="name" autofocus placeholder="请输入用户名：" /></p>
+        <p>邮箱：<input type="email" multiple name="email" required /></p>
+        <p>密码：<input type="text" minlength="6" maxlength="12" /></p>
+        <p><input type="submit" /></p>
+    </form>
 </body>
+
 </html>
