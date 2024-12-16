@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>画布</title>
-    <style  type="text/css">
-        canvas{
-          background-color: gray;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>画布</title>
+  <style type="text/css">
+    canvas {
+      background-color: gray;
+    }
+  </style>
 </head>
+
 <body>
-    <!--
+  <!--
     canvas标签：
         1.canvas必须配合js在网页上绘制图像
         2.画布是一个矩形区域，我们可以控制其每一个像素
@@ -36,29 +38,30 @@
     addColorStop():  渐变对象中颜色和停止位置
 
     -->
-    <canvas id="mycanvas" width="400px"  height="400px">
-        您的浏览器版本太低
-    </canvas>
-    <script type="text/javascript">
+  <canvas id="mycanvas" width="400px" height="400px">
+    您的浏览器版本太低
+  </canvas>
+  <script type="text/javascript">
     //js代码块
-    var canvas=document.getElementById("mycanvas");
-    var obj=canvas.getContext("2d");
+    var canvas = document.getElementById("mycanvas");
+    var obj = canvas.getContext("2d");
 
     // var colorobj= obj.createLinearGradient(0,0,100,0);
-    var colorobj=obj.createRadialGradient(50,50,10,50,50,50);
-    colorobj.addColorStop(0,"red");
-    colorobj.addColorStop(0.5,"blue");
-    colorobj.addColorStop(1,"green");
+    var colorobj = obj.createRadialGradient(50, 50, 10, 50, 50, 50);
+    colorobj.addColorStop(0, "red");
+    colorobj.addColorStop(0.5, "blue");
+    colorobj.addColorStop(1, "black");
     //obj.rect(0,0,100,100);
-    obj.shadowColor="rgb(11,25,9)";
-    obj.shadowOffsetX=3;
-    obj.shadowOffsetY=3;
-    obj.shadowBlur=5;
+    obj.shadowColor = "rgb(11,25,9)";
+    obj.shadowOffsetX = 3;
+    obj.shadowOffsetY = 3;
+    obj.shadowBlur = 5;
 
-     obj.fillStyle=colorobj;
-    obj.strokeStyle="green";
-     obj.fillRect(0,0,100,100);
-      obj.strokeRect(100,100,100,100);
-    </script>
+    obj.fillStyle = colorobj;
+    obj.strokeStyle = "red";
+    obj.fillRect(0, 0, 100, 100);
+    obj.strokeRect(100, 100, 100, 100);
+  </script>
 </body>
+
 </html>
