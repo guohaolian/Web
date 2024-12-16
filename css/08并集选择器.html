@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>并集选择器</title>
+    <style>
+        /* p{
+             color: red;
+         }
+         div{
+             color: red;
+         }
+         h1{
+             color: red;
+         }*/
+        p,div,h1,.xiang,#buxiang{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<!--
+合并选择器(并集选择器)  格式：
+    选择器1, 选择器2,...{
+        属性1：属性值1；
+        属性2：属性值2；
+        ...
+    }
+ 作用：提取共同的样式，减少重复代码
+
+-->
+<p>果汁</p>
+<p>咖啡</p>
+<div>西红柿</div>
+<div>胡萝卜</div>
+<div>大白菜</div>
+<h1>米饭</h1>
+<h1>面条</h1>
+<i class="xiang">我也想变颜色</i>
+<i>我不想变颜色</i>
+<i id="buxiang">我不想变颜色</i>
+</body>
+</html>
