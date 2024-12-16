@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>颜色透明度和文章溢出</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+           background-color:green;
+            color: red;
+            opacity: 1;
+
+            overflow: scroll;
+        }
+        p{ height: 20px; width:100px; background:#ddd;
+            white-space: nowrap;   /* //让文字在同一行显示，不换行*/
+        overflow: hidden;      /* //溢出部分隐藏*/
+        text-overflow: ellipsis;/* //文字溢出部分省略号显示，另外一个值为clip*/
+        }
+
+
+    </style>
+</head>
+<body>
+<p>这段文字多余的部分会显示为省略号</p>
+   <!-- <div>
+        <p>北京尚学堂科技有限京尚学堂科技有限公司是一家从事JAVA、IOS、android、hadoop公司京尚学堂科技有限公司是一家从事JAVA、IOS、android、hadoop是一家从事JAVA、IOS、android、hadoop大数据云计算技术开发、</p>
+        <p>  培训 <p>北京尚京尚学堂科技有限公司是一家从事JAVA、IOS、android、hadoop学堂科技有限公司是一家从事JAVA、IOS、android、hadoop大数据云计算技术开发、</p>
+        <p>  培训 <p>北京尚学堂科技有限公司是一家从事JAVA、IOS、android、hadoop大数据云计算技术开发、</p>
+        <p>  培训 <p>北京尚学堂科技有限公司是一家从事JAVA、IOS、android、hadoop大数据云计算技术开发、</p>
+        <p>  培训 <p>北京尚学堂科技有限公司是一家从事JAVA、IOS、android、hadoop大数据云计算技术开发、</p>
+        <p>  培训、咨询为一体的软件公司。公司由海外留学人员和国内IT精英人士创建，</p>
+    </div>-->
+</body>
+</html>
