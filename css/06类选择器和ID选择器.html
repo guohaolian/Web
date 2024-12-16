@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>类选择器和ID选择器</title>
     <style>
-       .libai{
-           color: #f00;
-       }
-      /* p{
+        .libai {
+            color: #f00;
+        }
+
+        /* p{
            color: green;
        }*/
-       /* #dufu{
+        #dufu {
             color: #0f0;
-        }*/
-       #libai{
-           color:orange;
-       }
+        }
+
+        #libai {
+            color: orange;
+        }
     </style>
 </head>
+
 <body>
     <!--
     类选择器  格式：
@@ -41,9 +45,10 @@
 
         优先级：ID选择器>类选择器>标签选择器
     -->
-    <p  class="libai" id="libai">李白</p>
-    <p  >杜甫</p>
-    <p >白居易</p>
+    <p class="libai" id="libai">李白</p>
+    <p id="dufu">杜甫</p>
+    <p>白居易</p>
     <span>光头强</span>
 </body>
+
 </html>
