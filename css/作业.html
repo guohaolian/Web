@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 初始化样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 800px;
+            background-color: #b2faff;
+            /* 浅蓝色背景 */
+            border: 2px solid red;
+            /* 外边框 */
+            padding: 10px;
+        }
+
+        /* 绿色条块 */
+        .header,
+        .sub-header,
+        .footer {
+            height: 50px;
+            background-color: #88b04b;
+            /* 绿色 */
+            margin: 10px 0;
+        }
+
+        /* 主体部分：两个蓝色盒子 */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .box {
+            width: 49%;
+            /* 确保两个盒子并排 */
+            height: 200px;
+            background-color: #4a90e2;
+            /* 蓝色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 上部绿色条块 -->
+        <div class="header"></div>
+        <!-- 第二个绿色条块 -->
+        <div class="sub-header"></div>
+        <!-- 主体部分 -->
+        <div class="content">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <!-- 下方绿色条块 -->
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>
