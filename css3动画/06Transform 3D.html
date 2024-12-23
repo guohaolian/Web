@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Transform 3D</title>
+    <style>
+      /* .parent{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            margin: 100px auto;
+            perspective: 400px;
+        }
+       .son{
+           width: 100%;
+           height: 100%;
+           background: blue;
+           transform: translatez(-100px);
+           transition: all 3s;
+       }
+        .son:hover{
+            transform: translate3d(100px,0,100px);
+        }*/
+       /* div{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        .perspective{
+            background-color: pink;
+            transform: perspective(400px) translatez(-100px);
+        }
+        .scaled{
+            background-color: orange;
+            transform: perspective(400px) scale3d(0.8,0.8,0.8)  translatez(-100px) ;
+        }*/
+      body{
+          perspective:400px;
+      }
+        img{
+            margin: 100px;
+            transition: all 3s;
+        }
+        img:hover{
+            transform: rotatez(80deg);
+        }
+    </style>
+</head>
+<body>
+    <img src="images/钢管舞.jpg"  width="300px" alt=""/>
+   <!-- <div>原来尺寸</div>
+    <div  class="perspective">perspective</div>
+    <div  class="scaled">scaled</div>-->
+    <!--
+    perspective  透视（呈现3d效果）
+
+    <div  class="parent">
+        <div  class="son"></div>
+    </div>
+    -->
+</body>
+</html>

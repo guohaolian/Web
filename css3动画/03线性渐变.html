@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>线性渐变</title>
+    <style>
+        .grad{
+            height: 200px;
+            background: -webkit-repeating-linear-gradient(red,yellow 10%,green 20%);
+            background: -o-repeating-linear-gradient(red,yellow 10%,green 20%);
+            background: -moz-repeating-linear-gradient(red,yellow 10%,green 20%);
+            background: repeating-linear-gradient(red,yellow 10%,green 20%);/*标准语法*/
+        }ll
+    </style>
+</head>
+<body>
+    <!--
+    线性渐变
+    语法：background: linear-gradient(direction, color-stop1, color-stop2, ...);
+    1.默认时从上往下渐变
+     .grad{
+            height: 200px;
+            background: -webkit-linear-gradient(red,blue);
+            background: -o-linear-gradient(red,blue);
+            background: -moz-linear-gradient(red,blue);
+            background: linear-gradient(red,blue);/*标准语法*/
+        }
+    2.自定义渐变方向
+    .grad{
+            height: 200px;
+            background: -webkit-linear-gradient(left,red,blue);
+            background: -o-linear-gradient(to right,red,blue);
+            background: -moz-linear-gradient(to right,red,blue);
+            background: linear-gradient(to right,red,blue);/*标准语法*/
+        }
+       .grad{
+            height: 200px;
+            background: -webkit-linear-gradient(left top,red,blue);
+            background: -o-linear-gradient(to right bottom,red,blue);
+            background: -moz-linear-gradient(to right bottom,red,blue);
+            background: linear-gradient(to right bottom,red,blue);/*标准语法*/
+        }
+       .grad{
+            height: 200px;
+            background: -webkit-linear-gradient(-90deg,red,blue);
+            background: -o-linear-gradient(-90deg,red,blue);
+            background: -moz-linear-gradient(-90deg,red,blue);
+            background: linear-gradient(-90deg,red,blue);/*标准语法*/
+        }
+       3.重复渐变
+        .grad{
+            height: 200px;
+            background: -webkit-repeating-linear-gradient(red,yellow 10%,green 20%);
+            background: -o-repeating-linear-gradient(red,yellow 10%,green 20%);
+            background: -moz-repeating-linear-gradient(red,yellow 10%,green 20%);
+            background: repeating-linear-gradient(red,yellow 10%,green 20%);/*标准语法*/
+        }
+    -->
+    <div  class="grad"></div>
+</body>
+</html>
