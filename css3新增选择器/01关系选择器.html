@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>关系选择器</title>
+    <style>
+      /*  .parent>span{
+            color: red;
+        }*/
+      /* p+span{
+           color: blue;
+       }*/
+      p~span{
+          color: blue;
+      }
+    </style>
+</head>
+<body>
+    <!--
+    关系选择器
+        1.后代选择器
+            格式：  选择器1 选择器2{属性1：属性值1;...}
+        2.子代选择器
+            格式：  选择器1 >选择器2{属性1：属性值1;...}
+        3.相邻兄弟选择器
+            格式： 选择器1+选择器2{属性1：属性值1;...}
+        4.通用兄弟选择器
+            格式：  选择器1~选择器2{属性1：属性值1;...}
+    -->
+   <!--<div  class="parent">
+       <span>子元素span</span>
+       <div>
+           子元素div
+           <span>孙子代元素span</span>
+       </div>
+   </div>
+    <span>外部span元素</span>-->
+    <p>这是一个p元素</p>
+    <span>这是第一个紧邻的span元素</span>
+    <span>这是第二个span元素</span>
+    <span>这是第三个span元素</span>
+</body>
+</html>

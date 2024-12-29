@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>微信导航栏(一)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        body{
+            background: url("img/wrap.jpg")  repeat-x;
+        }
+        .nav{
+            height: 75px;
+        }
+        .nav li a{
+            display: block;
+            background: url("img/lTcb_ve.png")  no-repeat;
+            padding-left: 15px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 33px;
+            text-decoration: none;
+        }
+        .nav li a span{
+            display: block;
+            line-height: 33px;
+            background: url("img/lTcb_ve.png") no-repeat right  center;
+            padding-right: 15px;
+        }
+        .nav li a:hover{
+            background-image: url("img/ao.png") ;
+        }
+        .nav li a:hover span{
+            background-image: url("img/ao.png") ;
+        }
+        .nav li{
+            float: left;
+            margin: 0 10px;
+            padding-top: 21px;
+        }
+    </style>
+</head>
+<body>
+    <div  class="nav">
+        <ul>
+            <li>
+                <a href="#">
+                    <span>首页</span>
+                 </a>
+            </li> <li>
+                <a href="#">
+                    <span>帮助与反馈</span>
+                 </a>
+            </li> <li>
+                <a href="#">
+                    <span>公众平台</span>
+                 </a>
+            </li> <li>
+                <a href="#">
+                    <span>开放平台</span>
+                 </a>
+            </li> <li>
+                <a href="#">
+                    <span>微信支付</span>
+                 </a>
+            </li> <li>
+                <a href="#">
+                    <span>微信网页版</span>
+                 </a>
+            </li> <li>
+                <a href="#">
+                    <span>表情开发平台</span>
+                 </a>
+            </li> <li>
+                <a href="#">
+                    <span>微信广告</span>
+                 </a>
+            </li>
+
+
+        </ul>
+    </div>
+</body>
+</html>

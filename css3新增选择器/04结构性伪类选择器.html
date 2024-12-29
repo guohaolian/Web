@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>结构性伪类选择器</title>
+    <style>
+       /*li:first-child{color: red}*/
+        /*ul:first-child{color: red}*/
+        /*li:last-child{color: red}*/
+        /*ul:last-child{color: red}*/
+        /*p:only-child{color: blue}*/
+       /*p:empty{ border:1px solid red;padding:10px;}*/
+       /*input:checked+span{color:red;}*/
+       ul li:nth-child(3n){color: red}
+        /*odd  奇数    even 偶数   n代表所有*/
+    </style>
+</head>
+<body>
+    <ul>
+        <li>这是第一个孩子</li>
+        <li>这是第二个孩子</li>
+        <li>这是第三个孩子</li>
+        <li>这是第四个孩子</li>
+        <li>这是第五个孩子</li>
+        <li>这是第六个孩子</li>
+        <li>这是第七个孩子</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>弹性盒子</title>
+    <style>
+        .box{
+            width: 100%;
+            height: 600px;
+            background-color: gray;
+            display: flex;
+            /*flex-direction: column;*/
+        }
+        .box>div{
+            /*width:33.33%;*/
+            height: 600px;
+            /*float: left;*/
+            /*flex-grow: 1;*/
+        }
+        .item1{background-color: pink;flex-grow: 1;}
+        .item2{background-color: orange;flex-grow:2;}
+        .item3{background-color: red;flex-grow:1;}
+        .parent{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            display: flex;
+            justify-content:space-around;
+            align-items:center;
+        }
+        .parent>div{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /*margin: 0 auto;*/
+        }
+    </style>
+</head>
+<body>
+    <!--
+        弹性盒子
+            父容器属性：
+                display: flex;     申明为弹性盒子，默认子容器水平布局
+                flex-direction    子容器垂直布局
+                 justify-content:center;    子项目水平对齐方式
+                 align-items:center;        子项目垂直对齐方式
+            子容器属性：
+                flex-grow: number;
+    -->
+    <div  class="box">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+    </div>
+
+<div  class="parent">
+    <div class="child1"></div>
+    <div class="child2"></div>
+    <div class="child3"></div>
+</div>
+</body>
+</html>

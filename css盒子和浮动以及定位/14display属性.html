@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>display属性</title>
+    <style>
+        .box>div{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /*float: left;*/
+            display: inline-block;
+            /*display: inline;*/
+            /*display: block;*/
+            /*display: table-cell;*/
+            /*text-align: center;*/
+            /*vertical-align: middle;*/
+            /*display: none;*/
+            /*opacity:0;*/
+            visibility:hidden;
+        }
+        .box>div:nth-child(2){
+            background-color: hotpink;
+        }
+        .box>div:last-child{
+            background-color: deeppink;
+        }
+        span{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: block;
+        }
+        .bottom{
+            width: 1200px;
+            height: 500px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    display属性值：
+        inline-block   行内块元素，即在同一行显示，又可以设置宽高，margin和padding可以设置四周
+        （注意：识别代码之间的空白）
+        block   指定对象为块元素
+         inline：指定对象为内联元素
+         table-cell：指定对象作为表格单元格
+         none：隐藏对象
+
+    -->
+    <div class="box">
+        <div>
+            <div style="width: 100px;height: 100px;background-color: blue;margin: 0 auto"></div>
+        </div>
+        <div></div>
+        <div></div>
+    </div>
+    <!--<span>尚学堂</span>
+    <span>尚学堂</span>
+    <span>尚学堂</span>-->
+    <div  class="bottom"></div>
+</body>
+</html>

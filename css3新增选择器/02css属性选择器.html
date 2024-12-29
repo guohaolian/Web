@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>css属性选择器</title>
+    <style>
+       /* a[href]{
+            color: red;
+        }*/
+        /*p[class="p2"]{color: red}*/
+        /*p[class~="p1"]{color: red}*/
+        /*p[class^="p"]{color: red}*/
+        /*p[class$="p"]{color: red}*/
+        /*a[href*="baidu"]{color: red}*/
+        div[class|="sxt"]{color: red}
+    </style>
+
+</head>
+<body>
+    <!--<a href="">这是第一个a标签</a>
+    <a href="">这是第二个a标签</a>
+    <a href="">这是第三个a标签</a>
+    <a href="">这是第四个a标签</a>-->
+    <div class="sxt-work">这是块元素work</div>
+    <div class="work-sxt">这是块元素car</div>  <!-- //不是以sxt开头-->
+    <div class="sxt-pen">这是块元素pen</div>
+    <div class="sxtpen">这是块元素pen</div>  <!-- //没有链接符-->
+
+
+</body>
+</html>

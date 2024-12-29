@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>浏览器内核例子</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            -ms-transition:1s;
+            -o-transition: 1s;
+            transition: 1s;
+        }
+        body:hover div{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+          -webkit-transition: 1s;   谷歌
+            -moz-transition: 1s;    火狐
+            -ms-transition:1s;      ie
+            -o-transition: 1s;     opera
+            transition: 1s;         w3c标准样式
+    -->
+    <div></div>
+</body>
+</html>
