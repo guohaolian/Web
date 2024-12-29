@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>链接伪类选择器</title>
     <style>
-     a{
+        a {
             text-decoration: none;
             font-size: 16px;
             font-weight: 800;
         }
+
         /*a:link{/!*未访问的链接*!/
           color: gray;
       }
@@ -21,15 +23,18 @@
       a:active{/!*选定的链接    鼠标按下时的样式*!/
           color: blue;
       }*/
-    a:hover{
-        color:red;
-    }
+        /* 四个同时存在顺序为lvha */
+        a:hover {
+            color: red;
+        }
     </style>
 </head>
+
 <body>
     <!-- 
     链接伪类选择器主要针对超链接(a)  注意：顺序不能更改
     -->
-    <a href="#" >秒杀</a>
+    <a href="#">秒杀</a>
 </body>
+
 </html>

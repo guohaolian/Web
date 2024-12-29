@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>css属性选择器</title>
     <style>
-       /* a[href]{
+        /* a[href]{
             color: red;
         }*/
         /*p[class="p2"]{color: red}*/
-        /*p[class~="p1"]{color: red}*/
-        /*p[class^="p"]{color: red}*/
-        /*p[class$="p"]{color: red}*/
-        /*a[href*="baidu"]{color: red}*/
-        div[class|="sxt"]{color: red}
+        /*p[class~="p1"]{color: red}属性值只要包含p1就选择,与位置无关*/
+        /*p[class^="p"]{color: red}以p开头的*/
+        /*p[class$="p"]{color: red}结尾*/
+        /*a[href*="baidu"]{color: red}包含val字符串*/
+        /* p[class|="val"]{color:red}有连接符，且包含val的开头 */
+        /* 不用管属性的值是啥，只要有这个属性就匹配 */
+        div[class|="sxt"] {
+            color: red
+        }
     </style>
 
 </head>
+
 <body>
     <!--<a href="">这是第一个a标签</a>
     <a href="">这是第二个a标签</a>
     <a href="">这是第三个a标签</a>
     <a href="">这是第四个a标签</a>-->
     <div class="sxt-work">这是块元素work</div>
-    <div class="work-sxt">这是块元素car</div>  <!-- //不是以sxt开头-->
+    <div class="work-sxt">这是块元素car</div> <!-- //不是以sxt开头-->
     <div class="sxt-pen">这是块元素pen</div>
-    <div class="sxtpen">这是块元素pen</div>  <!-- //没有链接符-->
+    <div class="sxtpen">这是块元素pen</div> <!-- //没有链接符-->
 
 
 </body>
+
 </html>
