@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>display属性</title>
     <style>
-        .box>div{
+        .box>div {
             width: 300px;
             height: 300px;
             background-color: pink;
@@ -17,27 +18,32 @@
             /*vertical-align: middle;*/
             /*display: none;*/
             /*opacity:0;*/
-            visibility:hidden;
+            visibility: hidden;
         }
-        .box>div:nth-child(2){
+
+        .box>div:nth-child(2) {
             background-color: hotpink;
         }
-        .box>div:last-child{
+
+        .box>div:last-child {
             background-color: deeppink;
         }
-        span{
+
+        span {
             width: 200px;
             height: 200px;
             background-color: red;
             display: block;
         }
-        .bottom{
+
+        .bottom {
             width: 1200px;
             height: 500px;
             background-color: purple;
         }
     </style>
 </head>
+
 <body>
     <!--
     display属性值：
@@ -46,7 +52,7 @@
         block   指定对象为块元素
          inline：指定对象为内联元素
          table-cell：指定对象作为表格单元格
-         none：隐藏对象
+         none：隐藏对象且不占据空间
 
     -->
     <div class="box">
@@ -59,6 +65,7 @@
     <!--<span>尚学堂</span>
     <span>尚学堂</span>
     <span>尚学堂</span>-->
-    <div  class="bottom"></div>
+    <div class="bottom"></div>
 </body>
+
 </html>

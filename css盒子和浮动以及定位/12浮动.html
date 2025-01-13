@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>浮动</title>
     <style>
-    div {
-        width: 200px;
-        height: 200px;
-    }
-    .one{
-        height: 800px;
-        background-color: pink;
-        float: left;
-    }
-    .two{
-        width: 500px;
-        height: 500px;
-        background-color: blue;
-        float: left;
-    }
-    .three{
-        width: 700px;
-        height: 700px;
-        background-color: orange;
-        float: left;
-    }
-       /* div:nth-child(2){
+        div {
+            width: 200px;
+            height: 200px;
+        }
+
+        .one {
+            height: 800px;
+            background-color: pink;
+            float: left;
+        }
+
+        .two {
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+            float: left;
+        }
+
+        .three {
+            width: 700px;
+            height: 700px;
+            background-color: orange;
+            float: left;
+        }
+
+        /* div:nth-child(2){
             background: hotpink;
         }
         div:last-child{
@@ -33,9 +38,15 @@
         }*/
     </style>
 </head>
+
 <body>
+    <!-- 1.浮动元素的外边缘不会超过父元素的内边缘
+        2.浮动元素不会互相重叠
+        3.浮动元素不会上下浮动
+        4.浮动后变为块级元素 -->
     <div class="one">1</div>
     <span class="two">2</span>
     <div class="three">3</div>
 </body>
+
 </html>
