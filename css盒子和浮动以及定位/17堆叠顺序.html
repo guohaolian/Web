@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>堆叠顺序</title>
     <style>
-        div{
+        div {
             width: 200px;
             height: 200px;
             background-color: pink;
-            position: absolute;/*绝对定位*/
+            position: absolute;
+            /*绝对定位*/
         }
-        div:first-child{
+
+        div:first-child {
             z-index: 1;
         }
-        div:nth-child(2){
+
+        div:nth-child(2) {
             background-color: orange;
             left: 30px;
             top: 30px;
             z-index: 2;
         }
-        div:last-child{
+
+        div:last-child {
             background-color: skyblue;
             left: 60px;
             top: 60px;
@@ -27,9 +32,12 @@
         }
     </style>
 </head>
+
 <body>
+    <!-- z-index仅能在定位的元素上生效，数值越大，堆叠顺序越高，即代表离用户近 -->
     <div></div>
     <div></div>
     <div></div>
 </body>
+
 </html>
