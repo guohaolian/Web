@@ -31,10 +31,16 @@
     height: 40px;
     line-height: 40px;
 }
-.nav_right ul{
+.nav_right .enter ul{
     float: right;
 }
-.nav_right ul li{
+.nav_right .enter ul li{
+    float: left;
+}
+.nav_right .home>ul{
+    float: right;
+}
+.nav_right .home>ul>li{
     float: left;
 }
 .nav_right ul a{
@@ -82,11 +88,33 @@
 .phone_hidden{
     width: 100%;
     height: 260px;
-    background-color: red;
+    background-color: whitesmoke;
     position: absolute;
     left:0 ;
     top:104px;
     display: none;
+}
+.menu-column{
+    margin: 0 115px;
+    float: left;
+
+    font-family: Arial, sans-serif;
+
+}
+.menu-column h3 {
+    height: 30px;
+    font-size: 16px;
+    color: #333;
+}
+.menu-item {
+    height: 36px;
+
+    font-size: 14px;
+}
+.menu-item .hot {
+    color: red;
+    font-weight: bold;
+    margin-left: 5px;
 }
 .home .phone:hover .phone_hidden{
     display: block;
