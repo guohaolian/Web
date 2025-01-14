@@ -127,9 +127,19 @@
     background-image: url("../jinli_images/04_1515047442501.jpg");
     background-position: -280px;
     margin-top: 104px;
-    -webkit-animation:lunbotu  5s  infinite alternate ;
+    -webkit-animation: lunbotu 5s infinite alternate;
+    animation: lunbotu 5s infinite alternate;
 }
 @-webkit-keyframes lunbotu  {
+    0%{
+        background-image: url("../jinli_images/04_1515047442501.jpg");
+    }
+    100%{
+        background-image: url("../jinli_images/02_1517536570441.jpg");
+    }
+}
+
+@keyframes lunbotu  {
     0%{
         background-image: url("../jinli_images/04_1515047442501.jpg");
     }
