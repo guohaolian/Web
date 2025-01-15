@@ -185,14 +185,17 @@
     width: 1850px;
     padding: 20px 20px;
     display: flex;
+    justify-content: space-between;
 }
 .img_box>img:nth-child(odd){
-    flex-grow: 1;
+    width:33%;
+    /* flex-grow: 1; */
 }
 .img_box>img:nth-child(2){
-    margin-left: 13px;
-    margin-right: 13px;
-    flex-grow: 1;
+    /* margin-left: 13px;
+    margin-right: 13px; 
+    flex-grow:1*/
+    width: 33%;
 }
 /*明星产品样式结束*/
 /*热卖推荐样式开始*/
