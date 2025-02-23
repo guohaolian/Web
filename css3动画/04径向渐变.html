@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>径向渐变</title>
     <style>
-        .grad{
+        .grad {
             width: 400px;
             height: 300px;
-            background: -webkit-radial-gradient(  closest-side ellipse at 30px 50px ,red,blue);
-            background: -o-radial-gradient( closest-side ellipse at 30px 50px ,red,blue);
-            background: -moz-radial-gradient( closest-side ellipse at 30px 50px ,red,blue);
-            background:radial-gradient( closest-side ellipse at 30px 50px ,red,blue);/*标准语法*/
+            background: -webkit-radial-gradient(closest-side ellipse at 30px 50px, red, blue);
+            background: -o-radial-gradient(closest-side ellipse at 30px 50px, red, blue);
+            background: -moz-radial-gradient(closest-side ellipse at 30px 50px, red, blue);
+            background: radial-gradient(closest-side ellipse at 30px 50px, red, blue);
+            /*标准语法*/
         }
     </style>
 </head>
+
 <body>
     <!--
     background: radial-gradient(center, shape， size, start-color, ..., last-color);
+    background: radial-gradient([形状 大小] at [位置], 起始颜色, 结束颜色, ...);
     需要设置的参数：
         1.颜色（可以设置多个）
         2.中心(at center center)
@@ -33,6 +37,7 @@
             ellipse(椭圆，默认值)
             circle(圆)
     -->
-<div  class="grad"></div>
+    <div class="grad"></div>
 </body>
+
 </html>
