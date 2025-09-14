@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>过度练习</title>
     <style>
-        .box{
+        .box {
             width: 290px;
             height: 390px;
             background-color: pink;
         }
-        .box_img{
+
+        .box_img {
             width: 100%;
             position: relative;
         }
-        .box_img>img{
+
+        .box_img>img {
             width: 120px;
             height: 240px;
             position: absolute;
             left: 85px;
-            top:25px;
-            transition: all  1s;
+            top: 25px;
+            transition: all 1s;
         }
-        .box_img:hover>.left{
-            left:55px ;
+
+        .box_img:hover>.left {
+            left: 55px;
         }
-        .box_img:hover>.right{
-            left:115px ;
+
+        .box_img:hover>.right {
+            left: 115px;
         }
     </style>
 </head>
+
 <body>
-  <div  class="box">
-      <div  class="box_img">
-          <img src="images/28_1514451629703.png" alt=""  class="left"/>
-          <img src="images/28_1514451679603.png" alt=""  class="right"/>
-      </div>
-  </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="images/28_1514451629703.png" alt="" class="left" />
+            <img src="images/28_1514451679603.png" alt="" class="right" />
+        </div>
+    </div>
 </body>
+
 </html>

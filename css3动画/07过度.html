@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
     <style>
-        .box{
+        .box {
             width: 200px;
             height: 300px;
             background-color: red;
@@ -13,19 +14,22 @@
             /*transition: all 1s linear  1s;*/
             transition-property: all;
             transition-duration: 1s;
-            transition-timing-function:linear;
-            transition-delay:1s;
+            transition-timing-function: linear;
+            transition-delay: 1s;
+            /*1秒延迟 */
         }
 
-        .box:hover{
-            transform: translate(0,-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,.3);
+        .box:hover {
+            transform: translate(0, -10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .3);
             width: 300px;
             background-color: green;
         }
     </style>
 </head>
+
 <body>
-  <div  class="box"></div>
+    <div class="box"></div>
 </body>
+
 </html>
