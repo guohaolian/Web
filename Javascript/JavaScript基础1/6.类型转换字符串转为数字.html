@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * prompt('提示语句','默认值')
+     * 注意：1.调用 prompt（）会返回一个字符串
+     *       2.默认值可以写也可以不写
+     * 例子：
+     var result = prompt('请您输入一个数字');
+     console.log(typeof result);
+     */
+    /**
+     * 将字符串转为数字
+     * 1.parseInt('字符串')结果为数字
+     *
+     * 注意：1.如果字符串内以非数字开头 则结果为 NaN  类型时 number
+     *          var r4 = parseInt(s4);//NaN
+     console.log(r4,typeof r4);//
+     *       2.如果字符串内以数字开头 但是后面含有其他字符 则 只将纯数字部分返回
+     *           var r2 = parseInt(s2);
+     console.log(r2,typeof r2);//123 number
+     3.parseInt()可以对小数进行取整  不保留小数部分
+     var r5 = parseInt(3.94);
+     console.log(r5,typeof r5);
+     4.  使用parseInt可以将数字字符串转为对应进制数的10进制展示
+          var result = parseInt('11', 8);
+     注意：
+     1.如果最开始的数字 不满足进制数要求 返回 NaN
+     2.如果后面的数字不满足进制要求  则  不满足要求的数字不进行转换
+
+     2.将字符串中的小数部分转换为数字
+     parseFloat('字符串')
+
+     注意：同上
+     例子：
+     var str = '3.14';
+     var result = parseFloat(str);
+     console.log(result, typeof result);
+
+     str = '3.14abc';
+     result = parseFloat(str);
+     console.log(result, typeof result);
+
+     str = '3.14.15926abc';
+     result = parseFloat(str);
+     console.log(result, typeof result);
+
+     str = 'a3.14.15926abc';
+     result = parseFloat(str);
+     console.log(result, typeof result);
+
+
+     3.将数字转为字符串
+     例子：
+     var num = 3.14;
+     console.log(typeof  num);//number
+     var result = num+'';
+     console.log(typeof  result);
+     */
+    var num1 = 10;
+    var num2 = '10';
+    var num3 = 10;
+    /**
+     * = 赋值
+     *  var num1 = 10;
+     *  == 比较：忽略类型的比较
+     *  ===比较：包含类型的比较
+     *  例子：
+     console.log('num1 == num3:'+(num1 == num3));
+     console.log('num2 == num3:'+(num2 == num3));
+     console.log('num2 === num3:'+(num2 === num3));
+     */
+</script>
+</body>
+</html>

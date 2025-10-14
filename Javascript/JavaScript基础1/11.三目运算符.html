@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 三目（元）运算符
+     * 语法：
+     *    X?Y:Z;
+     *  X:boolean类型的表达式
+     *  当X为true的时候 执行 Y表达式
+     *  当X为false的时候 执行Z 表达式
+     *
+     * 用户界面输入俩数  求最大值
+     * 例子：
+     var num1 = prompt('请您输入第一个数');//100
+     var num2 = prompt('请您输入第二个数');//99
+     num1 = parseInt(num1);
+     num2 = parseInt(num2);
+     //进行比较
+     var result =  num2>num1?num2:num1;
+     console.log(result);
+     */
+    var age = 19;
+    var result = age > 18 ? '成年了，要担起自己的责任' : '去网吧 不行';
+    console.log(result);
+    /**
+     * 找到三个数的最大值
+     * 前两个数比 让较大值和第三个数比
+     * 使用一行三目解决
+     * 12  15  19
+     */
+
+
+    /*  //前两个数比
+     result = a>b?a:b;
+     //较大值和第三个数比
+     var maxNum = result>c?result:c;
+
+     console.log(maxNum);
+     */
+
+    var num1 = prompt('请您输入第一个数');//100
+    var num2 = prompt('请您输入第二个数');//99
+    var num3 = prompt('请您输入第三个数');//99
+
+    var a = parseInt(num1);
+    var b = parseInt(num2);
+    var c = parseInt(num3);
+    var maxNum = a > b ? ( a > c ? a : c) : ( b > c ? b : c);
+    console.log(maxNum);
+
+
+</script>
+</body>
+</html>
