@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<span>num1</span><input type="text" id="num1">
-<span>num2</span><input type="text" id="num2"><br>
-<button id="sum">SUM</button>
-<button id="c">C</button>
-<br>
-<span>结果</span><input type="text" id="result">
-<script>
-    /**
-     * 2、    输入两个数字，进行加减乘法运算，每个运算符对应一个按钮，
-     * 每个运算结果存放到对应的input标签中
-     */
-    //获取页面元素
-    var num1Input = document.getElementById('num1');
-    var num2Input = document.getElementById('num2');
-    var sumBtn = document.getElementById('sum');
-    var resultInput = document.getElementById('result');
-    var cBtn = document.getElementById('c');
-    //给按钮添加点击事件
-    sumBtn.onclick = function () {
-        //获取标签的值
-        var num1 = parseInt(num1Input.value);
-        var num2 = parseInt(num2Input.value);
-        console.log(typeof  num1);
-        console.log(typeof  num2);
-        //加法的逻辑
-        var result = num1+num2;
-        //将结果赋值给input标签
-        resultInput.value = result;
-    }
-    cBtn.onclick = function () {
+    <span>num1</span><input type="text" id="num1">
+    <span>num2</span><input type="text" id="num2"><br>
+    <button id="sum">SUM</button>
+    <button id="c">C</button>
+    <br>
+    <span>结果</span><input type="text" id="result">
+    <script>
+        /**
+         * 2、    输入两个数字，进行加减乘法运算，每个运算符对应一个按钮，
+         * 每个运算结果存放到对应的input标签中
+         */
+        //获取页面元素
+        var num1Input = document.getElementById('num1');
+        var num2Input = document.getElementById('num2');
+        var sumBtn = document.getElementById('sum');
+        var resultInput = document.getElementById('result');
+        var cBtn = document.getElementById('c');
+        //给按钮添加点击事件
+        sumBtn.onclick = function () {
+            //获取标签的值
+            var num1 = parseInt(num1Input.value);//加法必须转换
+            var num2 = parseInt(num2Input.value);
+            console.log(typeof num1);
+            console.log(typeof num2);
+            //加法的逻辑
+            var result = num1 + num2;
+            //将结果赋值给input标签
+            resultInput.value = result;
+        }
+        cBtn.onclick = function () {
 
-        num1Input.value='';
-        num2Input.value='';
-        resultInput.value = '';
+            num1Input.value = '';
+            num2Input.value = '';
+            resultInput.value = '';
 
-    }
-</script>
+        }
+    </script>
 
 </body>
+
 </html>
