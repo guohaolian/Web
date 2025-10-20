@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
-<script>
-    /**
-     * > < >= <= == === !=
-     * 比较运算符支持隐士转换。
-     * 结果都是boolean类型
-     * 字符串比较的是ascII码值
-     * console.log(15>'8');
-     */
-    var num1 = 20;
-    var num2 = 40;
 
-  /*  console.log(num1 > num2);//false
-    console.log(num1 >= num2);//false
-    console.log(num1 < num2);//true
-    console.log(40 <= num2);//true 20 <=40
-    console.log(num1 == num2);//false
-    console.log(num1 === num2);//false
-    console.log(num1 != num2);//true
-*/
-    /**
-     * A:65
-     * a:97
-     */
-    console.log('a' >'A');
-    console.log('b' >'a');
-</script>
+<body>
+    <script>
+        /**
+         * > < >= <= == === !=
+         * 比较运算符支持隐士转换。
+         * 结果都是boolean类型
+         * 字符串比较的是ascII码值
+         * console.log(15>'8');
+         */
+        var num1 = 20;
+        var num2 = 40;
+
+        /*  console.log(num1 > num2);//false
+          console.log(num1 >= num2);//false
+          console.log(num1 < num2);//true
+          console.log(40 <= num2);//true 20 <=40
+          console.log(num1 == num2);//false
+          console.log(num1 === num2);//false，比较时既比较值又比较类型，不做隐式类型转换
+          console.log(num1 != num2);//true
+      */
+        /**
+         * A:65
+         * a:97
+         */
+        console.log('a' > 'A');
+        console.log('b' > 'a');
+    </script>
 </body>
+
 </html>

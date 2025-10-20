@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<script>
+
     var f1 = true;
     var f2 = false;
     /**
@@ -29,8 +22,3 @@
     var b = 20;
     var result =  b>a || a++ > b++;
     console.log(result,a,b);
-
-</script>
-
-</body>
-</html>
