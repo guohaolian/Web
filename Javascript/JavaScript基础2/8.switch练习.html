@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 输入一个月份，输入一个年份 判断该月有多少天
+     * 处理润年的情况
+     * 1 3 5 7 8 10 12  31
+     * 4 6 9 11 30
+     * 2月：
+     * 平年 28
+     * 闰年 29
+     * 使用switch完成
+     */
+    var year = parseInt(prompt('请您输入一个年份', 2018));
+    var mouth = parseInt(prompt('请您输入一个月份', 2));
+
+    switch (mouth) {
+        case 1:
+        case 5:
+        case 7:
+        case 3:
+        case 8:
+        case 10:
+        case 12:
+            console.log(31);
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            console.log(30);
+            break;
+        case 2:
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                console.log(29);
+            } else {
+                console.log(28);
+            }
+            break;
+    }
+    console.log('Game Over!!!');
+
+
+
+</script>
+
+</body>
+</html>

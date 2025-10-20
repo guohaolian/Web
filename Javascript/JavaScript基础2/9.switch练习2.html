@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 使用switch 求 分数的等级
+     * 100
+     * 90 91 92 93 94 95 96 97 98 99
+     * [90,100] A
+     * 80 81 82 83 84 85 86 87 88 89
+     * [80,90)  B
+     *
+     * [70,80)  C
+     * [60,70)  D
+     *
+     * <60  E
+     *
+     * 等值判断 不是使用范围校验
+     */
+    var score = prompt('请您输入一个成绩',89);
+    var num = parseInt(score/10);
+    switch (num){
+        case 10:
+        case 9:
+            console.log('A');
+            break;
+        case 8:
+            console.log('B');
+            break;
+        case 7:
+            console.log('C');
+            break;
+        case  6:
+            console.log('D');
+            break;
+        default :
+            console.log('E');
+            break;
+    }
+</script>
+</body>
+</html>

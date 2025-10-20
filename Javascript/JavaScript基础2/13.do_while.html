@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    /**
+     *   初始化条件
+     * do{
+     *   循环体
+     *   迭代条件
+     * }while(循环条件);
+     *
+     * 例子：
+     *   var num = 1;
+     do {
+        console.log(num);
+        num++;
+    } while (num <= 100);
+
+
+     注意：当初始化条件不满足循环条件  for while 都不会执行循环体的内容
+           do{}while()当初始化条件不满足循环条件 也会执行一次循环体
+
+            for 当循环次数固定时使用
+            while  当循环次数不固定可以使用while
+            do{}while():当初始化条件不满足循环条件 也会执行一次循环体
+     */
+    var num = 10;
+    while (num <= 1) {
+        console.log(num);
+        num++;
+    }
+    for(var i = 10;i<1;i++){
+        console.log(i);
+    }
+
+    var num1 = 10;
+    do{
+        console.log(num1);
+        num1++;
+    }while(num1<=1);
+    console.log('Game Over!!');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * break: 结束/跳出 当前循环
+     continue:结束本次循环 继续下一次循环
+
+     for (var i = 1; i < 10; i++) {
+        if (i % 5 == 0) {
+            continue;
+        }
+        console.log(i);
+    }
+     */
+
+
+    /**
+     * 输入一个年份 输入一个月份
+     *  2019      4
+     *  计算2018年  从1月到5月总天数
+     *  1
+     *  2
+     *  3  foo
+     *  4
+     *  5  biz
+     *  6
+     *  7  baz
+     *  8
+     *  9  foo
+     *  10 biz
+     *  ..
+     *  15 foo biz
+     *  35  biz baz
+     *  105 foo biz  baz
+     *  。。。。200
+     */
+    /**
+     *  输入一个年份 输入一个月份
+     *  2019      4
+     *  计算2018年  从1月到5月总天数
+     */
+    /*var year = parseInt(prompt('请输入一个年份', 2018));
+    var month = parseInt(prompt('请输入一个月份', 5));//2
+    //求总天数
+    var sum = 0;
+    for (var i = 1; i <= month; i++) {
+        switch (i) {//2
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+             //   console.log(31);
+                    sum = sum + 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                //console.log(30);
+                    sum = sum +30;
+                break;
+            case 2:
+                if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                    //console.log(29);
+                    sum = sum + 29;
+                }else{
+                  //  console.log(28);
+                    sum =  sum + 28;
+                }
+        }
+    }
+
+    console.log(year+'年1月 到'+month+'月 共有 '+sum+'天');*/
+    var year = parseInt(prompt('请输入一个年份', 2018));
+    var month = parseInt(prompt('请输入一个月份', 5));//2
+    //求总天数
+    var sum = 0;
+
+    for (var i = 1; i <= month; i++) {
+        var day = 0;
+        console.log(i+'月--->'+day);
+        switch (i) {//2
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                //   console.log(31);
+               day = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                //console.log(30);
+                day = 30;
+                break;
+            case 2:
+                if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                    //console.log(29);
+                   day = 29;
+                }else{
+                    //  console.log(28);
+                   day = 28;
+                }
+        }
+        sum  = sum + day;
+    }
+    console.log(year+'年1月 到'+month+'月 共有 '+sum+'天');
+</script>
+</body>
+</html>

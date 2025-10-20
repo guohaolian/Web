@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    /**
+     * 初始化条件
+     * while(循环条件){
+     *    循环体；
+     *    迭代条件
+     * }
+     *
+     * 例子：
+     *  var num = 1;
+     while(num<=100){
+        console.log(num);
+        num++;
+    }
+     */
+    //例子 使用while循环输出1~100 偶数的和 及个数
+
+    var num = 1;
+    //求和
+    var sum = 0;
+    while (num <= 100) {
+        //判断是否为偶数
+        if (num % 2 == 0){
+            sum += num;
+            console.log(num);
+        }
+        num++;
+    }
+    console.log(sum);
+
+    //使用while循环 求 1~100内能被7整除的数的个数 及总和
+
+    var num1 = 1;
+    sum = 0;
+    var count = 0;
+    while(num1<=100){
+        if(num1%7==0){
+            sum+=num1;
+            count++;
+        }
+        num1++;
+    }
+    console.log('和是 '+sum,'个数是 '+count);
+    /**
+     * 用户输入n个数 判断正数有多少个 负数有多少个 用户输入0时 终止程序
+     *
+     *
+     var zNum = 0;
+     var fNum = 0;
+
+     var num1 = 10;
+
+     while(num1!=0){
+        num1 = prompt('请您输入一个数');
+        if(num1>0){
+            zNum++;
+        }
+        if(num1<0){
+            fNum++;
+        }
+    }
+     console.log('正数有 '+zNum,'负数有 '+fNum);
+     */
+
+
+    //var num1 = prompt('请您输入一个数');
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

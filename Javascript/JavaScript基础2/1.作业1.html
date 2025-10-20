@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /**
+         * [90,100] A
+         * [80,90)  B
+         * [70,80)  C
+         * [60,70)  D
+         * <60  E
+         */
+
+
+        /**
+         * 利用if分支的特性  顺序不能变
+         */
+        /* if (score >= 90) {
+             console.log('A');
+         } else if (score >= 80) {
+             console.log("B");
+         } else if (score >= 70) {
+             console.log('C');
+         } else if (score >= 60) {
+             console.log('D');
+         } else {
+             console.log('E');
+         }*/
+        console.log('------------------------------------------------------');
+        var score = 78;
+        var result = "";
+        if (score >= 90 && score <= 100) {
+            result = 'A';
+        } else if (score >= 80 && score < 90) {
+            result = 'B';
+        } else if (score >= 70 && score < 80) {
+            result = 'C';
+        } else if (score >= 60 && score < 70) {
+            result = 'D';
+        } else {
+            result = 'E';
+        }
+
+        console.log(result);
+
+    </script>
+
+</body>
+
+</html>
