@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    /**
+     编写一个能够注册新用户的模块。要求：
+     (1)用户 账户名不超过20位，但不少于10位。 并且[首字母必须是字母]。
+     违规后提示用户。
+     (2)用户密码不超过16位，但不少于6位。并且密码中[必须包含字母]。违规后提示用户。
+     */
+    var userName = 'a12345678911abc';
+    var passWord = '12348h22ggg';
+    //获取首字母
+    var firstCode = userName.charCodeAt(0);
+    /*
+     字母范围
+     65 ~  90
+     97 ~ 122
+     */
+    console.log('Z'.charCodeAt(0));
+
+    if ((userName.length >= 10 && userName.length <= 20) && (firstCode >= 65 && firstCode <= 90 || firstCode >= 97 && firstCode <= 122)) {
+        //用户名合法 校验密码是否合适
+        if (passWord.length >= 6 && passWord.length <= 16) {
+                //密码长度合适
+                //假设密码不合法
+            var flag = false;
+            for (var i = 0; i < passWord.length; i++) {
+                //判断是否含有字母
+                //1.将密码中的每个字符转换为编码值
+                var code = passWord.charCodeAt(i);
+                //2.判断编码值是否在 字母范围内
+                if (code >= 65 && code <= 90 || code >= 97 && code <= 122) {
+                   // alert('success');
+                    flag = true;
+                    //结束循环
+                    break;
+                }
+            }
+            //判断结果
+            if(flag){// flag == true
+                alert('success');
+            }else{
+                alert(' fail ');
+            }
+        } else if (passWord.length < 6) {
+            alert('密码过短');
+        } else if (userName.length > 16) {
+            alert('密码过长');
+        }
+
+//字符串长度长了
+//字符串长度短了
+//第一个字符不是字母
+    } else if (userName.length > 20) {
+        alert('用户名过长');
+    } else if (userName.length < 10) {
+        alert('用户名过短');
+    } else {
+        alert('第一个字符不是字母');
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 质数/素数：质数定义为在大于1的自然数中，除了1和它本身以外不再有其他因数。
+     *
+     * 输出 2~ 200内质数
+     * 4
+     * 1.获取2到200内所有的数
+     * 2.2 3  4  16
+     *
+     * 除了 1 和 16 以外 还有能被16整除的数 所以16不是质数
+     *
+     * 查找约数的范围 是 从 2开始  到 要查找的数
+     *                  [2,要查找的数）
+     *                  8
+     *                  1 2  3  4  5 6  7     8
+     *
+     *                  8      16     21
+     *                  2 4  2 4 8    3  7
+     *
+     */
+
+  /*  for(var i = 2;i<=200;i++){
+        //假设所有的数都是质数
+        var flag = true;
+        for(var j = 2;j<=i/2;j++){//8
+            //判断是否为质数
+            if(i%j==0){
+                //不是质数
+                flag = false;
+            }
+        }
+        //判断flag的值是否改变
+        if(flag){
+            console.log(i);
+        }
+    }*/
+/*    for(var i = 2;i<=200;i++){
+        //假设所有的数都是质数
+        var flag = true;
+        for(var j = 2;j<=Math.sqrt(i);j++){//8
+            //判断是否为质数
+            if(i%j==0){
+                //不是质数
+                flag = false;
+                //当进入分支则 判定此数字不是质数 所以结束内层循环
+                break;
+            }
+        }
+        //判断flag的值是否改变
+        if(flag){
+            console.log(i);
+        }
+    }*/
+  l:  for(var i = 2;i<=200;i++){
+        //假设所有的数都是质数
+        for(var j = 2;j<=Math.sqrt(i);j++){//8
+            //判断是否为质数
+            if(i%j==0){
+                //不是质数
+                //当进入分支则 判定此数字不是质数 所以结束内层循环
+               continue l;
+            }
+        }
+        //判断flag的值是否改变
+            console.log(i);
+    }
+
+</script>
+
+</body>
+</html>

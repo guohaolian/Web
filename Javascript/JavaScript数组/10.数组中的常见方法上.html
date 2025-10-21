@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * isArray方法是数组提供的用来专门判断当前对象是否为数组的方法。如果是数组返回true，否则返回false。
+     * 语法：Array.isArray(对象)
+     * 例子：
+     *  var arr = [];
+     var flag = Array.isArray(arr);
+     //if(flag){}
+     console.log(flag);
+
+     flag = Array.isArray('你好');
+     console.log(flag);
+
+     * 注意：
+     *    1.通过Array调用isArray
+     *    2.valueOf()
+     *    将原有的数组复制一份返回一个新的数组
+     *    例子：
+     var arr = ['你好', 'haha', true];
+     var arr1 = arr.valueOf();
+     arr[0] = '今天你真的很美';
+     console.log(arr);
+     console.log(arr1);
+     3.toString()
+     描述：将数组转为字符串
+     语法：数组名.toString();
+     注意：
+     1.转换后的字符串 元素与元素之间用逗号相隔
+     你好,haha,true
+     例子：
+     var arr = ['你好', 'haha', true];
+     console.log(arr);
+     console.log(arr.toString());//你好,haha,true
+
+     push
+     描述：数组末尾追加
+     语法：数组名.push(元素)
+     注意：
+     1.一次可以追加多个元素
+     2.返回追加后数组的长度
+     例子：
+     var arr1 = [1, 2, 3, 4];
+     arr1.push('你好');
+     console.log(arr1);
+     arr1.pop();
+     console.log(arr1);
+     pop():
+     描述：数组末尾删除元素
+     语法：数组名.pop();
+     注意：
+     1.返回删除的元素
+     * join
+     * 描述：将数组转为字符串
+     * 语法：数组名.join('符号');
+     * 注意：
+     *      1.如果join没有参数 等同于toString 即元素与元素之间 使用逗号相隔
+     *      2.如果join有参数  元素与元素之间使用符号相隔
+     var result = arr1.join();
+     console.log(result);
+     console.log(typeof result);
+     *
+     *
+     * shift/unshift
+     *
+     * shift:
+     * 描述：头部删除
+     * 语法：数组名.shift();
+     * 注意：
+     *      返回删除的元素
+     * 例子：
+     *   var arr = [1,2,3,4,5];
+     console.log(arr.shift());
+     * unshift
+     * 描述：数组头部追加
+     * 语法：数组名.unshift
+     * 注意：
+     *      1.可以一次追加多个参数
+     *      2.返回追加后数组的长度
+     * 例子：
+     var arr = [1,2,3,4,5];
+     console.log(arr.unshift(66,88));
+     */
+    var num = 12345;
+    /**
+     * 1.将数字转为字符串
+     * 2.将字符串转为数组
+     * 3.数组中采用头部添加 第一个添加的到最后
+     * 4.数组转为字符串 因为元素与元素之间没有任何内容 所以 采用join('')
+     * 5.将字符串转为number
+     */
+             //54321
+    var newStr = num + '';
+    console.log(newStr, typeof newStr);
+    //将字符串转换为数组 ["1", "2", "3", "4", "5"]
+    var arr = newStr.split('');
+    console.log(arr);
+    var newArr = [];
+    for(var i = 0;i<arr.length;i++){
+     newArr.unshift(arr[i]);
+    }
+    //将数组转为字符串
+    var result = newArr.join('');
+    console.log(newArr,result);
+ //将字符串转为数字
+    var newNum = parseInt(result);
+    console.log(newNum,typeof newNum);
+
+    /*
+     解法1：
+     var result = '';
+
+     for (var i = newStr.length - 1; i >= 0; i--) {
+     result += newStr[i];
+     }
+     console.log(result);*/
+
+</script>
+
+</body>
+</html>

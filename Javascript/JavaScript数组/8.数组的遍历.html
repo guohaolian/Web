@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //0~长度-1
+    var arr = ['李白','胡歌','刘胡兰','雷锋'];
+    for(var i = 0;i<arr.length;i++){
+        console.log(arr[i]);
+    }
+    console.log('======================================');
+    for(var index in arr){
+        console.log(index,arr[index]);
+    }
+    console.log('======================================');
+    /**
+     * a:数组中的元素
+     * arr:数组 数据源
+     */
+    for(var a of arr){
+        console.log(a);
+    }
+    console.log('======================================');
+    /**
+     * forEach遍历
+     * 数组名.forEach(function(ele,index){
+     * ele:数组中的元素
+     * index:数组中的下标
+     * })
+     */
+   arr.forEach(function (a1,b1) {
+       console.log('a1-->'+a1);
+       console.log('b1-->'+b1);
+   });
+    console.log('===================mapmapmap===================');
+    /**
+     * map映射的意思
+     * arr.map（function(a,b,c){
+     * a:数组中的元素
+     * b:数组中元素的下标
+     * c:源数组
+     * }）
+     */
+    arr.map(function (item,bb,cc) {
+        console.log(item);
+        console.log(bb);
+        console.log(cc);
+    })
+
+    console.log('===================----------------===================');
+
+
+
+
+</script>
+
+</body>
+</html>

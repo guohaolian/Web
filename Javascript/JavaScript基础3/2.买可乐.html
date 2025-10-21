@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 20块钱买可乐  每瓶可乐3块钱  喝完瓶子换一块钱  问一共可以喝几瓶可乐？
+     * 推理：
+     *  20   3    1
+     *
+     *  6 + 2  + 1 = 9瓶
+     *  6  剩余2元 + 6个瓶子前   = 8元
+     *  8  2瓶 + 2元 = 4元
+     *  4 买一瓶  剩一元  + 1 = 2元
+     *
+     * 1.使用while循环
+     *
+     * 2.循环条件  当 剩余的钱不够买可乐 结束循环
+     *
+     *
+     * 3.
+     *   1.计算可以买多少可乐  parseInt(钱数/单价)
+     *
+     *   1.1可乐数进行累加
+     *
+     *   2.剩余的总钱数 = 买可乐剩下的钱（%） + 瓶子数
+     */
+
+    var money = 20;
+    var price = 3;
+    //记录每一次买可乐的瓶数
+    var count = 0;
+    //定义变量记录总瓶数
+    var sum = 0;
+    while(money>=price){
+        //1.计算可以买多少可乐  parseInt(钱数/单价)
+        count = parseInt(money/price);
+        console.log('money :'+money,'  count  :'+count);
+        //2.可乐瓶数累加
+        sum += count;
+        //3.剩余的总钱数 = 买可乐剩下的钱（%） + 瓶子数
+        money = money%price+count;
+    }
+
+    console.log(sum);
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

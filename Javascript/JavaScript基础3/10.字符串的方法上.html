@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 1.substring
+     * 描述：截取字符串
+     * 语法：字符串.substring(startIndex,endIndex);
+     * 注意： 区间范围 [startIndex,endIndex)
+     * 例子：
+     var str = 'abcdefghi';
+     var result = str.substring(1,5);//bcde
+     console.log(result);
+     console.log(str);
+     注意：
+         1.如果只写一个下标 则表示从此位置开始一直到最后
+         2.到结束下标的位置小于开始下标 自动调换位置
+         3.不会对原有的字符串造成影响
+     2.substr
+     语法：字符串对象.substr(startIndex,count);
+     例子：
+         var str = 'abcdefghi';
+         var result = str.substr(5,1);
+         console.log(result);
+         console.log(str);
+     3.slice
+     语法：字符串.slice(startIndex,endIndex)；
+     例子：
+     var str = 'abcdefghi';
+     var result =  str.slice(3,1);
+     console.log(result);
+     注意： 区间范围 [startIndex,endIndex)
+     ABCDEF
+     A
+     AB
+     ABC
+     ABCD
+     ABCDE
+
+     B
+     BC
+     BCD
+     BCDE
+     .......
+     */
+
+    /**
+     * substring
+     * substr
+     * slice
+     * 省略第二个参数 则都表示从当前下标开始 截取到字符串的最后
+     *
+     * @type {string}
+     */
+    var string = 'The Three fireGuners';
+   var r1 =  string.substring(0);
+   var r2 =  string.substr(0) ;
+   var r3 =  string.slice(0);
+    console.log(r1,r2,r3);
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 数组中逗号与逗号之间如果没有数据 则会产生空位
+     * 最后一个元素的后面 有一个逗号不会产生空位
+     */
+    var arr= [1,2,,3,4];
+    console.log(arr);
+    console.log(arr[2]);
+    console.log(typeof arr[2]);
+    arr1= [1,2,,3,4,];
+    console.log(arr1);
+
+
+    /**
+     * delete 删除数组中某个元素
+     * 语法 delete 数组[index]
+     * 注意：
+     *      删除元素后 数组的长度不变
+     */
+    var arr2 = [1,2,3,4,5];
+    arr2[2] = undefined;
+    delete arr2[0];
+    console.log(arr2);
+    console.log(arr2.length);
+</script>
+
+</body>
+</html>

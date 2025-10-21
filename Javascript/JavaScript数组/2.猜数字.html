@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    /**
+     *
+     随机数
+     Math.random() [0,1)
+     n:较大的范围  10  93
+     m:较小的范围  1   22
+     (Math.random()*(n-m+1)+m)
+     1~10000
+     50 小了
+     50 ~10000   999大了
+     50~999   666 小了
+     666~999
+     888 大奖
+     */
+    //指定幸运数字
+    var luckyNum = parseInt(Math.random()*(10000-1+1)+1);
+    console.log(luckyNum);
+    //定义变化范围
+    var min = 1;
+    var max = 10000;
+    var caiNum = 0;
+    //不知道循环执行多少次 while
+    while (true) {
+        //弹窗无限次弹  放到循环中
+        caiNum = prompt('请您输入一个数字', 100);
+        //判断猜测的数字是否在范围内
+       if(caiNum >max || caiNum <min){
+           alert('老铁 输入的数字 不在范围内');
+           //判断猜测数字与幸运数字的大小关系
+           //当猜测数字大于 幸运数字
+       }else if (caiNum > luckyNum) {
+            //将猜测的数值 赋给最大值
+            max = caiNum;
+            alert('小伙子 大了 范围是 '+min+'~~~~~~'+max);
+            //当猜测数字小于 幸运数字
+        }else if(caiNum<luckyNum){
+            min = caiNum;
+            alert('小伙子 小了 范围是 '+min+'~~~~~~'+max);
+        }else if(caiNum == luckyNum){
+            //当猜测数字等于 幸运数字
+            //猜测成功 获奖
+            alert('猜测成功  恭喜老铁 月薪两万！！！');
+            break;
+        }
+    }
+</script>
+
+</body>
+</html>

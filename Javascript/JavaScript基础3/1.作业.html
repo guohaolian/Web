@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 1
+     * 2
+     * 3 foo
+     * 4
+     * 5 biz
+     * 6 foo
+     * 7 baz
+     * ....
+     * 15 foo biz
+     * ...
+     * 35  biz baz
+     * ....
+     * 105 foo biz  baz
+     * 思考：
+     *   1.1~200的循环
+     *   2. 被3整除  foo
+     *      被5整除  biz
+     *      被7整除  baz
+     *      被 3  5整除 foo biz
+     *      被 3  7整除 foo baz
+     *      被 5  7整除 biz baz
+     *      被 3   5  7整除foo biz baz
+     *
+     *
+     */
+
+    for(var i = 1;i<=200;i++){
+        //定义变量记录【每次】字符串变化的结果
+        var str = '';
+        if(i%3 ==0){
+           // console.log(i+'  foo');
+            str = ' foo ';
+        }
+        if(i%5==0){
+            //console.log(i+'  biz');
+            str += ' biz ';
+        }
+        if(i%7==0){
+            //console.log(i+'  baz');
+            str += ' baz ';
+        }
+        console.log(i+'  '+str);
+    }
+
+
+
+</script>
+</body>
+</html>

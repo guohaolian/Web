@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     *  var str = 'I Love You!!!';
+     //加密 btoa()
+     var jiaMi = btoa(str);
+     console.log(jiaMi);
+     //解密 atob() 解密
+     var jieMi = atob(jiaMi);
+     console.log(jieMi);
+     */
+    var str = 'I Love You, 胡歌';
+    var jiaMi = encodeURIComponent(str);
+    //  var jiaMi = btoa(str);
+    console.log(jiaMi);
+    var finalJiaMi = btoa(jiaMi);
+    console.log(finalJiaMi);
+    //解密
+    var jieMi = atob(finalJiaMi);
+    console.log(jieMi);
+    var finalJieMi =  decodeURIComponent(jieMi);
+    console.log(finalJieMi);
+</script>
+</body>
+</html>
