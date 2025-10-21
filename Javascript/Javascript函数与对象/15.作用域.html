@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * js中只有两种作用域
+     * 1.全局作用域 :声明在函数的外部
+     *   全局可见
+     *
+     * 2.函数作用域:在函数内部声明的变量
+     *   函数内部可见
+     *
+     *
+     * 注意：没有块级作用域
+     *  for(var i = 0;i<10;i++){
+        }
+        console.log(i);
+     */
+    var i = 100;
+    function test(){
+        console.log(i);
+        var c = 2000;
+    }
+    test();
+    function test2(){
+        console.log('---------------------------');
+        console.log(i);
+        console.log(c);
+    }
+    test2();
+
+
+</script>
+
+</body>
+</html>

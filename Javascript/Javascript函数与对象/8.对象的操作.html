@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**Object.keys(对象名)
+     * 描述：获取对象内所有的属性
+     * 语法：Object.keys(对象名)
+     * 例子：
+     *    var obj = {
+        'userName': '李白',
+        'passWord': 123456,
+        'sex': '男'
+    }
+     var arr = Object.keys(obj);
+     console.log(arr);
+     *注意：返回的是一个数组
+     *
+     * 2.delete
+     * 描述：删除对象的属性
+     * 语法： delete obj.属性名
+     * 例子：
+     *    delete obj.sex;
+     console.log(obj);
+     注意：
+     删掉属性后 则此对象不再拥有此属性 所以 无法再获取该属性
+     var obj = {
+                'userName': '李白',
+                'passWord': 123456,
+                'sex': '男'
+            };
+     delete obj.sex;
+     console.log(obj);
+     console.log(Object.keys(obj));
+     *
+     * 3.in
+     * 描述：判断左边的字符串是否为右边对象的属性
+     * 语法： 字符串 in  对象名
+     * 例子：
+     *var obj = {
+        'userName': '李白',
+        'passWord': 123456,
+        'sex': '男',
+        111:222
+    };
+     console.log('userName' in obj);
+     console.log('222222' in obj);
+     console.log(111 in obj);
+     */
+    var obj = {
+        'userName': '李白',
+        'passWord': 123456,
+        'sex': '男',
+        111: 222
+    };
+    /* for(var att in obj){
+     console.log(obj[att]);
+     }*/
+</script>
+
+</body>
+</html>

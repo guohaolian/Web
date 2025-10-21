@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var student1 = {
+        'userName': '李白',
+        'age': 18,
+        'score': 88
+    };
+    var student2 = {
+        'userName': '亚瑟',
+        'age': 18,
+        'score': 90
+    };
+    var student3 = {
+        'userName': '大龙',
+        'age': 17,
+        'score': 100
+    }
+    /**
+     * 首先按照年龄排序 当年龄相等时 按照分数排序 都是自然顺序
+     * @type {Array}
+     */
+    var arr = [];
+    arr.push(student1, student2, student3);
+    arr.sort(function (a, b) {
+        if (a.age == b.age) {
+
+            return a.score - b.score;
+        } else {
+            return a.age - b.age;
+        }
+    });
+    console.log(arr);
+
+</script>
+
+</body>
+</html>

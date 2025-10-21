@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 随机数的范围 43 ~ 52
+     * 存到数组内 要求 数据不重复  数组长度为10
+     */
+
+    var arr = [];
+    console.log(arr);
+  /*  for (var i = 0; i < 10; i++) {
+         do {
+             var num = parseInt(Math.random() * (52 - 43 + 1) + 43);//51 51
+            console.log(num);
+         } while (arr.indexOf(num)!=-1);/!**
+                    判断是否进行下一次循环
+                       当生成的随机数没有在数组内出现过则终止循环 将元素添加到数组内
+                *!/
+        //如果产生的随机数 是重复的则应该再重新生成一个随机数进行判断
+        //像数组内添加元素
+        arr.push(num);
+    }*/
+    while(arr.length<10){
+        var num = parseInt(Math.random() * (52 - 43 + 1) + 43);//51 51
+        console.log('aaaa->',num);
+        if(arr.indexOf(num)==-1){
+            arr.push(num);
+        }
+    }
+    console.log(arr);
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 按照函数的书写结构
+     * 1.有参有返回值
+     *      当形参没有获取到实参传递的值时  那么它的值为undefined
+     *       function sum(a,b,c){
+        console.log(a,b,c);
+       return a+b+c;
+    }
+     * 2.有参无返回值
+     *  function sum(a,b,c){
+            console.log(a,b,c);
+      }
+     当一个函数没有返回值 但是在函数调用处仍然使用变量接收 则此变量的值为undefined
+     * 3.无参有返回值
+     *function sum2() {
+        return 1 + 1;
+    }
+     console.log(sum2());
+     * 4.无参无返回值
+     */
+    function sum(a, b, c) {
+        console.log(a, b, c);
+        return a + b + c;
+    }
+
+    function sum1(a, b, c) {
+        console.log(a, b, c);
+    }
+
+    function sum2() {
+        return 1 + 1;
+    }
+    function sum3() {
+        console.log('aaaaaaaaaaaaaaa');
+    }
+    console.log(sum3());
+
+</script>
+
+</body>
+</html>
