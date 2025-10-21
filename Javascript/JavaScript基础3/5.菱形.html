@@ -1,69 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<script>
-    /**
-     *              h   k   s       行数已知 + k = 5  ====> k = 5 - 行数
-     *----*         1   4   1
-     *---* *        2   3   2       h == s
-     *--* * *       3   2   3
-     *-* * * *      4   1   4
-     *
-     *              h   k   s     行数已知 + 1 = k;
-     *--* * *       1   2   3     行数已知 + s = 4; ===> s = 4 - 行数；
-     *---* *        2   3   2
-     *----*         3   4   1
-     */
-    /**
-     * 附加题 ；
-     * 将菱形在控制台输出
-     */
-    for(var h = 1;h<=4;h++){
-        //将变量定义到循环内 每次循环执行 都是新的开始 记录全新的空格数和星星数
-        var str = '';
-        //空格的数量
-        for(var k = 1;k<=5-h;k++){
-            str+=' ';
+    <script>
+        /**
+         *              h   k   s       行数已知 + k = 5  ====> k = 5 - 行数
+         *----*         1   4   1
+         *---* *        2   3   2       h == s
+         *--* * *       3   2   3
+         *-* * * *      4   1   4
+         *
+         *              h   k   s     行数已知 + 1 = k;
+         *--* * *       1   2   3     行数已知 + s = 4; ===> s = 4 - 行数；
+         *---* *        2   3   2
+         *----*         3   4   1
+         */
+        /**
+         * 附加题 ；
+         * 将菱形在控制台输出
+         */
+        for (var h = 1; h <= 4; h++) {
+            //将变量定义到循环内 每次循环执行 都是新的开始 记录全新的空格数和星星数
+            var str = '';
+            //空格的数量
+            for (var k = 1; k <= 5 - h; k++) {
+                str += ' ';
+            }
+            //str='    ';
+            //星星的数量
+            for (var s = 1; s <= h; s++) {
+                str += '* ';
+            }
+            console.log(str);
         }
-        //str='    ';
-        //星星的数量
-        for(var s = 1;s <=h;s++){
-            str += ' *';
+        for (var h = 1; h <= 3; h++) {
+            var str = '';
+            //空格的数量
+            for (var k = 1; k <= h + 1; k++) {
+                str += ' ';
+            }
+            //星星的数量
+            for (var s = 1; s <= 4 - h; s++) {
+                str += '* ';
+            }
+            console.log(str);
         }
-        console.log(str);
-    }
-   /* //上部分
-    for(var h = 1;h<=4;h++){
-        //输出空格
-        for(var k = 1;k<=5-h;k++){
-            document.write('&nbsp;');
-        }
-        //输出星星
-        for(var s = 1;s<=h;s++){
-            document.write(' *');
-        }
-        //换行
-        document.write('<br>');
-    }
-
-    //下部分
-    for(var h = 1;h <= 3;h++){
-        //输出空格
-        for(var k = 1;k<=h+1;k++){
-            document.write('&nbsp;');
-        }
-        //输出星星
-        for(var s = 1;s <= 4 -h;s++){
-            document.write(' *');
-        }
-        //换行
-        document.write('<br>')
-    }
-    */
+        /* //上部分
+         for(var h = 1;h<=4;h++){
+             //输出空格
+             for(var k = 1;k<=5-h;k++){
+                 document.write('&nbsp;');
+             }
+             //输出星星
+             for(var s = 1;s<=h;s++){
+                 document.write(' *');
+             }
+             //换行
+             document.write('<br>');
+         }
+     
+         //下部分
+         for(var h = 1;h <= 3;h++){
+             //输出空格
+             for(var k = 1;k<=h+1;k++){
+                 document.write('&nbsp;');
+             }
+             //输出星星
+             for(var s = 1;s <= 4 -h;s++){
+                 document.write(' *');
+             }
+             //换行
+             document.write('<br>')
+         }
+         */
 
 
 
@@ -71,7 +85,8 @@
 
 
 
-</script>
+    </script>
 
 </body>
+
 </html>

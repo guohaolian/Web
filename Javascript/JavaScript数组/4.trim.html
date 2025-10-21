@@ -1,121 +1,126 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<script>
+    <script>
 
-    /**
-     *1. trim()
-     * 描述：去除字符串两边的空格
-     * 语法：字符串.trim（）；
-     * 注意：
-     *       1.只能去除字符串两边的空格
-     *       2.不会对原有字符串产生影响
-     *       3.表单校验时 可以去掉无用的空格
-     *例子：
-     var str = '  李白 杜甫  白居易    ';
-     var str1 = '你好，中国';
-     var newStr = str.trim();
-     console.log(str+str1);
-     console.log(newStr+str1);
-
-     2.toUpperCase/toLowerCase
-     描述：将指定字符串内的字母转为大写/小写
-     语法：字符串.toUpperCase()/字符串.toLowerCase
-     注意：
-     1.不会对原有字符串产生影响
-     2.只对字母字符有影响
-     3.验证码的校验
-     全部转为大写或小写后再比较
-     例子：
-     var str = 'abcdEFG你好';
-     console.log(str.toUpperCase());
-     console.log(str.toLowerCase());
-     console.log(str);
-
-
-     3.localeCompare()
-     描述：按照本地的比较规则进行比较字符串内容
-     语法：字符串1.localeCompare('字符串2')
-         1  字符串1 >  字符串2
-         0  字符串1 ==  字符串2
-         -1  字符串1 <  字符串2
-     注意：
-         1.本地的比较规则  按照字母的排序比较 后面的大于前面的
-         2.如果是汉字 转换成拼音继续比较
-     例子：
-     var str1 = 'd';
-     var str2 = 'D';
-     var str3  ='你';
-     var str4 = '爱';
-     console.log(str1.localeCompare(str2));
-     console.log('-----------------------');
-     console.log(str3.localeCompare(str4));
-
-     4.match()
-     描述：查找字符串内是否包含子字符串 返回一个数组 包含查找的字符串 查找字符串的小标 源字符串
-           如果没有指定字符串 返回 null
-     语法：字符串.match('子字符串');
-     注意：
-            不会对原有的字符串造成影响
-     例子：
-     var str = 'abcdefgh';
-     var result = str.match('def1');
-     console.log(result);
-     console.log(str)
-     5.search
-     描述：查找指定字符串内是否包含要查找的字符串
-            有 返回指定字符串的下标
-            无  -1
-     语法：字符串.search('字符串')
-     例子：
-     var str = 'abcdefgh';
-     var index = str.search('def1');
-     console.log(index);
-     console.log(str);
-     6.replace()
-     描述：将字符串内指定的第一次出现的旧字符 替换为 新的字符串
-     语法：字符串.replace('oldStr'，'newStr');
-     注意：
-            1.不会对原有字符串产生影响
-            2.当要替换的字符串不存在时 则将原有的字符串进行返回
-     例子：
-     var str = 'abacdefgah';
-     var newStr1 = str.replace('a','你好啊老铁');
-     var newStr = str.replace('z','你好啊老铁');
-     console.log(newStr1,'-----'+str);
-     console.log(newStr,'-----'+str);
-
-     7.split
-     描述:将指定的字符串按照规则进行切割 返回数组
-
-     语法：字符串.split('切割的规则');
-     注意：
-        1.如果使用空字符串作为规则 则会将字符串内每个字符 单独的存入数组
+        /**
+         *1. trim()
+         * 描述：去除字符串两边的空格
+         * 语法：字符串.trim（）；
+         * 注意：
+         *       1.只能去除字符串两边的空格
+         *       2.不会对原有字符串产生影响
+         *       3.表单校验时 可以去掉无用的空格
+         *例子：
+         var str = '  李白 杜甫  白居易    ';
+         var str1 = '你好，中国';
+         var newStr = str.trim();
+         console.log(str+str1);
+         console.log(newStr+str1);
+    
+         2.toUpperCase/toLowerCase
+         描述：将指定字符串内的字母转为大写/小写
+         语法：字符串.toUpperCase()/字符串.toLowerCase
+         注意：
+         1.不会对原有字符串产生影响
+         2.只对字母字符有影响
+         3.验证码的校验
+         全部转为大写或小写后再比较
          例子：
+         var str = 'abcdEFG你好';
+         console.log(str.toUpperCase());
+         console.log(str.toLowerCase());
+         console.log(str);
+    
+    
+         3.localeCompare()
+         描述：按照本地的比较规则进行比较字符串内容
+         语法：字符串1.localeCompare('字符串2')
+             1  字符串1 >  字符串2
+             0  字符串1 ==  字符串2
+             -1  字符串1 <  字符串2
+         注意：
+             1.本地的比较规则  按照字母的排序比较 后面的大于前面的
+             2.如果是汉字 转换成拼音继续比较
+         例子：
+         var str1 = 'd';
+         var str2 = 'D';
+         var str3  ='你';
+         var str4 = '爱';
+         console.log(str1.localeCompare(str2));
+         console.log('-----------------------');
+         console.log(str3.localeCompare(str4));
+    
+         4.match()
+         描述：查找字符串内是否包含子字符串 返回一个数组 包含查找的字符串 查找字符串的小标 源字符串
+               如果没有指定字符串 返回 null
+         语法：字符串.match('子字符串');
+         注意：
+                不会对原有的字符串造成影响
+         例子：
+         var str = 'abcdefgh';
+         var result = str.match('def1');
+         console.log(result);
+         console.log(str);
+    
+         5.search
+         描述：查找指定字符串内是否包含要查找的字符串
+                有 返回指定字符串的下标
+                无  -1
+         语法：字符串.search('字符串')
+         例子：
+         var str = 'abcdefgh';
+         var index = str.search('def1');
+         console.log(index);
+         console.log(str);
+    
+         6.replace()
+         描述：将字符串内指定的第一次出现的旧字符 替换为 新的字符串
+         语法：字符串.replace('oldStr'，'newStr');
+         注意：
+                1.不会对原有字符串产生影响
+                2.当要替换的字符串不存在时 则将原有的字符串进行返回
+         例子：
+         var str = 'abacdefgah';
+         var newStr1 = str.replace('a','你好啊老铁');
+         var newStr = str.replace('z','你好啊老铁');
+         console.log(newStr1,'-----'+str);
+         console.log(newStr,'-----'+str);
+    
+         7.split
+         描述:将指定的字符串按照规则进行切割 返回数组
+    
+         语法：字符串.split('切割的规则');
+         注意：
+            1.如果使用空字符串作为规则 则会将字符串内每个字符 单独的存入数组
+             例子：
+             var str1 = 'abcdefg';
+             var arr2 = str1.split('');
+             console.log(arr2);
+            2.不会对原有的数组造成影响
+         例子：
+         var str = '李白,杜甫,白居易';
+         var arr = str.split(',');
+         console.log(arr);
          var str1 = 'abcdefg';
          var arr2 = str1.split('');
          console.log(arr2);
-        2.不会对原有的数组造成影响
-     例子：
-     var str = '李白,杜甫,白居易';
-     var arr = str.split(',');
-     console.log(arr);
-     var str1 = 'abcdefg';
-     var arr2 = str1.split('');
-     console.log(arr2);
-     console.log(str1);
-     */
-    var str = '你好';
-    console.log(str);
-    var 你好 = '你好';
-    console.log(你好);
-    var str1 = '\u4f60\u597d\u554a';
-    console.log(str1);
+         console.log(str1);
+         */
+        var str = '你好';
+        console.log(str);
+        var 你好 = '你好';
+        console.log(你好);
+        var str1 = '\u4f60\u597d\u554a';
+        console.log(str1);
 
-</script>
+    </script>
 </body>
+
 </html>
