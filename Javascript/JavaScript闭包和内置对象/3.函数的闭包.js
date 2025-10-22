@@ -1,0 +1,67 @@
+/* var obj={
+eat:function(){
+console.log('吃饭');
+}
+}
+obj['eat'](); */
+/*function test(){
+var a = 10;
+function show(){
+console.log(a);
+}
+return show;
+}*/
+function test(){
+var a = 10;
+return function(){
+a++;
+console.log(a);
+}
+}
+/**
+* 闭包：
+* 1.能够读取其他函数内部变量的函数。
+*
+*/
+var result = test();
+/**
+* 返回函数 show
+* ƒ show(){
+console.log(a);
+}
+返回匿名函数
+ƒ (){
+console.log(a);
+}
+*/
+result();
+console.log(result);
+
+
+    /**
+     * 函数 也具有和变量等同的作用域 即全局作用域 和函数作用域
+     */
+    /* function test() {
+         var a = 10;
+         function show() {
+             console.log(a);
+         }
+         show();
+     }
+     test();
+     console.log('-------------------------');
+     //求俩数的平方和
+ 
+     function getPingFangHe(a, b) {
+         var sum = getPingFang(a)+ getPingFang(b);
+         return sum;
+         //求平方
+         function getPingFang(num) {
+ 
+             return num * num;
+         }
+     }
+     getPingFang(10);
+ 
+     var result = getPingFangHe(10, 20);
+     console.log(result);*/
