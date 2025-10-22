@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<script>
-    /**
-     * reverse
-     * 描述：数组元素的反转
-     * 语法：数组名.reverse();
-     * 例子：
-     *var arr = [1,2,3,4,5];
-     arr.reverse();
-     console.log(arr);
-     注意：会对源数组造成影响
-
-     slice；
-     描述;数组元素的截取
-     语法：数组名.slice(startIndex,endIndex)
-     注意：
-     1.截取的范围[startIndex,endIndex)
-     2.当只有一个参数 则从开始下标一直到数组的结尾
-     例子：
-     var arr = [1,2,3,4,5];
-     var newArr = arr.slice(2);
-     console.log(arr,newArr);
-     splice
-     描述：splice方法的作用是在指定下标处截取一定长度的元素，再插入一些新元素，并将删除的元素构成一个新数组返回。
-     语法：数组名.splice(开始的下标,删除的个数,插入的元素);
-     注意：
-     1.splice方法会改变原本数组。
-     2.splice可以进行单纯的添加元素操作 将截取的数量变为0
-     例子：
-     var arr = ['a','b','c','d','e'];
-     var newArr = arr.splice(2,0,'你好','呵呵');
-     console.log(newArr,arr);
-     例子：
-     var arr = [1,2,3,4,5];
-     var newArr = arr.splice(2,2,'你好','呵呵');
-     console.log(newArr,arr);
-     */
-    /**
-     * sort()
-     * 注意：
-     *      1.不写排序规则 则按照默认的规则排序
-     *      2.更改排序规则
-     */
-    var arr = [1, 11, 12, 2, 3, 100];
-    console.log('排序前--》' + arr);
-    /* arr.sort();
-    console.log('排序后--》' + arr);*/
-    arr.sort(function (a, b) {
+    <script>
         /**
-         * a - b > 0  a>b
-         * a - b ==0  a==b
-         * a - b < 0  a < b;
+         * reverse
+         * 描述：数组元素的反转
+         * 语法：数组名.reverse();
+         * 例子：
+         *var arr = [1,2,3,4,5];
+         arr.reverse();
+         console.log(arr);
+         注意：会对源数组造成影响
+    
+         slice；
+         描述;数组元素的截取
+         语法：数组名.slice(startIndex,endIndex)
+         注意：
+         1.截取的范围[startIndex,endIndex)
+         2.当只有一个参数 则从开始下标一直到数组的结尾
+         例子：
+         var arr = [1,2,3,4,5];
+         var newArr = arr.slice(2);
+         console.log(arr,newArr);
+         splice
+         描述：splice方法的作用是在指定下标处截取一定长度的元素，再插入一些新元素，并将删除的元素构成一个新数组返回。
+         语法：数组名.splice(开始的下标,删除的个数,插入的元素);
+         注意：
+         1.splice方法会改变原本数组。
+         2.splice可以进行单纯的添加元素操作 将截取的数量变为0
+         例子：
+         var arr = ['a','b','c','d','e'];
+         var newArr = arr.splice(2,0,'你好','呵呵');
+         console.log(newArr,arr);
+         例子：
+         var arr = [1,2,3,4,5];
+         var newArr = arr.splice(2,2,'你好','呵呵');
+         console.log(newArr,arr);
          */
-        return -(a - b);
-    })
+        /**
+         * sort()
+         * 注意：
+         *      1.不写排序规则 则按照默认的规则排序
+         *      2.更改排序规则
+         */
+        var arr = [1, 11, 12, 2, 3, 100];
+        console.log('排序前--》' + arr);
+        /* arr.sort();
+        console.log('排序后--》' + arr);*/
+        arr.sort(function (a, b) {
+            /**
+             * a - b > 0  a>b
+             * a - b ==0  a==b
+             * a - b < 0  a < b;
+             */
+            return -(a - b);
+        })
+        /* 如果 a > b，则 a - b > 0，表示 a 应排在 b 的后面。
+        如果 a == b，则 a - b == 0，表示 a 和 b 的顺序不变。
+        如果 a < b，则 a - b < 0，表示 a 应排在 b 的前面。 */
+        console.log('排序后--》' + arr);
 
-    console.log('排序后--》' + arr);
 
 
 
-
-</script>
+    </script>
 </body>
+
 </html>
