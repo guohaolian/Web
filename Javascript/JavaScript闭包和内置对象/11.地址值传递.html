@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    var arr = ['李白', '杜甫'];
+    console.log('函数调用前数组的第一个值是', arr[0]);//李白
+    function changValue(arr) {
+        arr[0] = '白居易';
+        console.log('函数调用中数组的第一个值是', arr[0]);//白居易
+    }
+    changValue(arr);
+    console.log('函数调用后数组的第一个值是', arr[0]);//李白  白居易
+
+
+</script>
+</body>
+</html>

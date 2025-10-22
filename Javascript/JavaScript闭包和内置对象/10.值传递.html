@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    var num = 100;
+    console.log('函数调用前num的值', num);//100
+    function changValue(num) {
+        num = 66;
+        console.log('函数调用中num的值', num);//66
+    }
+    changValue(num);
+    console.log('函数调用后num的值', num);//100
+
+</script>
+
+</body>
+</html>

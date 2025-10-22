@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 一等公民：在JavaScript世界中函数却是一等公民，它不仅拥有一切传统函数的使用方式（声明和调用），
+     * 而且可以做到像简单值一样赋值、传参、返回，这样的函数也称之为第一级函数（First-class Function）或一等公民
+     */
+    /*
+    简单值作为 赋值 传参  返回使用
+    var a  =100;
+    function sum(a,b){
+        return a+b;
+    }
+    sum(10,20);*/
+    var obj = {
+        'eat':function(){
+            console.log('吃了满汉全席');
+        }
+    };
+    /**
+     * 函数可以像普通值一样 赋值给变量
+     */
+    var func = function(){
+        console.log('我是一个函数');
+    }
+    console.log(func);
+
+    if(func){
+        console.log('success');
+    }
+
+    console.log('----------------------------------');
+
+    /**
+     * 函数可以像普通值一样 作为参数传递
+     * @param f
+     */
+    function method(f){
+        console.log(f);
+        f();
+    }
+    function test(){
+        console.log('我是一个test');
+    }
+    method(test);
+    console.log('----------------------------------');
+    /**
+     * 函数可以像普通值一样 被返回
+     */
+
+    function test1(){
+        var a = 666;
+
+        function test2(){
+            return a++;
+        }
+
+        return test2;
+    }
+
+    console.log(test1()());
+
+
+</script>
+
+</body>
+</html>

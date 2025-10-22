@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    console.log(Math.PI);
+    console.log(Math.E);
+    console.log('---------------------------');
+    /**
+     * Math.round()
+     *  正数：四舍五入
+     *  负数:五大六小
+     *        如果负数小于等于5 变大
+     *        如果负数大于6     变小
+     * 例子：
+     var r1 = Math.round(1.6);
+     var r2 = Math.round(1.4);
+     console.log(r2);
+     var r3 = Math.round(-1.5);//
+     console.log(r3);
+
+     Math.floor()向下取整
+     使用其去掉小数部分
+     例子：
+     console.log(Math.floor(4.9));
+     console.log(Math.floor(-4.9));
+     Math.ceil()向上取整
+     console.log(Math.ceil(4.1));
+     console.log(Math.ceil(-4.9));
+
+     绝对值：
+     console.log(Math.abs(-10));
+     console.log(Math.abs(10));
+     获取最大值：
+     Math.max(...number)
+     获取最小值：
+     result = Math.min(...number);
+     例子：
+     var result = Math.max(10, 1, 20, 100, -1);
+     console.log(result);
+     result = Math.min(10, 1, 20, 100, -1);
+     console.log(result);
+
+
+     Math.pow(底数,次幂)
+     Math.pow(2,4)求 2^4
+     Math.sqrt(numer);求开平方
+     console.log(Math.sqrt(16));
+     随机数的公式：[0,1)
+     Math.floor(Math.random()*(n-m+1)+m);
+     根据上述代码，编写函数。要求：返回随机字符所组成的指定长度的字符串
+     'ABCD....Zabcdd..z0~9' 62 随机数的范围
+     yfvc
+     KJn5
+     5
+     6
+     8
+     3
+     生成验证码
+     */
+    //0.准备字符串  62
+    var str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456';
+    //1.生成随机数
+    function createRandomNum(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    //2.生成长度为4（5,6,7,8）的随机数
+    function getCheckCode(codeLength){
+        var newStr = '';
+        for (var i = 0; i < codeLength; i++) {
+            var num = createRandomNum(0, str.length-1);
+            //3.获取相应的字符
+            newStr += str[num];
+        }
+        return newStr;
+    }
+    var result = getCheckCode(6);
+    console.log(result);
+    var str1 = 'i love you!!';
+    //I Love You
+
+</script>
+
+</body>
+</html>

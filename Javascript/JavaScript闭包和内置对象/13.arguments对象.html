@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 1.arguments对象包含了函数【运行时】的所有参数。
+     *   注意：1.此对象非常类似于数组
+     *         2.可以使用下标的方式获取对应的参数
+     *         3.可以使用下标的方式 修改参数的值
+     *         4.可以使用下标的方式 增加函数的参数
+     *         5.arguments只能在函数内部使用
+     *         6.使用arguments.length获取参数的个数
+     */
+    function test(a, b) {
+        //修改参数的值
+        arguments[0] = 30;
+        arguments[1] = 60;
+        arguments[2] = 90;
+        //获取参数的值
+        console.log(arguments[0]);
+        console.log(arguments[1]);
+        console.log(arguments[2]);
+        console.log('a: ' + a);
+        console.log('b: ' + b);
+
+        console.log(arguments.length);
+    }
+    test(10, 20);
+
+    /*if(3>2){
+        console.log(arguments[0]);
+    }
+    console.log(arguments);*/
+console.log('-------------------------------------');
+
+    function sum(a,b){
+        console.log(arguments.length);
+        return a+b;
+    }
+    function sum(a,b,c){
+        console.log(arguments.length);
+        return a+b+c;
+    }
+    function sum(a,b,c,d){
+        console.log(arguments.length);
+        return a+b+c +d;
+    }
+
+</script>
+</body>
+</html>

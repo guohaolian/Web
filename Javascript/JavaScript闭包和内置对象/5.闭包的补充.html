@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    function changeNum(start) {
+        return function () {
+
+            return start++;
+        };
+    }
+    var inc = changeNum(5);
+    /**
+     * ƒ () {
+            return start++;
+        }
+     */
+    console.log(inc);
+    console.log(inc());
+    console.log(inc());
+    console.log(inc());
+    console.log(inc());
+
+    var innc = changeNum(5)();
+    console.log(innc);
+
+
+</script>
+</body>
+</html>

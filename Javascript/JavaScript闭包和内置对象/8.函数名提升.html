@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 只有采用function声明的函数 才会发生函数的声明式提升
+     * 函数表达式不可以
+     */
+    test();
+    function test(){
+        console.log('你好  世界');
+    }
+    a();
+    var a = function(){
+        console.log('是的 我很好！！');
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

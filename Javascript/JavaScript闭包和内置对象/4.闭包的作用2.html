@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 另一个就是让这些变量始终保持在内存中
+     * 使用闭包可能造成 内存泄露
+     * 内存泄漏（Memory Leak）是指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪
+                费，导致程序运行速度减慢甚至系统崩溃等严重后果。
+     */
+    function test() {
+        var a = 10;
+        return function () {
+            a++;
+            return a;
+        }
+    }
+    test()();
+    console.log('========================');
+    /**
+     * ƒ () {
+            a++;
+            return a;
+        }
+     */
+    var result = test();
+    console.log(result);
+    var a1 = result();
+    var a2 = result();
+    console.log(a1);//11
+    console.log(a2);//12
+    console.log('========================');
+    var r1 = test();
+    var b1 = r1();//11 13
+    var b2 = r1();//12 14
+    console.log(b1);
+    console.log(b2);
+    console.log('----------------------------');
+    function test2() {
+        var a = 10;
+        a++;
+        console.log(a);
+    }
+    test2();
+    test2();
+    test2();
+
+
+</script>
+
+</body>
+</html>
