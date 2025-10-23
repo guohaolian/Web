@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<script>
+    <script>
 
-    var arr1 = [1,2,3];
-    arr1[0] = 66;
-    console.log(arr1);
+        var arr1 = [1, 2, 3];
+        arr1[0] = 66;
+        console.log(arr1);
 
-    var str = 'i love you very much!!';
+        var str = 'i love you very much!!';
 
-    //1.获取单个的单词
-    var arr = str.split(' ');
-    console.log(arr);//["i", "love", "you", "very", "much!!"]
-    //2.将每个单词单独拿出来  然后将首字母变为大写 后面的字符进行拼接
- /*   var newStr = '';
-    for (var i = 0; i < arr.length; i++) {
-        //love
-       newStr +=  arr[i].charAt(0).toUpperCase()+arr[i].substring(1)+' ';
-    }*/
+        //1.获取单个的单词
+        var arr = str.split(' ');
+        console.log(arr);//["i", "love", "you", "very", "much!!"]
+        //2.将每个单词单独拿出来  然后将首字母变为大写 后面的字符进行拼接
+        /*   var newStr = '';
+           for (var i = 0; i < arr.length; i++) {
+               //love
+              newStr +=  arr[i].charAt(0).toUpperCase()+arr[i].substring(1)+' ';
+           }*/
 
-    for (var i = 0; i < arr.length; i++) {
-        //love
-       arr[i]=  arr[i].charAt(0).toUpperCase()+arr[i].substring(1)+' ';
+        for (var i = 0; i < arr.length; i++) {
+            //love
+            arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1) + ' ';
 
-    }
-    console.log(arr.toString());
-    console.log(arr.join(' '));
+        }
+        console.log(arr.toString());//用逗号转换
+        console.log(arr.join(' '));
 
 
-</script>
+    </script>
 
 </body>
+
 </html>
