@@ -1,91 +1,94 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
     <style>
         .box {
             width: 500px;
-            height: 440px;
+            height: 460px;
             border: 1px solid skyblue;
             margin: 100px auto;
 
         }
     </style>
 </head>
+
 <body>
-<div class="box">
-    <img src="img/psb.jpg">
+    <div class="box">
+        <img src="img/psb.jpg">
 
-    <h3>商品:忘忧丹</h3>
+        <h3>商品:忘忧丹</h3>
 
-    <p>结束是时间是:2019-1-31</p>
+        <p>结束是时间是:2025-10-24</p>
 
-    <p>
-        <span>原价</span>
-        <del>99999</del>
-        <span>现价</span><span>$1111</span>
-    </p>
-    <p>距离秒杀开始还剩:<span class="endTime"></span></p>
-</div>
-<script>
-    //获取界面元素
-    var endDateP = document.querySelector('p');
+        <p>
+            <span>原价</span>
+            <del>99999</del>
+            <span>现价</span><span>$1111</span>
+        </p>
+        <p>距离秒杀开始还剩:<span class="endTime"></span></p>
+    </div>
+    <script>
+        //获取界面元素
+        var endDateP = document.querySelector('p');
 
-    var showSpan = document.querySelector('.endTime');
-
-
-    /**
-     *  innerHtml 如果不写信息就是获取标签对应的内容
-     console.log(endDateP, endDateP.value, endDateP.innerHTML);
-     */
-    //获取结束的日期
-    var endDateStr = endDateP.innerHTML;
-    var arr = endDateStr.split(':');
-    console.log(arr);
-    var endDate = new Date(arr[1]);
-    console.log(endDate);
-    /**
-     *    获取当前日期
-     *     var toDay = new Date();//object
-            var toDay1 = Date();//string
-     *    console.log(typeof  toDay, typeof toDay1,totalS);
-     *
-     */
-    var toDay = new Date();
-    var toDay1 = Date();
-
-    //获取当前时间距离结束时间所有的秒数
-    var totalS = (endDate - toDay) / 1000;
-    console.log(typeof  toDay, typeof toDay1, totalS);
-    //距离2019-1-10 2天 14小时  22分钟  s
-    //使用定时器 或者叫间隔执行
-    var day = 0;
-    var hour = 0;
-    var minutes = 0;
-    var seconds = 0;
-    var timer = setInterval(function () {
-        //当时间充足 更改时间
-        if (totalS > 0) {
-            day = Math.floor(totalS / 60 / 60 / 24);
-            hour = Math.floor(totalS / 60 / 60) - day * 24;
-            minutes = Math.floor(totalS / 60) - day * 24 * 60 - hour * 60;
-            seconds = Math.floor(totalS) - day * 24 * 60 * 60 - hour * 60 * 60 - minutes * 60;
-
-            showSpan.innerHTML = day + ' 天 ' + hour + ' 小时 ' + minutes + ' 分钟 ' + seconds + ' 秒 ';
-
-            //总时间 间隔一秒减1
-            totalS--;
-        } else {
-            //当时间到达结束时间 结束定时器
-            clearInterval(timer);
-            showSpan.innerHTML = '秒杀开始';
-        }
-
-    }, 1000);
+        var showSpan = document.querySelector('.endTime');
 
 
-</script>
+        /**
+         *  innerHtml 如果不写信息就是获取标签对应的内容
+         console.log(endDateP, endDateP.value, endDateP.innerHTML);
+         */
+        //获取结束的日期
+        var endDateStr = endDateP.textContent;//endDateP.innerHTML;
+        var arr = endDateStr.split(':');
+        console.log(arr);
+        var endDate = new Date(arr[1]);
+        console.log(endDate);
+        /**
+         *    获取当前日期
+         *     var toDay = new Date();//object
+                var toDay1 = Date();//string
+         *    console.log(typeof  toDay, typeof toDay1,totalS);
+         *
+         */
+        var toDay = new Date();
+        var toDay1 = Date();
+
+        //获取当前时间距离结束时间所有的秒数
+        var totalS = (endDate - toDay) / 1000;
+        console.log(typeof toDay, typeof toDay1, totalS);
+        //距离2019-1-10 2天 14小时  22分钟  s
+        //使用定时器 或者叫间隔执行
+        var day = 0;
+        var hour = 0;
+        var minutes = 0;
+        var seconds = 0;
+        var timer = setInterval(function () {
+            //当时间充足 更改时间
+            if (totalS > 0) {
+                day = Math.floor(totalS / 60 / 60 / 24);
+                hour = Math.floor(totalS / 60 / 60) - day * 24;
+                minutes = Math.floor(totalS / 60) - day * 24 * 60 - hour * 60;
+                seconds = Math.floor(totalS) - day * 24 * 60 * 60 - hour * 60 * 60 - minutes * 60;
+
+                showSpan.innerHTML = day + ' 天 ' + hour + ' 小时 ' + minutes + ' 分钟 ' + seconds + ' 秒 ';
+
+                //总时间 间隔一秒减1
+                totalS--;
+            } else {
+                //当时间到达结束时间 结束定时器
+                clearInterval(timer);
+                showSpan.innerHTML = '秒杀开始';
+            }
+
+        }, 1000);
+
+
+    </script>
 
 </body>
+
 </html>
