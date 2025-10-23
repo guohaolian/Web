@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p style="color: red" align="center">我是中国人，我爱自己的祖国</p>
+<input type="text">
+<script>
+    /**
+     * 使用js代码不仅可以创建元素节点 而且可以创建属性节点
+     *  1.document.createElement('p')
+     * 描述：创建html的元素节点
+     * 语法：document.createElement('标签名');
+     * 注意：
+     *      1.创建的元素 无法在页面上显示 需要追加到对应的容器内
+     *      2.appendChild('元素')：将该元素 追加到当前容器所有的孩子后面
+     *例子：
+     var p = document.createElement('p');
+     console.log(p);
+     document.body.appendChild(p);
+     2.document.createTextNode('文本内容')
+     描述：创建文本节点
+     例子：
+     var p_text = document.createTextNode('这是一个刚刚创建的文本节点');
+     p.appendChild(p_text);
+
+     例子：
+     3.创建属性节点
+     语法：document.createAttribute('属性名');
+     注意：1.创建的属性节点是一座孤岛 需要和元素产生联系
+              通过元素名.setAttributeNode(属性);
+              p.setAttributeNode(p_style);
+     */
+    //创建元素节点
+    var p = document.createElement('p');
+    console.log(p);
+    document.body.appendChild(p);
+    p.innerHTML='我是p标签的内容';
+    //创建属性节点
+    var p_style = document.createAttribute('align');
+    p_style.value='center';
+    p.setAttributeNode(p_style);
+
+
+    《
+
+</script>
+</body>
+</html>

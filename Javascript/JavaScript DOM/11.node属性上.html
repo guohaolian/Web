@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="box">
+    <p class="p1">123456</p>
+    <span class="sp1">456789</span>
+
+    <p>123456</p>
+
+    <p>123456</p>
+
+    <p>123456</p>
+</div>
+<script>
+    var box = document.querySelector('.box');
+    var p1 = document.querySelector('.p1');
+    var sp1 = document.querySelector('.sp1');
+    //console.log(sp1.previousSibling.previousSibling.previousSibling.previousSibling);
+
+
+
+    /**
+     * 1.*通用属性nodeName/nodeType
+     * 描述：返回节点的名称和对应的常数
+     * 作用：可以进行判断节点的类型
+     *
+     * 例子：
+     *  console.log(document.nodeName,document.nodeType);
+     *   console.log(box.nodeName,box.nodeType);
+     console.log(sp1.nodeName,sp1.nodeType);
+     var attr = document.createAttribute('align');
+     console.log(attr.nodeName,attr.nodeType);
+     console.log(document.nodeType===9);
+
+     2.ownerDocument
+     描述：获取当前文档的顶层对象
+     语法：节点.ownerDocument
+     注意：
+     1.当前文档所有节点的顶层文档对象都是document
+     2.document的顶层文档对象是 null
+     例子：
+     console.log(box.ownerDocument);
+     console.log(p1.ownerDocument);
+     console.log(sp1.ownerDocument);
+     console.log(document.ownerDocument);//null
+
+
+     3.*nextSibling
+     描述：返回当前节点的下一个同级节点
+     语法：node.nextSibling
+     注意：
+     1.空白也是节点 文本节点
+     2.当没有同级节点的时候返回null
+     例子：
+     console.log(p1.nextSibling.nextSibling);
+     console.log(box.nextSibling.nextSibling.nextSibling)
+     获取所有的同级子节点：
+     while (p1) {
+        console.log(p1);
+        p1 = p1.nextSibling;
+    }
+     4.*previousSibling
+     描述;返回当前节点的上一个同级子节点
+     语法：node.previousSibling
+     例子：
+     console.log(sp1.previousSibling.previousSibling.previousSibling.previousSibling);
+     获取当前节点所有的上一个同级子节点
+     while(sp1){
+        console.log(sp1);
+        sp1 = sp1.previousSibling;
+    }
+     */
+</script>
+</body>
+</html>

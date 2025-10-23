@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            border: 1px solid red;
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <p>1234456</p>
+    <!--这是一个注释-->
+    <p>789213721</p>
+
+    <p>dsadsadsadsadas</p>
+
+    <p>dsadsadsadsadas</p>
+</div>
+<button id="addBtn">点我添加</button>
+<script>
+
+    /**
+     * comment节点
+     * 注释
+     * 例子：
+     *   var box = document.querySelector('.box');
+     var result = box.firstChild.nextSibling;
+     console.log(result.nodeName,result.nodeType);//#comment 8
+
+     2.***childNodes
+     描述：返回当前节点所有的子节点
+     语法：node.childNodes
+     注意：
+     1.当一个子节点都不存在时 返回 空的NodeList
+     2.nodeList是一个动态集合 当集合内的元素发生改变时 会直接反应给结果
+     例子：
+             var box = document.querySelector('.box');
+             var addBtn = document.querySelector('#addBtn');
+             var result = box.childNodes;
+             console.log(result);
+
+             addBtn.onclick = function () {
+                var h1 = document.createElement('h1');
+                h1.innerHTML = '我是新增的h1标签';
+                box.appendChild(h1);
+                console.log(result);
+            }
+     3.*firstChild/lastChild
+     描述：返回当前节点的第一个子节点/最后一个子节点
+     语法：node.firstChild/node.lastChild
+     注意：
+          1.如果页面没有经过压缩 则第一个和最后一个子节点都是#text(空白节点)
+          2.当当前节点没有字节点时 返回null
+     例子：
+     var box = document.querySelector('.box');
+     var addBtn = document.querySelector('#addBtn');
+     console.log(box.firstChild);
+     console.log(box.lastChild);
+     */
+
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        p {
+            background-color: orange;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<p align="center" style="color: blue">123456789</p>
+<img src="img/psb.jpg">
+
+<script>
+    /**
+     * 通过元素名.属性名 可以获取对应的属性值
+     * 注意： 元素名.属性名 可读可写
+     * 例子：
+     * var img = document.querySelector('img');
+       img.src='img/1.png';
+       console.log(img.src);
+     */
+    var img = document.querySelector('img');
+    img.src='img/1.png';
+    console.log(img.src);
+    /**
+     * 1.设置元素的css样式可以通过 元素名.style 获取当前元素的style对象
+     * 2.语法：元素名.style
+     *        1. var p = document.querySelector('p').style;
+     *        2.var p = document.querySelector('p');
+     var p_style = p.style;
+     3.注意：
+     1.通过style对象只能获取和操作行内样式
+     2.当设置的样式是用-进行分割时 需要去掉- 将后面单词的首字母变为大写
+     p_style.backgroundColor
+     3.当设置的样式是js中的保留字时 需要在单词之前+css
+     p_style.cssFloat = 'left';
+     * @type {Element}
+     * 例子：
+     var p = document.querySelector('p');
+     var p_style = p.style;
+     p_style.height='100px';
+     p_style.width='200px';
+     p_style.cssFloat = 'left';
+
+     console.log(p_style.color);
+     console.log(p_style.backgroundColor);
+     */
+    var p = document.querySelector('p');
+    console.log(p.align);
+
+
+</script>
+
+</body>
+</html>

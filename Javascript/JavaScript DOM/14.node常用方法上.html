@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box1 {
+            height: 300px;
+            width: 400px;
+            border: 1px solid skyblue;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <p>123456</p>
+
+    <p class="p2">123456</p>
+
+    <p>123456</p>
+
+    <p>123456</p>
+
+    <p>123456
+        <span>111111111111</span>
+    </p>
+</div>
+<div class="box2"></div>
+<script>
+    var box1 = document.querySelector('.box1');
+    var box2 = document.querySelector('.box2');
+    var p2 = document.querySelector('.p2');
+    var h1 = document.createElement('h1');
+    h1.innerHTML='我是H1';
+    box1.insertBefore(h1,null);
+    /**
+     * 1.appendChild
+     * 描述：appendChild()方法接受一个节点对象作为参数，将其作为最后一个子节点，插入当前节点
+     * 语法：node.appendChild('节点');
+     * 例子：
+     * var h1 = document.createElement('h1');
+     h1.innerHTML='新建的h1';
+     document.body.appendChild(h1);
+     2.hasChildNodes
+     描述：判断当前节点是否包含子节点
+     语法：node.hasChildNodes()
+     例子：
+     console.log(box1.hasChildNodes());
+     console.log(box2.hasChildNodes());
+     3.cloneNode()
+     描述;复制节点
+     语法：node.cloneNode(true/false)
+     注意：
+     1. 当参数为fasle的时候是浅拷贝  只复制当前节点
+     2.当参数为true时 是深拷贝     不仅复制当前节点 也会将子节点和孙子节点一起复制
+     3.无论是深拷贝还是浅拷贝 都不会将事件复制
+     例子：
+     var result =  box1.cloneNode(true);
+     console.log(result);
+     <div class="box1">
+     <p>123456</p>
+
+     <p>123456</p>
+
+     <p>123456</p>
+
+     <p>123456</p>
+
+     <p>123456
+     <span>111111111111</span>
+     </p>
+     </div>
+     测试节点的点击事件是否可以拷贝
+     box1.onclick = function () {
+        console.log('box1被点击了');
+    }
+     var result = box1.cloneNode(false);
+     document.body.appendChild(result);
+     4.insertBefore()
+     描述：insertBefore方法用于将某个节点插入当前节点的指定位置。
+     语法:父节点.insertBefore(新创建的节点,子节点)
+     注意:当没有写子节点时 插入到最后 ===》appendChild();
+     例子：
+     var box1 = document.querySelector('.box1');
+     var box2 = document.querySelector('.box2');
+     var p2 = document.querySelector('.p2');
+     var h1 = document.createElement('h1');
+     h1.innerHTML='我是H1';
+     box1.insertBefore(h1,p2);
+     */
+
+
+</script>
+
+
+</body>
+</html>

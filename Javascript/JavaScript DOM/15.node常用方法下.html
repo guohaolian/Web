@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box1 {
+            height: 300px;
+            width: 400px;
+            border: 1px solid skyblue;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <p>123456</p>
+
+    <p class="p2">12345699999</p>
+
+    <p>123456</p>
+
+    <p>123456</p>
+
+    <p>123456
+        <span>111111111111</span>
+    </p>
+</div>
+<div id="box2"></div>
+<div id="box3">
+    <p>23221321321</p>
+</div>
+<script>
+    var box1 = document.querySelector('.box1');
+    var box2 = document.querySelector('#box2');
+    var box3 = document.querySelector('#box3');
+
+
+    var r1 = box3.cloneNode(true);
+    console.log(box3.isEqualNode(r1));
+
+    /**
+     * removeChild
+     * 描述;删除一个子节点并返回
+     * 语法：node.removeChild('子节点');
+     * 例子：
+     var result = box1.removeChild(p2);
+     console.log(result);
+     document.body.appendChild(result);
+
+     replaceChild
+     描述：对当前节点的子节点执行替换的操作 返回被替换掉额子节点
+     语法：node.replaceChild(new ,old);
+     例子：
+     var h1 = document.createElement('h1');
+     h1.innerHTML = '哈哈';
+     var ss = box1.replaceChild(h1,p2);
+     console.log(ss);
+
+     contains()
+     描述;判断参数节点是否为当前节点的子节点
+     语法;node.contains(node);
+     例子：
+     var h1 = document.createElement('h1');
+     h1.innerHTML = '哈哈';
+     console.log(box1.contains(h1));
+     注意：
+          返回一个boolean值  是当前节点的子节点 返回true
+            否则返回false
+     */
+
+
+
+
+
+
+</script>
+</body>
+</html>

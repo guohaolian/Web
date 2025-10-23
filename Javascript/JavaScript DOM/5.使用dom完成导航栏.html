@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+
+        ul li {
+            background-color: skyblue;
+        }
+
+        ul li:hover {
+
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    //准备数据源 就是li的内容
+    var data = ['百度', '腾讯', '网易', 'sxt', '淘宝'];
+    //创建ul
+    var ul = document.createElement('ul');
+    //设置ul样式
+    var ul_style = document.createAttribute('style');
+    ul_style.value = 'list-style: none;';
+    //样式与ul产生关系
+    ul.setAttributeNode(ul_style);
+    for (var i = 0; i < data.length; i++) {
+        //创建li
+        var ul_li = document.createElement('li');
+        //设置li的样式
+        var ul_li_style = document.createAttribute('style');
+        ul_li_style.value = 'float: left; width: 100px;height: 40px;line-height: 40px; text-align: center; cursor: pointer;';
+        //样式和li产生关系
+        ul_li.setAttributeNode(ul_li_style);
+        //将文字赋值给li
+        ul_li.innerHTML = data[i];
+        //将li追加到ul中
+        ul.appendChild(ul_li);
+    }
+    //将ul添加到body内
+    document.body.appendChild(ul);
+</script>
+</body>
+</html>

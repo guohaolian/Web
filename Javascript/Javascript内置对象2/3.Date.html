@@ -1,75 +1,80 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<script>
-    /**
-     * 1. Date();
-     * 返回当前时间
-     *注意：
-     *      1.Date()写参数或者不写参数对结果没有影响 都是返回当前时间
-     *  例子：
-     *   var date = Date('2019-1-8');
-     console.log(date);//Mon Jan 07 2019 11:10:10 GMT+0800 (中国标准时间)
-     *2.使用new关键字调用 Date（）
-     *  注意：
-     *      1.不写参数 返回当前时间
-     var date = new Date();
-     console.log(date);
-     2.写参数  可以指定日期
-     例子：
-     1.使用月份对应的英文表示  英文不区分大小写
-     var date2 = new Date("januAry 8, 2019");
-     console.log(date2);
-     简写也支持
-     var date2 = new Date("jan 8, 2019");
-     console.log(date2);
+    <script>
+        /**
+         * 1. Date();
+         * 返回当前时间
+         *注意：
+         *      1.Date()写参数或者不写参数对结果没有影响 都是返回当前时间
+         *  例子：
+         *   var date = Date('2019-1-8');
+         console.log(date);//Mon Jan 07 2019 11:10:10 GMT+0800 (中国标准时间)
+         *2.使用new关键字调用 Date（）
+         *  注意：
+         *      1.不写参数 返回当前时间
+         var date = new Date();
+         console.log(date);
+         2.写参数  可以指定日期
+         例子：
+         1.使用月份对应的英文表示  英文不区分大小写
+         var date2 = new Date("januAry 8, 2019");
+         console.log(date2);
+         简写也支持
+         var date2 = new Date("jan 8, 2019");
+         console.log(date2);
+    
+         例子：
+         var date = new Date();
+         console.log(date);
+         var date2 = new Date("jan 8, 2019");
+         console.log(date2);
+         var date3 = new Date('2019-1-9');
+         console.log(date3);
+         var date4 = new Date('2019/01/10');
+         console.log(date4);
+         var date5 = new Date("FEB, 15, 2019");
+         var date6 = new Date("2019.1.7");
+         console.log(date6);
+         */
 
-     例子：
-     var date = new Date();
-     console.log(date);
-     var date2 = new Date("jan 8, 2019");
-     console.log(date2);
-     var date3 = new Date('2019-1-9');
-     console.log(date3);
-     var date4 = new Date('2019/01/10');
-     console.log(date4);
-     var date5 = new Date("FEB, 15, 2019");
-     var date6 = new Date("2019.1.7");
-     console.log(date6);
-     */
+
+        console.log('----------------------------------');
+        /**
+         * 第三种创建日期的方式 参数中可以存在 年 月 日 时 分 秒
+         * 注意：1. 月份0 开始
+         *       2.当时间不满足的具体情况 会进一位
+         *       var date7 = new Date(2019,0,7,11,20,68);
+                 console.log(date7);//Mon Jan 07 2019 11:21:08 GMT+0800 (中国标准时间)
+                3.必须含有年月  其他可以省略 默认为0
+        日期运算：
+              1.两个日期相减 拿到毫秒数
+              2.两个日期相加 拿到的是拼接后的字符串
+         例子：
+         var  date1 = new Date('2019-1-7');
+         var  date2 = new Date('2019-1-1');
+         console.log(date1 - date2);//518400000
+         console.log(date1+date2);//Mon Jan 07 2019 00:00:00 GMT+0800 (中国标准时间)Tue Jan 01 2019 00:00:00 GMT+0800 (中国标准时间)
+         */
+        var date1 = new Date('2019-1-7');
+        var date2 = new Date('2019-1-1');
+        console.log(date1 - date2);//518400000
 
 
-    console.log('----------------------------------');
-    /**
-     * 第三种创建日期的方式 参数中可以存在 年 月 日 时 分 秒
-     * 注意：1. 月份0 开始
-     *       2.当时间不满足的具体情况 会进一位
-     *       var date7 = new Date(2019,0,7,11,20,68);
-             console.log(date7);//Mon Jan 07 2019 11:21:08 GMT+0800 (中国标准时间)
-            3.必须含有年月  其他可以省略 默认为0
-    日期运算：
-          1.两个日期相减 拿到毫秒数
-          2.两个日期相加 拿到的是拼接后的字符串
-     例子：
-     var  date1 = new Date('2019-1-7');
-     var  date2 = new Date('2019-1-1');
-     console.log(date1 - date2);//518400000
-     console.log(date1+date2);//Mon Jan 07 2019 00:00:00 GMT+0800 (中国标准时间)Tue Jan 01 2019 00:00:00 GMT+0800 (中国标准时间)
-     */
-    var  date1 = new Date('2019-1-7');
-    var  date2 = new Date('2019-1-1');
-    console.log(date1 - date2);//518400000
-    /**
-     * 毫秒数：1s == 1000ms;-->day  月  年
-     * 毫秒数/1000/60/60/24
-     */
-    console.log(518400000/1000/60/60/24);
-    console.log(date1+date2);//Mon Jan 07 2019 00:00:00 GMT+0800 (中国标准时间)Tue Jan 01 2019 00:00:00 GMT+0800 (中国标准时间)
-</script>
+        //毫秒数：1s == 1000ms;-->day  月  年
+        //毫秒数/1000/60/60/24
+
+
+        console.log(518400000 / 1000 / 60 / 60 / 24);
+        console.log(date1 + date2);//Mon Jan 07 2019 00:00:00 GMT+0800 (中国标准时间)Tue Jan 01 2019 00:00:00 GMT+0800 (中国标准时间)
+    </script>
 
 </body>
+
 </html>

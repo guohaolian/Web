@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        p {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<p class="p" align="center" style="color: blue">这是一个p标签</p>
+
+<script>
+    /**
+     * getAttribute
+     * 描述：获取属性值
+     * 语法：元素名.getAttribute('属性名');
+     * setAttribute
+     * 描述：设置属性值
+     * 语法：元素名.setAttribute('属性名','属性值');
+     * removeAttribute()
+     * 描述：删除属性值
+     * 语法:元素名.removeAttribute('属性名')
+     例子：
+     var p = document.querySelector('.p');
+     var result = p.getAttribute('align');
+     console.log(result);
+     p.setAttribute('align','right');
+     p.removeAttribute('align');
+     注意：操作的都是行内样式
+     例子：
+     var p = document.querySelector('.p');
+     var result = p.getAttribute('style');
+     p.setAttribute('style','height:100px');
+     // p.removeAttribute('style');
+     console.log(result);
+     */
+
+
+</script>
+
+
+</body>
+</html>

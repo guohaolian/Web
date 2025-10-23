@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            background-color: orange;
+            height: 500px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+<div class="box" style="height: 100px;"></div>
+<script>
+
+
+    //获取界面元素
+    /**
+     * 使用元素style对象.cssText完成对元素样式的设置
+     *
+     * 注意：
+     *     1.操作的是行内样式
+     *     2.清除行内样式
+     * 例子：
+     *   var box_style =   document.querySelector('.box').style;
+
+     box_style.height = '300px';
+     box_style.width = '200px';
+     box_style.border='1px solid red';
+     box_style.backgroundColor = 'skyblue';
+
+     box_style.cssText = 'height:100px;width:200px;border:1px solid red;';
+     box_style.cssText='';
+
+     2.使用style对象 完成对行内样式属性值的增加 获取和修改
+     例子：
+     var box_style = document.querySelector('.box').style;
+     //获取行内样式的属性值
+     var result = box_style.getPropertyValue('height');
+     console.log(result);
+     //设置行内样式的属性值
+     box_style.setProperty('width','100px');
+     //删除行内样式值
+     box_style.removeProperty('width');
+     result = box_style.getPropertyValue('width');
+     console.log(result);
+     */
+
+
+</script>
+</body>
+</html>

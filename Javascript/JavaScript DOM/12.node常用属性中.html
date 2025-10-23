@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="box">
+    <p class="p1">123456</p>
+    <span class="sp1">456789</span>
+
+    <p>123456</p>
+
+    <p>123456</p>
+
+    <p>123456</p>
+</div>
+<script>
+    var box = document.querySelector('.box');
+    var p1 = document.querySelector('.p1');
+    var sp1 = document.querySelector('.sp1');
+
+    /**
+     * 1.*parentNode：
+     * 描述：返回当前节点的父节点
+     * 例子：
+     *  console.log(sp1.parentNode.parentNode.parentNode.parentNode.parentNode);
+     *  注意：
+     *      1.支持链式调用
+     *      2.document也是节点
+     *      3.当没有父节点的时候返回null
+     * 2.parentElement
+     * 描述：返回当前节点的父元素
+     * 语法：
+     *      node.parentElement
+     *  例子：
+     *  console.log(sp1.parentElement.parentElement.parentElement.parentElement)
+     *  注意：
+     *      1.只能获取到html元素
+     *      2.支持链式调用
+     *      3.当没有父元素的时候 返回null
+     *3.textContent
+     * 描述：返回当前节点及后代节点的文本内容 （没有标签）
+     * 语法：node.textContent
+     *  注意：
+     *      1.类似于百度快照
+     * 例子：  console.log(document.body.textContent);
+     *4.nodevalue
+     * 描述:设置或者返回文本节点的值  可读可写
+     * 语法：node.nodevalue
+     * 例子：
+         sp1.firstChild.nodeValue = '你好，中国';
+         console.log(sp1.firstChild.nodeValue);
+     */
+
+
+</script>
+</body>
+</html>

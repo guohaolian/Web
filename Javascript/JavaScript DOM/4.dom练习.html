@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2 align="center" style="color: red">222222</h2>
+
+<script>
+
+    //创建一个元素
+    var h1 = document.createElement('h1');
+    h1.innerHTML = '会当凌绝顶,一览众山小';
+    //创建2个属性
+    var h1_align = document.createAttribute('align');
+    h1_align.value = 'center';
+    var h1_style = document.createAttribute('style');
+    h1_style.value = 'color:red';
+    //属性和元素产生关系
+    h1.setAttributeNode(h1_align);
+    h1.setAttributeNode(h1_style);
+    //元素追加到body内
+    document.body.appendChild(h1);
+</script>
+
+</body>
+</html>
