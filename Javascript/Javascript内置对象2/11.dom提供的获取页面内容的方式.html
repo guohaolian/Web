@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>
+    <span>用户名</span><input type="text" class="userName"/><br>
+    <span>性别</span><input type="text" class="userSex" name="hehe"/><br>
+    <span>年龄</span><input type="text" class="userAge"/><br>
+    <span>爱好</span><input type="text" class="userAge" name="hehe"/>
+</p>
+
+<p id="p1" class="userName">春眠不觉晓</p>
+
+<script>
+    /**
+     * querySelector('选择器')
+     * 选中页面中的一个元素
+     * 如果有多个元素满足 则返回第一次出现的元素
+     * 例子：
+     var p = document.querySelector('p');
+     console.log(p);
+     querySelectorAll('选择器')
+     选中界面内所有满足选择器要求的内容
+     注意：
+     1.返回一个集合 但是可以采用类似于数组选择元素的方式 灵活选择要用的元素
+     2.querySelect系列不被IE7及以下支持
+     */
+    /* var ps = document.querySelectorAll('p');
+     console.log(ps[0]);*/
+    /**
+     *  document.getElementsByTagName('标签名');
+     *  document.getElementsByClassName('类名');
+     *  document.getElementsByName('name名')
+     * 上面三个返回的是一个集合，都可以采用数组的方式选择想要的元素
+     */
+    var pss = document.getElementsByTagName('p');
+    console.log(pss[1]);
+    /* var classs =  document.getElementsByClassName('userName');
+     console.log(classs[0]);*/
+    var names = document.getElementsByName('hehe');
+    console.log(names[0]);
+</script>
+</body>
+</html>

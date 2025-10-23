@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>dom的属性下</title>
+</head>
+<body>
+<script>
+    /**
+     * title的跑马灯效果 1s
+     * dom的属性下
+     * om的属性下d
+     * m的属性下do
+     * 的属性下dom
+     */
+    //获取当前文档的title
+    console.log(document.title);
+    console.log(document.readyState);
+    //获取当前文档的编码
+    console.log(document.characterSet);
+    console.log(document.charset);
+    console.log(document.readyState);
+    /**
+     * 定时执行/间隔执行 每隔多长时间执行一次
+     * setInerval(function(){
+     *    定时执行的逻辑
+     * },毫秒数)
+     *
+     * 例子：
+     * var t =  setInterval(function () {
+        console.log('aaaaaaaaaaaaaaa');
+    },1000);
+     clearInterval(t);
+     */
+    //当文档加载完毕后终止定时器
+    var t = setInterval(function () {
+        console.log(document.readyState);
+        if(document.readyState=='complete'){
+            console.log('---->'+document.readyState);
+            clearInterval(t);
+        }
+    },300);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>一二三四五</title>
+</head>
+<body>
+
+<script>
+
+
+   //一二三四五
+     // 一
+    //二三四五
+   //二三四五一
+    setInterval(function () {
+        //因为每次获取的title值都是变化后的
+        var title = document.title;//二三四五一
+        //获取第一个字符
+        var first = title.charAt(0);
+        //获取除第一个字符以外的后面的字符
+        var other = title.substring(1);
+        //后面的+第一个字符 进行拼接
+        var result = other + first;
+        console.log(title,first,other,result);
+        //将拼接后的字符赋值给 title
+        document.title = result;
+    },500);
+
+
+/*
+解法一
+ var title = document.title;
+ var titleArr = title.split('');
+ console.log(title,titleArr);
+    setInterval(function () {
+        //把第一个元素删除
+       var first =  titleArr.shift();
+        // 添加到最后一个元素的后面
+        titleArr.push(first);
+        console.log(titleArr);
+        //将数组变为字符串赋值给title
+        document.title = titleArr.join(' ');
+
+    },50);*/
+
+</script>
+</body>
+</html>

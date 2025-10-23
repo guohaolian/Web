@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 1.doctype
+     * 描述：获取文档的dtd信息
+     * 注意：
+     *     1.一般情况下 该属性是文档的第一个直接子节点
+     *     2.当没有文档类型声明时 返回null
+     * 例子：
+     *  console.log(document.doctype);
+     *  2.documentElement
+     *  描述：返回html文档
+     *  注意：
+     *      1.一般情况下 该属性是文档的第二个直接子节点
+     *  例子：
+     *      console.log(document.documentElement);
+     *
+     *  3.body/head
+     *  描述：获取body/head
+     *  语法：documnet.body/document.head
+     *  例子：
+     console.log(document.body);
+     console.log(document.head);
+
+     4.document.documentURI
+     描述：返回当前文档的地址
+     语法：document.documentURI
+     例子：console.log(document.documentURI);
+         //http://localhost:63342/code/6.dom%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%8A.html
+     注意：
+     1.所有的文档都具有此属性
+     2.document.documentURI无法在IE浏览器中使用
+     5.document.URL
+     描述：获取当前文档的地址
+     语法：document.URL
+     注意：1.html文档独有
+     例子：
+     console.log(document.URL);
+
+     6.domain
+     描述：获取当前文档的域名
+     语法：document.domain
+     例子：
+     console.log(document.domain);
+
+     7.document.lastModified
+     描述：获取文档的最后修改时间
+     语法：document.lastModified
+     注意：
+         1.当文档发生修改时  最后修改时间才会改变
+             console.log(document.lastModified);
+         2.返回一个字符串类型的时间  01/07/2019 15:25:04
+         3.Date.parse('字符串') 可以将一个满足日期解析的字符串 转变为 一个 毫秒数
+             var str = '2019-1-7';
+             var result =  Date.parse(str);
+             console.log(result);
+     */
+
+</script>
+
+</body>
+</html>

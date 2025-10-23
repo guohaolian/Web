@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var date = new Date(2019, 0, 13, 11, 32, 56, 333);
+    console.log(date.getMonth()); //月份0开始
+    console.log(date.getYear()); //距离1900年的整年数
+    console.log(date.getFullYear()); //返回当前年份
+    console.log(date.getDate()); //返回该月的第几天  几号
+    console.log(date.getDay()); //返回星期几  星期日 是0
+    console.log(date.getHours()); //获取小时数
+    console.log(date.getMinutes()); //获取分钟数
+    console.log(date.getSeconds()); //获取秒数
+    var milis = date.getMilliseconds();//获取毫秒数
+    console.log(milis);
+
+    var str = prompt('请您输入一个日期', '2019-1-1');
+    //将字符串转为日期
+    var date2 = new Date(str);
+    console.log(date2);
+
+    //获取年份
+    var year = date2.getFullYear();
+    //获取月份
+    var month = date2.getMonth() + 1;//0~11
+    if (month < 10) {
+        month = '0' + month;
+    }
+    //获取日期
+    var riQi = date2.getDate();
+    if (riQi < 10) {
+        riQi = '0' + riQi;
+    }
+
+    console.log(year + '-' + month + '-' + riQi);
+    console.log('----------------------------------------');
+
+    var result = date2.getFullYear() + '-' + (date2.getMonth() + 1 >= 10 ? date2.getMonth() + 1 : '0' + (date2.getMonth() + 1)) + '-' + (date2.getDate() >= 10 ? date2.getDate() : '0' + date2.getDate());
+
+    console.log(result);
+
+
+    //2019-09-07  //判断0的位置
+    //2019-10-12
+    //出生了多少天？
+    var date1 = new Date(str);
+    console.log(date1);
+
+    /*  var birthday = new Date('2000-1-7');
+     var toDay = new Date();
+
+     var days = toDay - birthday;
+
+     var day = days/1000/60/60/24;
+
+     console.log(Math.floor(day));*/
+
+
+</script>
+</body>
+</html>

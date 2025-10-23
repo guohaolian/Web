@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="#" method="get">
+    <span>姓名</span><input type="text" name="userName" class="userName"/><br>
+    <span>性别</span><input type="text" name="userSex" class="userSex"/><br>
+    <span>年龄</span><input type="text" name="userAge" class="userAge"/><br>
+    <input type="submit">
+</form>
+
+<button id="btn">点我一下</button>
+<br>
+
+<button id="search">search一下</button>
+
+<script>
+    var btn = document.getElementById('btn');
+    var searchbtn = document.getElementById('search');
+
+
+    searchbtn.onclick = function () {
+        console.log(document.location.search);
+
+    }
+    /**
+     *1. location.reload()
+     * 描述：重新加载资源  刷新
+     * 注意;
+     *     1.document.location.reload(false) 优先从本地缓存重新加载数据
+     *     2.document.location.reload(true)  优先从服务器重新加载数据
+     * 例子：
+     *  btn.onclick = function () {
+        //document.location.reload(false);
+        document.location.reload(true);
+    };
+     * 2.location.search
+     *
+     * 描述：获取地址栏内要查询的字符串
+     * 语法：document.location.search
+     *      //?userName=%E6%9D%8E%E7%99%BD&userSex=%E7%94%B7&userAge=18
+     * 注意：
+     *      1.form表单提交数据时 一定要写name属性
+     *      2.form表单必须使用【get】请求 才可以获取地址栏 传输的内容
+     */
+
+    /**
+     * 地址栏相关内容可以通过location获取
+     */
+    console.log(document.location.href);
+
+    //跳转页面
+    //document.location.href='http://www.baidu.com';
+    // document.location.assign('http://www.sina.com.cn');
+
+    console.log(document.location.host);
+
+</script>
+
+</body>
+</html>

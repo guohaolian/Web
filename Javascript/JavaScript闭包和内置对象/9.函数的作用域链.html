@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<script>
-    /**
-     * 函数的变量值的查找方式：
-     * 优先在本层（所在函数的作用域）中查找  当 本层中没有的时候 向上一层查找 如果找到 返回  否则继续向上查找
-     *  当在全局作用域内也没有找到 则 此变量 没有被定义
-     */
-    console.log(a);
-    var a = 100;
-    function test() {
-        //var a;
-        console.log('=====>', a);
-       // var a = 10;
+    <script>
+        /**
+         * 函数的变量值的查找方式：
+         * 优先在本层（所在函数的作用域）中查找  当 本层中没有的时候 向上一层查找 如果找到 返回  否则继续向上查找
+         *  当在全局作用域内也没有找到 则 此变量 没有被定义
+         */
         console.log(a);
-        function show() {
-             var a = 66;
+        var a = 100;
+        function test() {
+            //var a;
+            console.log('=====>' + a);
+            // var a = 10;
             console.log(a);
+            function show() {
+                var a = 66;
+                console.log(a);
+            }
+            show();
         }
-        show();
-    }
-    test();
-    console.log('-------------------------------------');
-    /**
-     * 在函数内部 也会发生 变量提升
-     *  使用var 关键字声明的变量 会将变量的声明提升到 函数(当前变量所在的函数) 的头部
-     * @param num
-     */
-    function test2(num) {
-        console.log(a);
-        if (num > 3) {
-            var a = 10;
+        test();
+        console.log('-------------------------------------');
+        /**
+         * 在函数内部 也会发生 变量提升
+         *  使用var 关键字声明的变量 会将变量的声明提升到 函数(当前变量所在的函数) 的头部
+         * @param num
+         */
+        function test2(num) {
+            console.log(a);
+            if (num > 3) {
+                var a = 10;
+            }
         }
-    }
-    test2(2);
-</script>
+        test2(2);
+    </script>
 </body>
+
 </html>
