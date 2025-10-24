@@ -13,3 +13,6 @@ const r2=r1(2);
 const r3=r2(3);
 const r4=r3();
 console.log(r4); // 6
+
+
+console.log(add(1,2)(3)(4)());
