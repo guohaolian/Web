@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1 {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background-color: orange;
+        }
+
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="div1">
+    <div class="div2"></div>
+</div>
+<script>
+    /**
+     * 事件：是可以被js检测到的行为，实质上是一种交互操作。
+     * 事件的作用：
+     (1)各个元素之间可以借助事件来进行交互
+     (2)用户和页面之间也可以通过事件来交互
+     (3)后端和页面之间也可以通过事件来交互（减缓服务器的压力）
+     注意：
+     事件通常与函数配合使用，当事件发生时函数才会执行
+     */
+
+    //获取页面元素
+    var div1 = document.querySelector('.div1');
+    var div2 = document.querySelector('.div2');
+
+    div2.onclick = function () {
+        console.log('div2 被点击了');
+    };
+    div1.onclick = function () {
+        console.log('div1 被点击了');
+    }
+
+</script>
+
+</body>
+</html>

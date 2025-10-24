@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="box">
+    <span>名字:</span><input type="text" class="userName"><br/>
+    <span>密码:</span><input type="text" class="pwd"><br/>
+</div>
+<button disabled="disabled">来啊</button>
+<script>
+    /**
+     * 获取页面元素：
+     */
+    var userNameInput = document.querySelector('.userName');
+    var pwdInput = document.querySelector('.pwd');
+    var box = document.querySelector('.box');
+    /*
+     失去焦点和获取焦点
+     1.使用heml绑定
+     <span>名字:</span><input type="text" class="userName" onfocus="test()" onblur="test2()"><br/>
+     function test(){
+     console.log('test 获得焦点');
+     }
+     function test2(){
+     console.log('失去了焦点');
+     }
+     2.使用dom0绑定
+     userNameInput.onfocus = function () {
+     console.log('获得了焦点');
+     };
+     userNameInput.onblur = function () {
+     var userName = userNameInput.value;
+     console.log(userName, '失去了焦点');
+     }
+     3.使用dom2绑定
+     userNameInput.addEventListener('focus', function () {
+
+     console.log('获得焦点');
+     })
+     userNameInput.addEventListener('blur', function () {
+     console.log('失去焦点');
+     })
+     4.注意
+         1.不支持事件冒泡  支持事件捕获
+     box.addEventListener('blur', function () {
+     console.log('box 失去焦点');
+     });
+     userNameInput.addEventListener('blur', function () {
+     console.log('失去焦点');
+     },true);
+     //不支持事件冒泡
+     box.addEventListener('blur', function () {
+     console.log('box 失去焦点');
+     },true);
+     */
+
+
+</script>
+</body>
+</html>

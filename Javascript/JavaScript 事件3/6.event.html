@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <p class="p1">123456789</p>
+</div>
+<script>
+    /**
+     * 当dom tree中某个事件被触发的时候，会同时自动产生一个用来【描述事件所有的相关信息】（比如出发事件的元素、或者是事件的类型）的对象，这个对象就是event（事件对象）。
+     * event的兼容性写法：
+     * var event = event||window.event;
+     */
+    var box = document.querySelector('.box');
+    var p1 = document.querySelector('.p1');
+
+
+
+    /*box.onclick = function () {
+        console.log(event);
+    }*/
+    /**
+     * event中常见属性：
+     * 1.type：触发事件的具体属性
+     *    console.log(event.type);
+     * 2.判断当前的事件是否支持冒泡
+     *     console.log(event.bubbles);
+     *     注意： 支持 true
+     *            不支持  false mouseenter mouseleave  focus  blur
+     *      例子： box.onmouseenter = function (event) {
+                 console.log('onmouseenter '+event.bubbles);
+    }
+     * 3.event.eventPhase
+     * 描述：当事件传到此节点属于什么状态
+     *       1：捕获
+     *       2：事件真正触发者
+     *       3：冒泡
+     *  例子：
+     *  box.onclick = function (event) {
+        console.log(event);
+        console.log(event.type);
+        console.log(event.bubbles);
+        console.log('box eventPhase :'+event.eventPhase );
+    };
+     p1.onclick = function (event) {
+        console.log('p1 eventPhase :'+event.eventPhase );
+    };
+     document.body.onclick = function (event) {
+        console.log('body eventPhase :'+event.eventPhase );
+    }
+
+     p1.addEventListener('click', function (event) {
+        console.log('p1 eventPhase :'+event.eventPhase );
+    },true)
+     box.addEventListener('click', function (event) {
+        console.log('box eventPhase :'+event.eventPhase );
+    },true)
+     document.body.addEventListener('click', function (event) {
+        console.log('body eventPhase :'+event.eventPhase );
+    },true)
+     */
+</script>
+</body>
+</html>

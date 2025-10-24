@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 键盘事件：当用户敲击键盘时触发的事件
+     * keydown: 键盘按下
+     * keypress:键盘按下
+     * keyup:   键盘弹起
+     * event.keyCode:返回按键的编码值
+     * 注意：
+     *    1.keydown无法区别大小写  keypress可以区别大小写
+     *    2.keyPress主要用来捕获：数字(包括Shift+数字的符号)、字母（包括大小写）、小键盘等能够显示在屏幕中的字符
+     *      keydown:都可以显示
+     *    3.组合键无法使用keypress
+     *    4.event.key:获取按下的键盘符
+     */
+    document.body.onkeydown = function () {
+        if(event.keyCode==13){
+            console.log('敲了回车');
+        }
+        console.log(event.key);
+        console.log(event.keyCode);
+        console.log('----------------keydown----------------');
+    };
+    document.body.onkeypress = function () {
+        console.log(event.key);
+        console.log(event.keyCode);
+        console.log('=================keypress==================');
+    };
+</script>
+</body>
+</html>

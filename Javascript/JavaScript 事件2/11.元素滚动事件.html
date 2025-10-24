@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div{
+            width: 500px;
+            height: 200px;
+            border: 1px solid skyblue;
+            overflow-y: scroll;
+        }
+    </style>
+
+</head>
+<body>
+<div class="div">
+
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+    <p>11111111111111111111</p>
+</div>
+<button class="btn">点我一下</button>
+<script>
+    var div = document.querySelector('div');
+    var btn = document.querySelector('button');
+
+    btn.onclick = function () {
+        div.scrollTop = 50;
+    }
+
+    div.onscroll = function () {
+        console.log(div.scrollTop);
+    }
+    /**
+     * 元素的滚动事件
+     * 元素.onscroll
+     * 注意：
+     *    1.没有兼容性问题
+     *    2.scrollTop/scrollLeft 都是可读可写的属性
+     *    3.overflow-y：在Y轴存在滚动条
+     *      .overflow-X：在X轴存在滚动条
+     *      overflow:scroll:在XY轴都存在滚动条
+     *      overflow：auto 哪个轴需要就在哪个轴出现
+     */
+</script>
+
+</body>
+</html>

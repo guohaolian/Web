@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="box" class="box1">
+    123456789
+</div>
+<input type="text" name="userName"/>
+<ul>
+    <li><a href="">1112</a></li>
+    <li><a href="">2112</a></li>
+    <li><a href="">3112</a></li>
+    <li><a href="">4112</a></li>
+</ul>
+
+<script>
+
+    /**
+     * 区别：
+     *     1.遵从的标准不同
+     *        querySelector系列属于W3C中的Selectors API(JS)规范
+     getElementsBy系列则属于 W3C的DOM 规范。
+     *     2.兼容性不同：
+     *        querySelector系列被ie8及其以上支持
+     *        getElementsBy系列 大部分都被浏览器支持 除了document.getElementsByClassName('box1');
+     *     3.参数不同
+     *     querySelector系列参数为css选择器
+     *     getElementsBy系列接收的参数只能是单一的className、tagName 和 name
+     *     4.返回的结果不一样
+     *     querySelectorAll()返回的是一个静态节点列表(Static NodeList)
+     *     getElementsBy系列的返回的是一个动态节点列表(Live NodeList)。
+     *
+     *     例子：
+     *      /*
+     //静态节点列表
+     var ul = document.querySelector('ul');
+     var lis = document.querySelectorAll('li');
+     console.log(lis[0]);
+     for (var i = 0; i < lis.length; i++) {
+        var li = document.createElement('li');
+        li.innerHTML = '3333' + i;
+        ul.appendChild(li);
+    }
+     //动态节点列表
+     var ul = document.getElementsByTagName('ul')[0];
+     var lis = document.getElementsByTagName('li');
+     console.log(ul,lis);
+
+     for(var i = 0;i<lis.length;i++){
+    var li = document.createElement('li');
+    li.innerHTML = '3333' + i;
+    console.log(lis.length);
+    ul.appendChild(li);
+    }
+     */
+    /*var box = document.querySelector('#box');
+     console.log(box);*/
+    /* var box = document.getElementById('box');
+     // box = document.getElementsByClassName('box1');
+     box = document.getElementById('box');
+     box = document.getElementsByTagName('div');
+     document.getElementsByName('userName');*/
+
+
+</script>
+
+</body>
+</html>

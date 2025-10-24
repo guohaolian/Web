@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<img src="img/fun1.jpg">
+<script>
+    var img = document.querySelector('img');
+
+    /**
+     * load/error:
+     * 描述：判断节点内容是否加载成功
+     * load:加载成功
+     * error:加载失败
+     * 例子：
+     *  img.onload = function () {
+        console.log('加载成功');
+    }
+     img.onerror = function () {
+        console.log('加载失败');
+    }
+     */
+    img.onload = function () {
+        console.log('加载成功');
+    };
+    img.onerror = function () {
+
+        console.log('加载失败');
+    };
+    /**
+     * 所有的内容加载完毕之后再输出
+     */
+    window.onload = function () {
+        console.log('整个窗体加载完毕');
+    }
+
+</script>
+
+</body>
+</html>

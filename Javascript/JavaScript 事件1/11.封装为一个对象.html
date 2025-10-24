@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+
+    </style>
+    <script src="js/tools.js"></script>
+</head>
+<body>
+<div id="div1">111111111
+    <p id="p1">111111111</p>
+
+    <p>111111111</p>
+
+    <p>111111111</p>
+
+    <p>111111111</p>
+
+</div>
+<button id="cancel">解绑</button>
+
+
+<script>
+
+    var btnCancel = document.getElementById('cancel');
+    var div1 = document.getElementById('div1');
+    var p1 = document.getElementById('p1');
+
+    /**
+     *
+     dom2事件绑定
+     元素名.addEventlistener（'类型',函数）
+     元素名.attachEvent('on+类型'，函数)
+     元素名.removeEventListener('类型',函数)
+     元素名.detachEvent(on+'类型',函数)
+     console.log(div1.addEventListener)
+     console.log(div1.attachEvent)
+     console.log(div1.removeEventListener)
+     console.log(div1.detachEvent)
+     */
+    /**
+     * 事件的解绑
+     */
+
+
+    tools.addEvent(div1, 'click', test);
+    btnCancel.onclick = function () {
+        //解绑的操作
+        tools.removeEvent(div1, 'click', test);
+    };
+    function test() {
+        console.log('tools  test');
+    }
+    /**
+     * 完成对事件的绑定
+     */
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+<div class="div1">
+    <button class="btn">点我一下</button>
+</div>
+<button class="btnCancle">解绑事件</button>
+<script>
+    var div1 = document.querySelector('.div1');
+    var btn = document.querySelector('.btn');
+    var btnCancle = document.querySelector('.btnCancle');
+
+    var obj = {
+        'userName':'李白'
+    }
+
+
+    console.log(obj.userName);
+    console.log(obj['userName']);
+
+
+    btnCancle['onclick'] = function () {
+        console.log('我是通过[]运算符调用的');
+
+    }
+
+ /*   btnCancle.onclick = function () {
+        btn.onclick = '';
+        btn.ondblclick = '';
+    }*/
+    /**
+     * dom0事件：
+     * 语法:节点名.on+事件类型 = 匿名函数
+     * 注意：
+     *     1.dom0事件支持冒泡
+     *     2.dom0事件绑定有名函数 不需要+()
+     *       function test(){
+                 console.log('aaaaas');
+              }
+         3.当元素绑定多个相同类型dom0事件 则只有最后一个事件会生效
+         4.一个元素可以绑定多个不同类型的事件
+         5.dom0事件的解绑 直接将对应的属性值置为空 即可
+         btnCancle.onclick = function () {
+            btn.onclick = '';
+            btn.ondblclick = '';
+        }
+         btn.onclick = test;
+         6.dom0事件创建的方式2
+           可以直接使用[]运算符 进行绑定
+         btnCancle['onclick'] = function () {
+            console.log('我是通过[]运算符调用的');
+        }
+         7.dom0和html事件实质都是对元素属性的操作
+     */
+    function test() {
+        console.log('aaaaas');
+    }
+    btn.onclick = test;
+    btn.ondblclick = function () {
+        console.log('dbClick');
+    };
+
+    btn.onclick = function () {
+        console.log('btn被点击了');
+    };
+    btn.onclick = function () {
+        console.log('我是第三个绑定事件');
+    };
+   /* div1.onclick = function () {
+        console.log('div 被点击了');
+    }
+    document.body.onclick = function () {
+        console.log('body');
+    }
+    document.documentElement.onclick = function () {
+        console.log('html');
+    }
+    document.onclick = function () {
+        console.log('document');
+    }
+    window.onclick = function () {
+        console.log('window');
+    }*/
+
+
+</script>
+
+
+</body>
+</html>

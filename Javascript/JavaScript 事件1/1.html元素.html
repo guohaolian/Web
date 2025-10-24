@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 2000px;
+            width: 2000px;
+        }
+
+        .div1 {
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+
+    </div>
+
+
+    <script>
+        var html = document.documentElement;
+        /**
+         *  浏览器视图窗口的大小
+         html.clientWidth：宽
+         html.clientHeight：高
+         注意;
+         这两个宽高值不包括滚动条的宽高
+         */
+        console.log('clientWidth', html.clientWidth);
+        console.log('clientHeight', html.clientHeight);
+        console.log('-----------------------------')
+        console.log('innerWidth', window.innerWidth);//包含滚动条
+        console.log('innerHeight', window.innerHeight);
+        var div1 = document.querySelector('.div1');
+
+
+        console.log('-----------------------------')
+
+
+        /**
+         * 获取html元素的宽高
+         * 语法：元素名.offsetHeight:元素的高
+         *      元素名.offsetWidth:元素的宽
+         */
+        console.log('offsetHeight', div1.offsetHeight);
+        console.log('offsetWidth', div1.offsetWidth);
+
+    </script>
+</body>
+
+</html>

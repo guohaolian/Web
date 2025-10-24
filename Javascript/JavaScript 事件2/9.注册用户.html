@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .redBorder {
+            border: 2px solid red;
+        }
+
+        .redColor {
+            color: red;
+        }
+
+        .greenBorder {
+            border: 2px solid green;
+        }
+
+        .greenColor {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <span>电话:</span>
+    <input type="text" name="phone" class="phoneInput">
+    <span class="phoneSpan"></span>
+</p>
+
+<p>
+    <span>姓名:</span>
+    <input type="text" name="userName" class="userNameInput">
+    <span class="userNameSpan"></span>
+</p>
+<button class="btn" disabled="disabled">提交</button>
+<script>
+    /**
+     * 校验的规则：手机号长度是11位
+     *
+     */
+    //获取页面元素
+    var phoneInput = document.querySelector('.phoneInput');
+    var phoneSpan = document.querySelector('.phoneSpan');
+
+    var userNameInput = document.querySelector('.userNameInput');
+    var userNameSpan = document.querySelector('.userNameSpan');
+
+    var btn = document.querySelector('.btn');
+    //设置失去焦点事件
+    //手机号的焦点事件
+    phoneInput.onblur = function () {
+        console.log('失去焦点');
+        if (phoneInput.value.length == 11) {
+            //将边框设为绿色
+            phoneInput.setAttribute('class', 'greenBorder');
+            //将phoneSpan的值设置为正确
+            phoneSpan.innerHTML = '正确';
+            //将phoneSpan的颜色设置为绿色
+            phoneSpan.setAttribute('class', 'greenColor');
+            //校验是否满足
+            checkSuccess();
+        } else {
+            //将边框设为红色
+            phoneInput.setAttribute('class', 'redBorder');
+            //将phoneSpan的值设置为错误
+            phoneSpan.innerHTML = '请输入正确长度的手机号';
+            //将phoneSpan的颜色设置为红色
+            phoneSpan.setAttribute('class', 'redColor');
+            checkSuccess();
+        }
+    };
+
+    //姓名的焦点事件 用户名的长度：2~7位
+    userNameInput.onblur = function () {
+        console.log('失去焦点  userName');
+        if (userNameInput.value.length >= 2 && userNameInput.value.length <= 7) {
+            //将姓名的输入框变为绿色
+            userNameInput.className = 'greenBorder';
+            //设置姓名的span为正确
+            userNameSpan.innerHTML = '正确';
+            //将姓名的span设置为绿色
+            userNameSpan.className = 'greenColor';
+            //校验是否满足
+            checkSuccess();
+        } else {
+            userNameInput.className = 'redBorder';
+            userNameSpan.innerHTML = '请输入正确长度的名字';
+            userNameSpan.className = 'redColor';
+            checkSuccess();
+        }
+    };
+    //判断是否可以进行提交
+    function checkSuccess() {
+        console.log('cccccccc');
+        if (userNameSpan.innerHTML == '正确' && phoneSpan.innerHTML == '正确') {
+            btn.removeAttribute('disabled');
+        } else {
+            btn.setAttribute('disabled', 'disabled');
+        }
+    }
+
+</script>
+</body>
+</html>

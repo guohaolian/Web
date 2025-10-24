@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1 {
+            width: 400px;
+            height: 400px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<div class="div1" onclick="test1()"></div>
+<button class="btnCancle">解绑事件</button>
+<script>
+    var btnCancle = document.querySelector('.btnCancle');
+    var div1 = document.querySelector('.div1');
+    btnCancle.onclick = function () {
+        div1.removeAttribute('onclick');
+    };
+    /**
+     * 事件绑定名称;事件绑定发生在哪里 就称为什么事件
+     *
+     * 1.html事件：事件绑定发生在页面内 称为 html事件
+     * 注意：
+     *        1.html事件一个元素可以一次性绑定多个函数
+     *        2.函数与函数之间可以使用;分割
+     *        3.牵一发而动全身 耦合性太高（修改功能 需要不停的修改源码）
+     *        4.html事件一个元素可以绑定多个事件
+     *        5.html事件 传递方式为冒泡 会沿着domtree 一直传递到 window
+     *        6.html事件的解绑 元素名.removeAttribute('on+事件名')
+     * 例子：
+     * <div class="div1" onclick="test1();test21();test31()" ondblclick="test4()"></div>
+     * 2.DOM0事件
+     * 3.DOM2事件
+     */
+    function test1() {
+        console.log('我是test1函数');
+    }
+    /*  function test4(){
+     console.log('我是test4函数');
+     }
+     function test21(){
+     console.log('我是test2函数');
+     }
+     function test31(){
+     console.log('我是test3函数');
+     }
+
+     document.body.onclick = function () {
+     console.log('body被点击');
+     }
+
+     document.documentElement.onclick = function () {
+     console.log('html 被点击');
+     }
+     document.onclick = function () {
+     console.log('document 被点击');
+     }
+
+     window.onclick = function () {
+     console.log('window 被点击');
+
+     }*/
+
+</script>
+
+</body>
+</html>

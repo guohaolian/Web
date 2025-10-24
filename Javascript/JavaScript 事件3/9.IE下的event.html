@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box {
+            height: 400px;
+            width: 400px;
+            background-color: orange;
+        }
+
+        #small {
+            height: 200px;
+            width: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="small"></div>
+</div>
+<a href="http://www.baidu.com" id="a_link">百度一下</a>
+<script>
+    var box = document.getElementById('box');
+    var small = document.getElementById('small');
+    var a_link = document.getElementById('a_link');
+
+
+
+
+    /**
+     * 注意：
+     *    1.非IEevent对象的默认值是 undefined
+     *      IE下Event对象的默认值是  null
+     *    2.event对象的兼容性写法
+     *        var event = event||window.event;
+     *
+     *    3.在IE浏览器下使用srcElement 返回当前事件的触发者
+     *        var target = event.target||event.srcElement;
+     *
+     *  常用的方法：
+     *     1. event.cancelBubble
+     *       描述：阻止当前事件传递到上一个节点
+     *       false:默认值
+     *       true:阻止当前事件传递到上一个节点
+     *       例子：
+     *          box.onclick = function (event) {
+          var event = event || window.event;
+                 var target = event.target||event.srcElement;
+        console.log(target);
+    };
+     small.onclick = function (event) {
+        var event =event||window.event;
+
+        console.log('small被点击了');
+        event.cancelBubble = true;
+
+    }
+     4.event.returnvalue
+     描述： 取消节点默认行为
+     注意：
+     event.returnvalue = false;取消节点默认行为
+     event.returnvalue  = true;默认
+     例子：
+     a_link.onclick = function (event) {
+        var event = event || window.event;
+        event.returnValue = false;
+    }
+     */
+
+    box.onclick = function (event) {
+        var event = event || window.event;
+        var target = event.target || event.srcElement;
+        console.log(target);
+    };
+    small.onclick = function (event) {
+        var event = event || window.event;
+
+        console.log('small被点击了');
+        event.cancelBubble = true;
+
+    }
+
+
+</script>
+
+</body>
+</html>

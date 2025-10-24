@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1{
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<script>
+    /**
+     鼠标单击是触发：click
+     鼠标双击是触发：dblclick
+     鼠标按下时触发：mousedown 
+     鼠标抬起时触发：mouseup
+     鼠标移动时触发：mousemove 
+     鼠标移入时触发(不冒泡)： mouseenter
+     鼠标移出时触发(不冒泡)： mouseleave 
+     鼠标移入时触发(冒泡)： mouseover
+     鼠标移出时触发(冒泡)： mouseout
+     */
+    var div1 = document.querySelector('.div1');
+
+    div1.onmousemove = function () {
+        //获取鼠标的坐标
+        var x = event.clientX;
+        var y = event.clientY;
+        console.log(x,y);
+
+    }
+    /**
+     * 注意：
+     * a.鼠标的基本事件默认采用冒泡传递
+     b.可以给一个元素添加多个不同的鼠标事件，不同的鼠标事件之间互不影响
+     c.mouseenter和mouseleave两个事件不冒泡触发。
+     鼠标事件：
+
+     div1.onmousedown = function () {
+        console.log('鼠标被按下了');
+    }
+     div1.onmouseup = function () {
+        console.log('鼠标抬起');
+    }
+     div1.onmousemove = function () {
+        console.log('鼠标在移动');
+    }
+     div1.onmouseenter = function () {
+        console.log('鼠标进入div');
+    }
+     div1.onmouseleave = function () {
+        console.log('鼠标离开');
+    }
+     div1.onmouseover = function () {
+        console.log('鼠标进入 onmousemove');
+    }
+     div1.onmouseout = function () {
+        console.log('鼠标离开 onmouseout');
+    }
+     */
+
+</script>
+</body>
+</html>

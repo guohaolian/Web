@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            width: 100px;
+            background-color: orange;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        li a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="#">百度一下</a></li>
+    <li><a href="#">新浪一下</a></li>
+    <li><a href="#">雅虎一下</a></li>
+    <li><a href="#">腾讯一下</a></li>
+</ul>
+<script>
+    var lis = document.querySelectorAll('li');
+    //给所有的li绑定事件
+    for(var i = 0;i<lis.length;i++){
+        //绑定两个事件 鼠标进入  鼠标离开
+        lis[i].onmouseover = function () {
+            console.log(this)
+            this.style.backgroundColor = 'yellow';
+        };
+        lis[i].onmouseout = function () {
+            this.style.backgroundColor = 'orange';
+        };
+    }
+    /**
+     * 使用dom完成
+     */
+
+
+</script>
+</body>
+</html>

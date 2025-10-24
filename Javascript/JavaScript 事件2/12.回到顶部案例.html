@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+<button>回到顶部</button>
+<script>
+    var btn = document.querySelector('button');
+    btn.onclick = function () {
+        //获取滚动距离
+        var tempTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //间隔事件改变滚动距离让其不断变小
+        var timer = setInterval(function () {
+            tempTop -= 11;
+            console.log(tempTop);
+            if(tempTop<0){
+                clearInterval(timer);
+            }
+            //将减小后的值赋值给滚动条
+            document.documentElement.scrollTop = tempTop;
+            document.body.scrollTop = tempTop;
+        }, 50);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .big {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+        .small {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            left: 50px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="big">
+    <div class="small"></div>
+</div>
+<script>
+    //获取页面元素
+    var big = document.querySelector('.big');
+    var small = document.querySelector('.small');
+    //设置开关 判断是否可以移动鼠标
+    var flag = false;
+
+    var delX = 0;
+    var delY = 0;
+
+    //鼠标按下
+    small.onmousedown = function () {
+        flag = true;
+        delX = event.clientX - small.offsetLeft;
+        delY = event.clientY - small.offsetTop;
+    };
+    //鼠标移动
+    big.onmousemove = function () {
+        //鼠标按下的时候才可以移动
+        if (flag) {//flag ==true;
+            var tempLeft = event.clientX - delX;
+            var tempTop = event.clientY - delY;
+            //判断边界问题
+            if(tempLeft<40){
+                tempLeft = 0;
+            }
+            if(tempLeft> big.clientWidth - small.clientWidth - 40){
+                tempLeft = big.clientWidth - small.clientWidth;
+            }
+            if(tempTop<40){
+                tempTop = 0;
+            }
+            if(tempTop> big.clientHeight - small.clientHeight - 40){
+                tempTop = big.clientHeight - small.clientHeight;
+            }
+            small.style.left = tempLeft+'px';
+            small.style.top = tempTop+'px';
+        }
+    };
+    //鼠标抬起
+    document.onmouseup = function () {
+        flag = false;
+    }
+
+
+</script>
+
+
+</body>
+</html>

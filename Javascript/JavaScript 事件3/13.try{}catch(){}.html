@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * try{
+     *    可能出现问题的代码
+     * }catch(error){
+     *  console.log(error);//输出bug信息
+     * }
+     * 即使程序出现bug 也不会影响程序的继续执行
+     */
+    try {
+        console.log(a);
+    } catch (error) {
+        console.log(error);//ReferenceError: a is not defined
+    }
+
+
+    console.log('abcdefg');
+
+
+</script>
+
+</body>
+</html>

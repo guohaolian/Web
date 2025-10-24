@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1 {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            background-color: pink;
+        }
+
+        .div2 {
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+        .div3 {
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+            position: absolute;
+            left: 120px;
+            top: 120px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="div1">
+    <div class="div2">
+        <div class="div3"></div>
+    </div>
+</div>
+<script>
+    var div1 = document.querySelector('.div1');
+    var div2 = document.querySelector('.div2');
+    var div3 = document.querySelector('.div3');
+
+
+    var result = getAllOffsetLeft(div2);
+    console.log(result);
+
+    console.log(div1.offsetParent.offsetParent);
+
+    console.log(div3.offsetLeft);//当前元素相对于父元素的偏移量 注意不包括边框的距离
+    console.log(div3.offsetParent.offsetLeft);
+
+    console.log('offsetTop', div3.offsetTop);
+
+    console.log(getAllOffsetTop(div3));
+
+
+    /**
+     *
+     * offsectParent:offsetParent表示获取距离【当前元素】的最靠近的、并且CSS的position属性不等于static的父元素。
+     * 例子：
+     *  <p id="p-id" style="position:relative;">
+     <span id="span-id" style="position: relative">
+     <a href="#" id="a-id">test-a</a>
+     </span>
+     </p>
+     var a = document.querySelector('#a-id');
+
+     console.log(a.offsetParent);
+     */
+    //获取传入元素所有的左偏移量
+    function getAllOffsetLeft(obj) {
+        //定义变量记录总和
+        var sum = 0;
+        while (obj) {
+            //获取当前元素的左偏移量
+            sum = sum + obj.offsetLeft;
+            //获取当前元素的已经定位的父元素
+            obj = obj.offsetParent;
+        }
+        return sum;
+    }
+    function getAllOffsetTop(obj) {
+        var sum = 0;
+        while (obj) {
+            sum += obj.offsetTop;
+            obj = obj.offsetParent;
+        }
+
+        return sum;
+    }
+
+
+</script>
+</body>
+</html>

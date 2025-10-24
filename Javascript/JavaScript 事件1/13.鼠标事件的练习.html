@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="div1"></div>
+<script>
+    //获取页面元素
+    var div1 = document.querySelector('.div1');
+
+    //设置开关判断能否移动
+    var flag = false;
+
+    //div设置鼠标按下的监听
+    div1.onmousedown = function () {
+        flag = true;
+    }
+    //div设置移动事件
+
+    document.onmousemove = function () {
+        if (flag) {
+            var tempLeft = event.clientX;
+            var tempTop = event.clientY;
+            console.log('aaaaaaaaaaaa', tempLeft, tempTop);
+            div1.style.top = tempTop - 50 + 'px';
+            div1.style.left = tempLeft - 50 + 'px';
+        }
+    }
+    //div设置鼠标离开事件
+    document.onmouseup = function () {
+        flag = false;
+    }
+
+
+</script>
+</body>
+</html>

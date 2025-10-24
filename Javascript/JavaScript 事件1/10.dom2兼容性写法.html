@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">111111111
+    <p id="p1">111111111</p>
+
+    <p>111111111</p>
+
+    <p>111111111</p>
+
+    <p>111111111</p>
+
+</div>
+<button id="cancel">解绑</button>
+
+
+<script>
+
+    var btnCancel = document.getElementById('cancel');
+    var div1 = document.getElementById('div1');
+    var p1 = document.getElementById('p1');
+
+    btnCancel.onclick = function () {
+        //解绑的操作
+        removEvent(div1,'click',test);
+    };
+    /**
+     *
+     dom2事件绑定
+     元素名.addEventlistener（'类型',函数）
+     元素名.attachEvent('on+类型'，函数)
+     元素名.removeEventListener('类型',函数)
+     元素名.detachEvent(on+'类型',函数)
+     console.log(div1.addEventListener)
+     console.log(div1.attachEvent)
+     console.log(div1.removeEventListener)
+     console.log(div1.detachEvent)
+     */
+    /**
+     * 事件的解绑
+     */
+
+
+    function removEvent(ele, type, methodName) {
+        if (ele.removeEventListener) {
+            ele.removeEventListener(type, methodName);
+        } else if (ele.detachEvent) {
+            ele.detachEvent('on' + type, methodName);
+        } else {
+            ele['on' + methodName] = '';
+        }
+
+    }
+    function test() {
+        console.log('test');
+    }
+    /**
+     * 完成对事件的绑定
+     */
+    function addEvent(ele, type, methodName) {
+        if (ele.addEventListener) {
+            ele.addEventListener(type, methodName);
+        } else if (ele.attachEvent) {
+            ele.attachEvent('on' + type, methodName);
+        } else {
+            ele['on' + type] = methodName;.
+        }
+    }
+    addEvent(div1, 'click', test);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            height: 400px;
+            width: 400px;
+            background-color: orange;
+        }
+
+        .small {
+            height: 200px;
+            width: 200px;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="small"></div>
+</div>
+<a href="http://www.baidu.com" class="a_link">百度一下</a>
+<script>
+    var box = document.querySelector('.box');
+    var small = document.querySelector('.small');
+
+    var a_link = document.querySelector('.a_link');
+
+
+    console.log(event);
+
+
+    /**
+     * stopPropagation():
+     * 描述：阻止事件从当前节点传递到下一个节点
+     * 语法： event.stopPropagation();
+     * 冒泡例子：
+     *   box.onclick = function (event) {
+        console.log('box 被点击了');
+    };
+     small.onclick = function () {
+        console.log('small 被点击了');
+
+        event.stopPropagation();
+    }
+     捕获例子：
+     box.addEventListener('click', function () {
+        console.log('box 被点击了');
+        event.stopPropagation();
+    }, true);
+
+     small.addEventListener('click', function () {
+        console.log('small 被点击了');
+    }, true)
+
+
+     2. event.preventDefault();
+     描述：取消节点的默认行为
+     语法：event.preventDefault();
+     例子：
+     function test(){
+        event.preventDefault();
+    }
+     a_link.onclick = test;
+     */
+
+
+
+
+</script>
+</body>
+</html>

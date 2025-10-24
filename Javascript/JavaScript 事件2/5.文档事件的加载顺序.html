@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<img src="img/fun.jpg">
+
+<script>
+
+    var img = document.querySelector('img');
+
+    console.log(document.readyState);
+    img.onload = function () {
+        console.log('图片加载成功');
+    };
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('domTree加载完毕');
+    });
+    document.addEventListener('readystatechange', function () {
+        console.log('文档的状态发生改变了', document.readyState);
+
+    });
+    window.onload = function () {
+        console.log('整个窗体内容加载完毕');
+    };
+    /**
+     * html的执行顺序
+     * 解析HTML结构。
+     * 加载外部脚本和样式表文件。
+     * 解析并执行脚本代码。
+     * DOM树构建完成。
+     * //DOMContentLoaded执行
+     * 加载图片等外部文件。
+     * 页面加载完毕。
+     * //load执行
+     */
+
+</script>
+
+</body>
+</html>

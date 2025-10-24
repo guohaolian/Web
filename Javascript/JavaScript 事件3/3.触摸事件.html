@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            height: 800px;
+            width: 800px;
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <script>
+
+        var box = document.querySelector('.box');
+
+        box.addEventListener('touchstart', function () {
+            console.log('touchstart');
+            console.log('(x,y):('+event.touches[0].clientX+','+event.touches[0].clientY+')');
+        });
+
+    /*    box.addEventListener('touchmove', function () {
+            console.log('touchmove');
+        });*/
+
+        box.addEventListener('touchend', function () {
+            console.log('touchend');
+        });
+        box.addEventListener('touchcancel', function () {
+            console.log('touchcancel');
+        });
+        box.ontouchmove = function () {
+            console.log('touchmovetouchmovetouchmovetouchmove');
+        };
+        box.onclick = function () {
+            console.log('onclick');
+        }
+
+
+
+        /**
+         * 注意：
+         *    1.pc端无法响应触摸事件
+         *    2.可以使用dom0绑定
+         *    3.可以响应click事件
+         *
+         */
+    </script>
+
+</div>
+</body>
+</htm

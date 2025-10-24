@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+<div class="box"></div>
+
+<script>
+    var box = document.querySelector('.box');
+
+
+    function handlerMouseMiddle(event) {
+        var event = event || window.event;
+
+        var direction = 0;
+        //判断在哪个浏览器下
+        if (event.wheelDelta) {
+            direction = event.wheelDelta > 0 ? 1 : -1;
+        } else {
+            //火狐浏览器
+            direction = event.detail < 0 ? 1 : -1;
+        }
+        console.log(direction);
+    }
+    box.onmousewheel = handlerMouseMiddle;
+    try{
+        box.addEventListener('DOMMouseScroll',handlerMouseMiddle);
+    }catch (error){
+    }
+
+
+
+</script>
+</body>
+</html>

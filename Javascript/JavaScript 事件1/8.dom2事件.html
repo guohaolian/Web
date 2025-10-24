@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1 {
+            height: 400px;
+            width: 400px;
+            background-color: orange;
+            position: relative;
+        }
+
+        .div2 {
+            height: 100px;
+            width: 100px;
+            background-color: skyblue;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="div1">div1
+    <div class="div2">
+        div2
+    </div>
+</div>
+<button class="btnCancle">解绑事件</button>
+<script>
+
+    var div1 = document.querySelector('.div1');
+    var div2 = document.querySelector('.div2');
+    var btnCancle = document.querySelector('.btnCancle');
+
+
+    function test() {
+        console.log('测试解绑操作');
+    }
+
+    btnCancle.onclick = function () {
+
+        div2.removeEventListener('click', test,true);
+
+    };
+
+    div2.addEventListener('click', test,true);
+
+
+    /**
+     * dom2事件绑定
+     * 语法：元素名.addEventListener(事件的类型,函数,是否使用捕获)
+     * 例子：
+     *  div2.addEventListener('click', function () {
+        console.log('我是div2，被点击了');
+    })
+     注意：
+     0.事件绑定时 没有 on
+     1.当不写true/false时 dom2事件默认事件冒泡 false;
+     2.dom2事件可以一次性绑定多个事件 执行的顺序 按照绑定的顺序依次执行
+     3.事件流的执行顺序 先执行捕获  事件真正触发者先执行捕获还是冒泡 要看声明的顺序 再执行冒泡
+     执行顺序：
+     window.addEventListener('click', function () {
+        console.log('我是Window，被点击了  我是冒泡');
+    });
+     window.addEventListener('click', function () {
+        console.log('我是Window，被点击了  我是捕获');
+    }, true);
+     div1.addEventListener('click', function () {
+        console.log('我是div1，被点击了  我是冒泡');
+    });
+     div2.addEventListener('click', function () {
+        console.log('我是div2，被点击了  我是捕获');
+    }, true);
+     div2.addEventListener('click', function () {
+        console.log('我是div2，被点击了  我是冒泡');
+    });
+
+     div1.addEventListener('click', function () {
+        console.log('我是div1，被点击了  我是捕获');
+    }, true);
+     4.匿名函数无法进行事件的解绑
+     5.外部函数或者有名的函数可以执行事件的解绑
+        注意：如果采用事件捕获 则  接班时 要将true写上
+     例子：
+     var btnCancle = document.querySelector('.btnCancle');
+     function test() {
+        console.log('测试解绑操作');
+    }
+     btnCancle.onclick = function () {
+        div2.removeEventListener('click', test,true);
+    };
+     div2.addEventListener('click', test,true);
+     */
+
+
+</script>
+
+</body>
+</html>

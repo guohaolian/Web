@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p id="p1">111111111111
+    <span id="p2">222222span</span>
+</p>
+<button id="btnCancle">点我解绑</button>
+<script>
+
+
+
+    /*    p1.attachEvent('onclick', function () {
+     console.log('p1被点击了');
+     })*/
+
+
+    /**
+     * 注意：
+     *    1.IE浏览器对html事件和dom0事件没有兼容性的问题
+     *    2.addEventListener：在IE9内可以使用可以使用事件捕获
+     *        p1.addEventListener('click', function () {
+        console.log('p11111111111111111111111111');
+    }, true)
+     p2.addEventListener('click', function () {
+        console.log('p22222222222222222222');
+    }, true)
+     *    3.ie8及其以下不支持 addEventListener
+     *    4.ie8及其以下中dom2事件支持事件冒泡 但是不支持 事件捕获
+     *
+     *    5.在ie9浏览器内如果一个元素绑定多个dom2事件 则按照绑定的顺序从上到下依次执行
+     *    6.ie8及其以下中如果一个元素绑定多个dom2事件 则 逆序执行
+     *      例子：
+     *         p2.attachEvent('onclick', function () {
+        console.log('p2被点击了  1');
+    });
+     p2.attachEvent('onclick', function () {
+        console.log('p2被点击了  2');
+    }); p2.attachEvent('onclick', function () {
+        console.log('p2被点击了   3');
+    }); p2.attachEvent('onclick', function () {
+        console.log('p2被点击了   4');
+    });
+     7.匿名函数绑定无法解绑
+     外部函数可以解绑
+     function test() {
+        console.log('test');
+    }
+     var p2 = document.getElementById('p2');
+     var p1 = document.getElementById('p1');
+     var btnCancle = document.getElementById('btnCancle');
+
+     btnCancle.onclick = function () {
+
+        p2.detachEvent('onclick', test);
+    }
+     p2.attachEvent('onclick', test);
+     */
+
+    function test() {
+        console.log('test');
+    }
+    var p2 = document.getElementById('p2');
+    var p1 = document.getElementById('p1');
+    var btnCancle = document.getElementById('btnCancle');
+    p2.attachEvent('onclick', test);
+</script>
+</body>
+</html>

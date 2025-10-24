@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+<button class="btn"> 去那里</button>
+<script>
+    var btn = document.querySelector('button');
+    btn.onclick = function () {
+        document.documentElement.scrollTop = 1000;
+        document.body.scrollTop = 1000;
+    };
+    /**
+     * 滚动事件：scroll事件会在【文档】或【元素】发生滚动操作时触发。
+     * 兼容性写法：var tempScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+     * 注意：
+     *      1.scrollTop scrollLeft 都是可读可写的属性 没有单位
+     *      2.想要发生滚动事件  首先要有滚动条
+     *      3.document.body.scrollTop 当文档没有doctype时 可以用来获取滚动距离
+     */
+    window.onscroll = function () {
+        //避免冲突使用兼容性写法
+        var tempScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        /*   console.log('documentElement',document.documentElement.scrollTop);
+         console.log('body',document.body.scrollTop);*/
+        console.log(tempScrollTop);
+    }
+
+</script>
+</body>
+</html>
