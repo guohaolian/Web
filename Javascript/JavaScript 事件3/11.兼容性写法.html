@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -11,41 +12,53 @@
         }
     </style>
 </head>
+
 <body>
-<div class="box"><p>11111111111</p></div>
-<a href="http://www.baidu.com">点我</a>
-<script>
+    <div class="box">
+        <p>11111111111</p>
+    </div>
+    <a href="http://www.baidu.com">点我</a>
+    <script>
 
-    var box = document.querySelector('.box');
-    var p = document.querySelector('p');
-    var a = document.querySelector('a');
+        var box = document.querySelector('.box');
+        var p = document.querySelector('p');
+        var a = document.querySelector('a');
 
-    a.onclick = function () {
+        a.onclick = function () {
 
-        quXiao();
+            quXiao();
 
-    }
+        }
 
-    p.onclick = function () {
+        p.onclick = function () {
 
-        console.log('999999999999999999999');
-        stop();
-    }
+            console.log('999999999999999999999');
+            stop();
+        }
 
-    box.onclick = function (event) {
-        var event = event || window.event;
-        console.log('77777777777777777777');
-    }
+        box.onclick = function (event) {
+            var event = event || window.event;
+            console.log('77777777777777777777');
+        }
 
-    var tools = {
-        'cancel': function () {
-            if(event.preventDefault){
-                event.preventDefault();
-            }else{
-                event.returnValue = false;
+        var tools = {
+            'cancel': function () {
+                if (event.preventDefault) {
+                    event.preventDefault();
+                } else {
+                    event.returnValue = false;
+                }
+            },
+            'stop': function () {
+                //阻止事件传递
+                if (event.stopPropagation) {
+                    event.stopPropagation();
+                } else {
+                    event.cancelBubble = true;
+                }
             }
-        },
-        'stop': function () {
+        }
+        function stop() {
             //阻止事件传递
             if (event.stopPropagation) {
                 event.stopPropagation();
@@ -53,25 +66,17 @@
                 event.cancelBubble = true;
             }
         }
-    }
-    function stop() {
-        //阻止事件传递
-        if (event.stopPropagation) {
-            event.stopPropagation();
-        } else {
-            event.cancelBubble = true;
+        function quXiao() {
+            if (event.preventDefault) {
+                event.preventDefault();
+            } else {
+                event.returnValue = false;
+            }
         }
-    }
-    function quXiao(){
-        if(event.preventDefault){
-            event.preventDefault();
-        }else{
-            event.returnValue = false;
-        }
-    }
 
-</script>
+    </script>
 
 
 </body>
+
 </html>

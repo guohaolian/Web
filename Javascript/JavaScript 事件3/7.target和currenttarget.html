@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -15,34 +16,35 @@
             width: 200px;
             background-color: skyblue;
         }
-
     </style>
 </head>
-<body>
-<div class="box">box
-    <div class="small">small</div>
-</div>
-<script>
-    var box = document.querySelector('.box');
-    var small = document.querySelector('.small');
-    /**
-     * target/currentTarget
-     * 描述：target:事件的触发者
-     *       currentTarget：事件的监听者
-     * 注意：当事件冒泡时  this指向当前的元素
-     * 例子：
-     *    box.onclick = function (event) {
-                console.log('target',event.target);
-                console.log('currentTarget ' ,event.currentTarget);
-                console.log(this);
-    };
-     small.onclick = function (event) {
-        console.log('aaaaaaaaaaaaaaaaaa');
-    }
-     */
 
-</script>
+<body>
+    <div class="box">box
+        <div class="small">small</div>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var small = document.querySelector('.small');
+        /**
+         * target/currentTarget
+         * 描述：target:事件的触发者
+         *       currentTarget：事件的监听者
+         * 注意：当事件冒泡时  this指向当前的元素
+         * 例子：
+         *    box.onclick = function (event) {
+                    console.log('target',event.target);
+                    console.log('currentTarget ' ,event.currentTarget);
+                    console.log(this);
+        };
+         small.onclick = function (event) {
+            console.log('aaaaaaaaaaaaaaaaaa');
+        }
+         */
+
+    </script>
 
 
 </body>
+
 </html>

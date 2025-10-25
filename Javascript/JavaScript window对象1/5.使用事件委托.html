@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
     <style>
-        ul{
+        ul {
             list-style: none;
         }
-        li{
+
+        li {
             width: 100px;
             height: 40px;
             text-align: center;
@@ -17,36 +19,38 @@
         }
     </style>
 </head>
+
 <body>
-<ul>
-    <li>你好</li>
-    <li>我好</li>
-    <li>大家好</li>
-    <li>才是真的好</li>
-</ul>
-<script>
-    /**
-     * 事件委托/事件代理：事件委托就是利用【事件冒泡】，只指定一个事件处理程序，就可以管理某一类型的所有事件。
-     */
+    <ul>
+        <li>你好</li>
+        <li>我好</li>
+        <li>大家好</li>
+        <li>才是真的好</li>
+    </ul>
+    <script>
+        /**
+         * 事件委托/事件代理：事件委托就是利用【事件冒泡】，只指定一个事件处理程序，就可以管理某一类型的所有事件。
+         */
 
 
-    var ul = document.querySelector('ul');
-   /* ul.onclick = function (event) {
-        var event = event|| window.event;
-        console.log(event.target.innerHTML);
-    }*/
-    ul.onmouseover = function (event) {
-        var event = event|| window.event;
-        event.target.style.backgroundColor = 'yellow';
+        var ul = document.querySelector('ul');
+        /* ul.onclick = function (event) {
+             var event = event|| window.event;
+             console.log(event.target.innerHTML);
+         }*/
+        ul.onmouseover = function (event) {
+            var event = event || window.event;
+            event.target.style.backgroundColor = 'yellow';
 
-    };
-    ul.onmouseout = function (event) {
-        var event = event|| window.event;
-        event.target.style.backgroundColor = 'orange';
-    };
+        };
+        ul.onmouseout = function (event) {
+            var event = event || window.event;
+            event.target.style.backgroundColor = 'orange';
+        };
 
 
-</script>
+    </script>
 
 </body>
+
 </html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
     <style>
-        .box{
+        .box {
             height: 200px;
             width: 200px;
             background-color: orange;
@@ -13,35 +14,36 @@
 </head>
 
 <body>
-<div class="box"></div>
-<script>
-    var box = document.querySelector('.box');
+    <div class="box"></div>
+    <script>
+        var box = document.querySelector('.box');
 
-    /**
-     * 鼠标滚轮事件
-     * ie,google 等浏览器：
-     *   元素名.onmousewheel
-     *   注意： 上 120  下 -120
-     *
-     *  火狐浏览器： DOMMouseScroll
-     * 注意：上 -3  下  3
-     */
-    box.onmousewheel = function (event) {
-        var event = event|| window.event;
-      console.log(event.wheelDelta);
-    };
+        /**
+         * 鼠标滚轮事件
+         * ie,google 等浏览器：
+         *   元素名.onmousewheel
+         *   注意： 上 120  下 -120
+         *
+         *  火狐浏览器： DOMMouseScroll
+         * 注意：上 -3  下  3
+         */
+        box.onmousewheel = function (event) {
+            var event = event || window.event;
+            console.log(event.wheelDelta);
+        };
 
-    try{
-        box.addEventListener('DOMMouseScroll', function (event) {
-            var event = event|| window.event;
-            console.log(event.detail);
-        })
-    }catch (error){
-        console.log(error);
-    }
+        try {
+            box.addEventListener('DOMMouseScroll', function (event) {
+                var event = event || window.event;
+                console.log(event.detail);
+            })
+        } catch (error) {
+            console.log(error);
+        }
 
 
 
-</script>
+    </script>
 </body>
+
 </html>
