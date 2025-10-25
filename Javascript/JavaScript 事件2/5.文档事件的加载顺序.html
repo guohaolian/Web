@@ -15,10 +15,10 @@
     img.onload = function () {
         console.log('图片加载成功');
     };
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {//DOMContentLoaded事件
         console.log('domTree加载完毕');
     });
-    document.addEventListener('readystatechange', function () {
+    document.addEventListener('readystatechange', function () {//readystatechange事件
         console.log('文档的状态发生改变了', document.readyState);
 
     });

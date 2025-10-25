@@ -4,7 +4,7 @@ function add(...args) {
         if(rest.length===0){
             return n;
         }
-        return add(n,...rest);
+        return add(...rest,n);
     }
     
 }

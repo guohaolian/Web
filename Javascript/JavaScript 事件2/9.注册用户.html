@@ -49,7 +49,7 @@
     var btn = document.querySelector('.btn');
     //设置失去焦点事件
     //手机号的焦点事件
-    phoneInput.onblur = function () {
+    phoneInput.onblur = ()=> {
         console.log('失去焦点');
         if (phoneInput.value.length == 11) {
             //将边框设为绿色
