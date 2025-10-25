@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            border: 1px solid skyblue;
+        }
+    </style>
+</head>
+<body>
+<h1>我是第一个h1标签</h1>
+
+<div class="box"></div>
+<img src="img/3.jpg">
+<script>
+    /**
+     * 尽量不要使用dom创建页面元素
+     * 每添加一次就会引起一次回流和重绘
+     */
+    var box = document.querySelector('.box');
+    /*var h1 = document.createElement('h1');
+     h1.innerHTML = '我是第二个h1标签';
+     box.appendChild(h1);//回流和重绘
+     var h2 = document.createElement('h2');
+     h2.innerHTML = '床前明月光';
+     box.appendChild(h2);//回流和重绘
+     var h3 = document.createElement('h3');
+     h3.innerHTML = '牧童遥指杏花村';
+     box.appendChild(h3);//回流和重绘*/
+    /**
+     * 创建一个容器 将所有要添加的内容放到容器内
+     * 将此容器添加到页面内 一次搞定
+     * 注意：
+     *
+     *   1.  var fragment =  document.createDocumentFragment();
+     *     fragment脱离文档流存在  即没有父节点
+     *   2.通过文档碎片节点添加到文档中的内容 实际上是 文档碎片节点的孩子
+     *
+     *
+     * 例子： var fragment = document.createDocumentFragment();
+
+     console.log(fragment.parentNode);
+     var h1 = document.createElement('h1');
+     h1.innerHTML = '我是第二个h1标签';
+     fragment.appendChild(h1);
+     var h2 = document.createElement('h2');
+     h2.innerHTML = '床前明月光';
+     fragment.appendChild(h2);
+     var h3 = document.createElement('h3');
+     h3.innerHTML = '牧童遥指杏花村';
+     fragment.appendChild(h3);
+
+     box.appendChild(fragment);
+     */
+    /**
+     * 减少回流和重绘的方法：
+     * 1.不要一项一项的去改变样式，尽可能一口气写完。(可以写在一起，不要被打断就行)
+     最好使用.style.cssText
+     2.读写DOM也尽量也放在一起
+     3.使用文档碎片 var linshi = document.createDocumentFragment();
+     4.使用fixed或者absolute可以减少回流和重绘
+     */
+
+
+
+
+</script>
+</body>
+</html>

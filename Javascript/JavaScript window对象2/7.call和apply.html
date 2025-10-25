@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 更改this指向
+     * call:函数名.call(函数实际的调用者，参数1，参数2...);
+     * 例子：
+     *   function test(){
+            console.log('aaaaaa');
+             console.log(this);
+          }
+     var obj = {'userName':'李白'};
+     // window.test();
+     test.call(obj,'1');
+     *
+     * apply: 函数名.apply(函数的调用者,[参数1，参数2.。。])
+     *
+     *
+     * 注意：
+     *     1.想要将函数的实际调用者变为window
+     *     2.不适用call或者apply
+     *     3.第一个参数可以是null 或者window
+     *      test.call(null,1,2,3)
+     *        test.call(window,1,2,3)
+     *
+     */
+
+    function test(){
+        /**
+         * arguments:获取函数运行时 函数调用处传递的所有实参 类似数组的对象
+         */
+        console.log(arguments.length);
+
+        console.log('aaaaaa');
+        console.log(this);
+    }
+    var obj = {'userName':'李白'};
+    // window.test();
+    test.call(null,1,2,3);
+
+
+</script>
+
+</body>
+</html>

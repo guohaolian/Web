@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            list-style: none;
+            position: absolute;
+            display: none;
+
+        }
+
+        li {
+            height: 40px;
+            line-height: 40px;
+            background-color: orange;
+            width: 100px;
+        }
+
+        li:hover {
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+<textarea cols="40" rows="40"></textarea>
+<ul>
+    <li>赶快说话</li>
+    <li>离开页面</li>
+    <li>百度搜索</li>
+    <li>输入搜索</li>
+</ul>
+
+<script>
+    var ul = document.querySelector('ul');
+    //禁止系统右键菜单
+    document.oncontextmenu = function (eve) {
+        return false;
+    };
+    //当鼠标右键按下的时候 将菜单展示出来
+    document.onmousedown = function (event) {
+        var event = event || window.event;
+        if (event.button == 2) {
+            //将菜单展示出来
+            ul.style.left = event.clientX + 'px';
+            ul.style.top = event.clientY + 'px';
+            ul.style.display = 'block';
+        } else {
+            //不是右键
+            ul.style.display = 'none';
+        }
+    };
+    //事件委托的方式
+    ul.onmousedown = function (event) {
+        var event = event || window.event;
+       /* switch (event.target.innerHTML){
+            case
+        }*/
+        if (event.target.innerHTML == '赶快说话') {
+            alert('赶快说话 否则发红包！！！');
+        } else if (event.target.innerHTML == '离开页面') {
+            var result = window.confirm('真的要舍我而去吗？');
+            if (result) {
+                window.close();
+            }
+        } else if (event.target.innerHTML == '百度搜索') {
+            //获取页面选中的内容
+            var result = document.getSelection().toString();
+
+            window.open('http://www.baidu.com/s?wd=' + result);
+
+        } else if (event.target.innerHTML == '输入搜索') {
+
+            var str = window.prompt('请输入搜索的信息', '美女');
+
+            window.open('http://www.baidu.com/s?wd=' + str);
+        }
+    }
+</script>
+</body>
+</html>

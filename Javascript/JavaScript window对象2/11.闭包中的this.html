@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 闭包中的this指向window
+     * 注意：闭包内的this也是可以使用call或者apply改变的
+     *  result.call(obj);
+     */
+    function test3() {
+        console.log('我是test3');
+        console.log(this);
+        console.log('...........................');
+    }
+    window.test3();
+    function test() {
+        var a = 10;
+
+        function test2() {
+            a++;
+            console.log(a);
+            console.log(this);
+        }
+        return test2;
+    }
+    /**
+     *ƒ test2() {
+            a++;
+            console.log(a);
+            console.log(this);
+        }
+     */
+    var result = test();
+    console.log(result);
+
+    var obj = {'userName': '李白'};
+    result.call(obj);
+   // window.result();
+
+</script>
+</body>
+</html>

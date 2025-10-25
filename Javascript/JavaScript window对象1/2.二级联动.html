@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        select {
+            width: 100px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<p align="center">
+    <span>省：</span><select class="sheng">
+    <option>请选择</option>
+</select>
+    <span>市：</span><select class="shi"></select>
+    <span>县：</span><select class="xian"></select>
+</p>
+<script>
+    /**
+     * 1.select元素的option创建方式：【var option = new Option(‘想要显示的内容’)；】
+     * 2.select元素中添加option方式：【select.options.add(新创建的option)；】
+     * 3.select元素清空所有的option方式：【select.options.length = 0;】
+     * 4.select元素改变时触发的事件：【select.onchange = function(){};】
+     * 5.select元素当前正在选中的option的序号：【select.selectedIndex】,从0开始。
+     */
+    //获取页面元素
+    var shengSelect = document.querySelector('.sheng');
+    var shiSelect = document.querySelector('.shi');
+    var xianSelect = document.querySelector('.xian');
+    //准备数据
+    var shengArr = ['河南', '河北', '山西'];
+    /**
+     * @type {*[]}
+     */
+    var shiArr = [['郑州', '洛阳', '开封', '商丘'], ['保定', '唐山', '秦皇岛', '石家庄'], ['太原', '大同', '平遥', '运城']];
+    var xianArr = [[['郑1', '郑2'], ['洛1', '洛2'], ['开1', '开2'], ['商1', '商2']], [['保1', '保2'], ['唐1', '唐2'], ['秦1', '秦2'], ['石1', '石2']], [['太1', '太2'], ['大1', '大2'], ['平1', '平2'], '运1', '运2']];
+    console.log(shiArr[1].length)
+    //填充数据
+    for (var i = 0; i < shengArr.length; i++) {
+        var option = new Option(shengArr[i]);
+        shengSelect.options.add(option);
+    }
+    //实现联动效果
+    //1.当省的select发生改变 填充市的数据
+
+    shengSelect.onchange = function (event) {
+        var event = event || window.event;
+        var shengIndex = event.target.selectedIndex - 1;
+        if (shengIndex == -1) {//请选择
+            shiSelect.options.length = 0;
+        } else {
+            //添加市的数据 填充之前数据清空
+            shiSelect.options.length = 0;
+            for (var i = 0; i < shiArr[shengIndex].length; i++) {
+                var option = new Option(shiArr[shengIndex][i]);
+                shiSelect.options.add(option);
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

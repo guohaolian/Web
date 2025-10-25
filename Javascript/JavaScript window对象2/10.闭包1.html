@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script>
+    /**
+     * 作用域2种：
+     *  1.函数作用域
+     *  2.全局作用域
+     *    function test(){
+       var num = 100;
+    }
+     test();
+     console.log(num);
+     var num;
+
+
+     function test() {
+        var a = 10;
+
+        function test2() {
+            console.log(a);
+        }
+        //test2();
+        return test2;
+    }
+     */
+    function test() {
+        var a = 10;
+        return function () {
+            console.log(a);
+            a++;
+            return a;
+        }
+        //test2();
+    }
+    /**
+     * ƒ () {
+            console.log(a);
+        }
+     */
+    var result = test();
+
+    var a1 = result();
+    var a2 = result();
+    var a3 = result();
+    result = null;
+
+    console.log('a1', a1);//11
+    console.log(a2);//12
+    console.log('a3', a3);//13
+    var result2 = test();
+
+    a1 = result2();
+    a2 = result2();
+    a3 = result2();
+    console.log('a1', a1);//11
+    console.log(a2);//12
+    console.log(a3);//13
+
+
+    /**
+     * 可以在函数的外部获取函数内部的值
+     * 可以将变量一直保留在内存中 不被垃圾回收器杀死
+     */
+
+</script>
+
+</body>
+</html>

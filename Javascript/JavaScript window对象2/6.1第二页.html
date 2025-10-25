@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>第二个页面</h1>
+<hr/>
+<button class="back">back</button>
+<button class="forward_next">forward_next</button>
+
+<button class="forward">去第三页</button>
+<button class="go">go()</button>
+<button class="length">length</button>
+<script>
+    //获取页面元素
+    var back = document.querySelector('.back');
+    var forward = document.querySelector('.forward');
+    var go = document.querySelector('.go');
+    var length = document.querySelector('.length');
+    var next = document.querySelector('.forward_next');
+    next.onclick = function () {
+
+        window.history.forward();
+
+    }
+    //绑定点击事件
+    back.onclick = function () {
+        window.history.back();
+    }
+    forward.onclick = function () {
+        document.location.href = '6.1第三页.html';
+    }
+    go.onclick = function () {
+        window.history.go(2);
+    }
+
+    length.onclick = function () {
+
+        console.log(window.history.length);
+
+    }
+
+
+</script>
+</body>
+</html>

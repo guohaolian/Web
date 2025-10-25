@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+            display: none;
+        }
+
+        p {
+            border: red solid thin;
+            outline: #00ff00 dotted thick;
+        }
+
+    </style>
+</head>
+<body>
+<div></div>
+<img src="img/3.jpg">
+<h1 style="visibility: hidden">你好啊 小老弟</h1>
+<h1>你好啊 悟空</h1>
+<button>点我</button>
+<p>11111111111111</p>
+<script>
+
+    /**
+     * 回流(reflow)：当渲染树中的一部分或者全部因为大小边距等问题发生改变而需要重建的过程叫做回流。
+     *重绘(repaint)：当元素的一部分属性发生变化，如【外观背景色】不会引起布局变化而需要重新渲染的过程叫做重绘
+     * 注意：
+     *      回流必将引起重绘 重绘不一定造成回流
+     * 渲染树：
+     * 1.根据文档生成dom树
+     * 2.在DOM树基础上根据节点的几何属性（margin/padding/width/height等)生成render树（不包括display:none、head节点但会包含visibility:hidden节点
+     * 3.在render树基础上进行进一步渲染包括color,outline等样式）
+     */
+    /**
+     * 引起回流和重绘的原因：
+     * 调整窗口大小（Resizing the window）
+     改变字体（Changing the font）
+     增加或者移除样式表（Adding or removing a stylesheet）
+     内容变化，比如用户在input框中输入文字（Content changes, such as a user typing text inan input box）
+     激活 CSS 伪类，比如 :hover
+     (IE 中为兄弟结点伪类的激活)（Activation of CSS pseudo classes such as :hover (in IE the activation of the pseudo         class of a sibling)）
+     操作 class 属性（Manipulating the class attribute）
+     脚本操作 DOM（A script manipulating the DOM）
+     设置 style 属性的值 （Setting a property of the style attribute）
+
+     */
+
+</script>
+</body>
+</html>

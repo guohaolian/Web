@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 2000px;
+            width: 2000px;
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+    //浏览器的大小
+    console.log('outerHeight ', window.outerHeight)
+    console.log('outerWidth ', window.outerWidth);
+    //视口含滚动条
+    console.log('innerHeight ', window.innerHeight)
+    console.log('innerWidth ', window.innerWidth);
+    //视口不含滚动条
+    console.log('clientHeight ', document.documentElement.clientHeight);
+    console.log('clientWidth ', document.documentElement.clientWidth);
+    //浏览器窗体 距离 【屏幕左顶点】坐标
+    console.log('screenX ', window.screenX);
+    console.log('screenY ', window.screenY);
+    //判断设备的类型
+    console.log(window.navigator.userAgent);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/out.js" ></script>
+    <script src="js/out1.js" ></script>
+    <script src="js/out2.js" ></script>
+</head>
+<body>
+<script>
+    /**
+     * js文件的加载顺序： defer 内部domtree加载完毕后 再去加载外部的js文件  内部优先
+     *                    async:异步执行 domtree加载 和js文件的js是同步执行的
+     *                          HTML5规范要求
+                                 脚本执行应该按照脚本出现的先后顺序执行
+                           文件阻塞：js文件在dom加载完成后执行，会出现如果dom文件过大，加载缓慢。
+                           当没有任何属性修饰时 js文件的执行顺序 按照html解析的顺序 从上到下依次执行
+     */
+    alert('你好世界111 我是内部的js');
+    alert('你好世界222 我是内部的js');
+    alert('你好世界333 我是内部的js');
+    alert('你好世界444 我是内部的js');
+</script>
+</body>
+</html>

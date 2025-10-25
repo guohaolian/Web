@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .big {
+            height: 600px;
+            width: 600px;
+            position: relative;
+            background-image: url("img/花2.jpg");
+        }
+
+        .small {
+            width: 235px;
+            height: 204px;
+            background-image: url("img/花1.png");
+            position: absolute;
+            left: 0;
+            top: 64px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="big">
+    <div class="small"></div>
+</div>
+<script>
+
+    //获取页面元素
+    var big = document.querySelector('.big');
+    var small = document.querySelector('.small');
+    //当滑块没有被按下时 不能移动
+    var flag = false;
+    //如果是第一次移动 则可以继续执行
+    var once = true;
+    /**
+     *  添3加鼠标事件
+     *    2个开关
+     *    （1）判断滑块是否被按下
+     *    （2）判断是不是第一次移动
+     */
+
+    var delX = 0;
+    small.onmousedown = function (event) {
+        if (once) {
+            var event = event || window.event;
+            flag = true;
+            delX = event.clientX - small.offsetLeft;
+        }
+    };
+
+    var tempLeft = 0;
+    big.onmousemove = function (event) {
+        //当鼠标按在滑块时才可以移动
+        if (flag) {
+            var event = event || window.event;
+             tempLeft = event.clientX - delX;
+                //处理边界问题
+            if(tempLeft<0){
+                tempLeft = 0;
+            }
+            if(tempLeft>big.clientWidth  - small.clientWidth){
+                tempLeft = big.clientWidth - small.clientWidth;
+            }
+
+            small.style.left = tempLeft + 'px';
+
+        }
+
+    };
+    //鼠标抬起时 进行校验
+    document.onmouseup = function () {
+        if(once){
+            //第一次移动已经结束
+            once = false;
+            //鼠标已经抬起滑块不能移动
+            flag = false;
+            //进行校验
+            if(tempLeft>=174 && tempLeft<=194){
+                alert('success');
+                small.style.left = 186 + 'px';
+            }else{
+                alert('fail');
+            }
+        }
+    };
+
+
+</script>
+</body>
+</html>

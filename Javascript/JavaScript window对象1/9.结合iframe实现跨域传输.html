@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button>获取跨域传输的值</button>
+<script>
+    var button = document.querySelector('button');
+
+    button.onclick = function () {
+        var iframe = document.createElement('iframe');
+        iframe.src = '8.another.html';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        iframe.onload = function (event) {
+            var event = event || window.event;
+            var message = this.contentWindow.name;
+            eval(message);
+            console.log(message);
+            console.log(typeof obj);
+            console.log(obj.userName);
+        }
+
+    }
+
+
+</script>
+<!--<iframe src="http://www.baidu.com" width="500" height="500"></iframe>-->
+</body>
+</html>

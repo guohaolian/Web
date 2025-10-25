@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: skyblue;
+            position: absolute;
+            left: 30px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+<button class="start">开始</button>
+<button class="stop">结束</button>
+<div class="box"></div>
+<script>
+    var start = document.querySelector('.start');
+    var stop = document.querySelector('.stop');
+    var box = document.querySelector('.box');
+
+    var timer = null;
+    //只初始化一次防止左右摇摆
+    var tempLeft = 30;
+    start.onclick = function () {
+        //结束上一次的定时器
+        clearInterval(timer);//1 2
+        timer = setInterval(function () {
+            tempLeft += 20;
+            box.style.left = tempLeft + 'px';
+        }, 300);
+        console.log(timer);//1 2 3
+    };
+    stop.onclick = function () {
+        clearInterval(timer);
+    }
+
+</script>
+
+</body>
+</html>

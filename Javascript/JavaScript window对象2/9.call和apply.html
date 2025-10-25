@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 结论：
+     * call函数结论：
+     (1)call函数能够改变函数的实际调用者，也就是函数中this的指向。
+     (2)call函数中第一个参数必须写，而其余参数可以不写。
+     (3)call函数传递参数的时候，用逗号分隔每一个参数
+     apply函数结论：
+     (1)apply函数能够改变函数的实际调用者，也就是函数中this的指向
+     (2)apply函数中第一个参数必须写，而其余参数可以不写
+     (3)apply函数传递参数的时候，参数采用数组方式传递
+
+     */
+
+    var minNum = Math.min(10, 20, 30, 40);
+    console.log(minNum);
+    var arr = [1, 2, 3, 4, 9, 100, -9, 0];
+
+    minNum = Math.min.apply(null, arr);
+    console.log('----> '+ minNum);
+
+    var result = arr.map(function (ele,index) {
+        return ele*ele;
+    });
+    console.log(result);
+
+    /*  minNum = arr[0];
+     for(var i = 0;i<arr.length;i++){
+     if(minNum>arr[i]){
+         minNum = arr[i];
+        }
+     }
+     console.log(minNum);*/
+
+
+
+
+
+</script>
+
+</body>
+<

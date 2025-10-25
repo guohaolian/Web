@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    /**
+     * setInterval()定时执行
+     * 定时器后面的任务执行完毕后 才会执行定时器内部的任务
+     *
+     * 注意：
+     *    1.timer的值（任务的标识）从1开始 随着定时器的增多 依次递增
+     *    2.清除定时器可以使用变量 也可以使用 标识值
+     *
+     */
+    var timer = null;
+    var timer1 = null;
+    var timer2 = null;
+    timer = setInterval(function () {
+        console.log('HelloWorld timer');
+    }, 0);
+
+    timer1 = window.setInterval(function () {
+        console.log('HelloWorld timer1');
+    }, 0);
+    timer2 = setInterval(function () {
+        console.log('HelloWorld timer2');
+    }, 0);
+    console.log(timer);
+    console.log(timer1);
+    console.log(timer2);
+
+  // clearInterval(timer);
+   clearInterval(2);
+   clearInterval(3);
+
+</script>
+</body>
+</html>

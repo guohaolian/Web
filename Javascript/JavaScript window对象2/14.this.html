@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p onclick="test(this)">111111</p>
+<script>
+    function test(a){
+        console.log('aaaaaaaaaaaaaaaa');
+        console.log(a);
+        console.log(this);
+    }
+    /**
+     *
+     (1)this在正常函数中：			谁调用了函数，this指向谁
+     (2)this在闭包中：				闭包中的this指向window
+     (3)间隔调用和延迟调用：		间隔调用和延迟调用中的this指向window
+     (4)事件中的this
+     HTML：this指向window
+     DOM0：this指向绑定该事件的元素
+     DOM2级：IE指向window 非IE中指向指向绑定该事件的元素
+     (5)自执行函数：				this指向window
+     (6)call和apply函数：			第一个参数是谁，this指向谁
+
+     */
+
+</script>
+</body>
+</html>

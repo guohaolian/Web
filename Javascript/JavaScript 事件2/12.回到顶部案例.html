@@ -23,7 +23,7 @@
         var tempTop = document.documentElement.scrollTop || document.body.scrollTop;
         //间隔事件改变滚动距离让其不断变小
         var timer = setInterval(function () {
-            tempTop -= 11;
+            tempTop -= 40;
             console.log(tempTop);
             if(tempTop<0){
                 clearInterval(timer);

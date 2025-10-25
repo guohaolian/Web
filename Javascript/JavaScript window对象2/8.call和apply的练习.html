@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * call和apply不仅可以改变全局作用域的函数中this的指向 还可以改变 对象内部函数this的指向
+     *
+     * 只要获取到对用的函数即可
+     */
+
+    var name = 'quanJuBianLiang';
+
+    var obj1 = {
+        name: 'obj1Name',
+        getName: function (x, y) {
+            console.log(this);
+            console.log(this.name);
+            console.log(x);
+            console.log(y);
+        }
+    };
+    //obj1.getName(66,88);
+    //obj1.getName.call(null,10,20);//window  obj1Name
+    obj1.getName.apply(window,[20,30]);
+
+    var obj2 = {name: 'obj2Name'};
+    function getName(x, y) {
+        console.log('------------一次输出------------');
+        console.log('this:' , this);
+        console.log('this.name:' + this.name);
+        console.log('参数x：' + x);
+        console.log('参数y：' + y);
+    }
+
+   // window.getName(10,20);//window   10  20
+
+  //  getName.call(obj2,10,66);
+
+    //getName.apply(obj2,[10,20,30]);
+
+
+</script>
+</body>
+</html>

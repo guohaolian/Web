@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>第一个页面</h1>
+<hr/>
+<button class="back">back</button>
+<button class="forward_next">forward_next</button>
+<button class="forward">去第二页</button>
+<button class="go">go()</button>
+<button class="length">length</button>
+<script>
+    //获取页面元素
+    var back = document.querySelector('.back');
+    var forward = document.querySelector('.forward');
+    var go = document.querySelector('.go');
+    var length = document.querySelector('.length');
+    var next = document.querySelector('.forward_next');
+    next.onclick = function () {
+
+        window.history.forward();
+
+    }
+    //绑定点击事件
+    back.onclick = function () {
+        window.history.back();
+    };
+    forward.onclick = function () {
+        document.location.href = '6.1第二页.html';
+    };
+
+    go.onclick = function () {
+        window.history.go(2);
+    };
+
+    length.onclick = function () {
+        console.log(window.history.length);
+    }
+    /**
+     * window.location.href或者通过a标签进行的跳转，则会向栈中添加新的页面
+     *
+     * 注意：
+     *      1.当向栈中已有界面再次添加新的页面时  则 会清除掉原栈内以上所有的页面  再将新的页面添加进来
+     *
+     */
+
+
+</script>
+</body>
+</html>
