@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /**
+         * 构造函数：function 类名（属性值）{
+         *  this.属性 = 属性值；
+         *  。。。。。。
+         * }
+         *   1.构造函数可以定义为类：在函数内规定了该类的共有特征（属性）
+         *   2.调用构造函数  使用 new关键字调用
+         *   3.创建构造函数时 注意所有单词的首字母大写
+         */
+
+        function Person(userName, userAge, userSex, userHeight) {
+            this.userName = userName;
+            this.userAge = userAge;
+            this.userSex = userSex;
+            this.userHeight = userHeight;
+        }
+        var p1 = new Person('李白', 18, '男', '180cm');
+        var p2 = new Person('杜甫', 18, '男', '180cm');
+        console.log(p1.userHeight);
+        console.log(p2.userName);
+        /**
+         * 动物类：毛色  年龄   昵称  sex
+         */
+
+    </script>
+
+</body>
+
+</html>

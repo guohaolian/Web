@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 79px;
+            height: 108px;
+            position: absolute;
+            background: url("img/girl.png") no-repeat;
+            background-position: 0px -216px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        /**
+         * 群魔乱舞  ：在不定的位置产生小女孩 行走
+         */
+        function Girl(left, top) {
+            this.left = left;
+            this.top = top;
+            //1.产生小女孩
+            this.init = function () {
+                this.div = document.createElement('div');
+                this.div.style.left = this.left + 'px';
+                this.div.style.top = this.top + 'px';
+                document.body.appendChild(this.div);
+            }
+            //2.小女孩行走
+            this.move = function () {
+                var ids = 0;
+                var that = this;
+                this.timer = setInterval(function () {
+                    that.left += 5;
+                    //从左向右走
+                    that.div.style.left = that.left + 'px';
+                    if (that.left > 1000) {
+                        that.die();
+                    }
+                    if (ids > 7) {
+                        ids = 0;
+                    }
+                    //改变图片
+                    that.div.style.backgroundPosition = -79 * ids + 'px -216px';
+                    ids++;
+                }, 50);
+            };
+            //3.小女孩消失
+            this.die = function () {
+                clearInterval(this.timer);
+                this.div.style.display = 'none';
+            };
+            //调用函数开始执行
+            this.init();
+            this.move();
+        }
+
+        /*   new Girl(100, 100);
+           new Girl(50, 150);*/
+
+        setInterval(function () {
+            new Girl(Math.floor(Math.random() * (200 - 100 + 1) + 100), Math.floor(Math.random() * (600 - 100 + 1) + 100));
+
+        }, 10);
+
+    </script>
+
+</body>
+
+</html>

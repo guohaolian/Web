@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /**
+         * 类：对一类事物共有特征的抽象描述  汽车图纸
+         * 对象：一个具体的实例    汽车
+         */
+
+        var xiaoMing = {
+            'userName': '小明',
+            'userSex': '男',
+            'userHeight': '180cm'
+        };
+        var xiaoGang = {
+            'userName': '小刚',
+            'userSex': '男',
+            'userHeight': '180cm'
+        };
+        var xiaoHua = {
+            'userName': '小花',
+            'userSex': '女',
+            'userHeight': '160cm'
+        }
+
+        function Person() {
+            var person = {};
+            person.userName = '李白';
+            person.userAge = '18';
+            return person;
+
+        }
+        var p1 = Person();
+        var p2 = Person();
+        console.log(p1, p2);
+
+
+    </script>
+</body>
+
+</html>

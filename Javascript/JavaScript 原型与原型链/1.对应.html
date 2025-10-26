@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1,
+        .div2 {
+            width: 600px;
+            height: 300px;
+            border: 1px solid skyblue;
+            margin: 20px;
+        }
+
+        .div1 div {
+            width: 100px;
+            height: 100px;
+            float: left;
+            background-color: orange;
+            margin: 20px;
+        }
+
+        .div2 div {
+            width: 100px;
+            height: 100px;
+            float: left;
+            background-color: orange;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="div2">
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </div>
+    <script>
+        /**
+         * 获取页面元素
+         */
+        var div1s = document.querySelectorAll('.div1 div');
+        var div2s = document.querySelectorAll('.div2 div');
+        console.log(div1s, div2s);
+
+        for (var i = 0; i < div1s.length; i++) {
+            div1s[i].index = i;
+
+            div1s[i].onmouseover = function () {
+                //将所有的div变为原来的颜色
+                for (var j = 0; j < div1s.length; j++) {
+                    div1s[j].style.backgroundColor = 'orange';
+                    div2s[j].style.backgroundColor = 'orange';
+                }
+                div1s[this.index].style.backgroundColor = 'skyblue';
+                div2s[this.index].style.backgroundColor = 'skyblue';
+
+            }
+        }
+
+
+        /*   for (var i = 0; i < div1s.length; i++) {
+               (function (m) {
+                   div1s[m].onmouseover = function () {
+                       div1s[m].style.backgroundColor = 'skyblue';
+                       div2s[m].style.backgroundColor = 'skyblue';
+                   }
+               })(i)
+           }*/
+
+
+    </script>
+
+</body>
+
+</html>

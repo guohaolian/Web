@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        var str = '你好';
+        var result = str.charCodeAt(0);
+        console.log(result);
+        /*var xiaoMing = {
+            'userName': '小明',
+            'age': 18,
+            'sex': '男',
+            'eyesNum':2
+        }
+        var jianGuo = {
+            'userName': '建国',
+            'age': 19,
+            'sex': '男',
+            'eyesNum':2
+        }
+        var xiaoFang = {
+            'userName': '小芳',
+            'age': 18,
+            'sex': '女',
+            'eyesNum':2
+        }*/
+        /**
+         * 原型：js中给函数提供了一个对象类型的属性，叫做prototype(原型)。
+                   原型归函数所有，他不用创建，是默认存在的。
+               原型的作用：
+                         1.开辟一块公共的空间 所有的对象都可以访问
+                         2.对象属性值的查找规则 优先在本对象内查找
+                            当本对象中没有的时候去原型中查找
+    
+    
+         */
+        function Person(userName, age, sex) {
+            this.userName = userName;
+            this.age = age;
+            this.sex = sex;
+        }
+        Person.prototype.eyesNum = 2;
+
+        var xiaoMing = new Person('小明', 18, '男');
+        var jianGuo = new Person('建国', 20, '男');
+        var xiaoFang = new Person('小芳', 18, '女');
+        var erLangSheng = new Person('二郎神', 18, '男');
+        //此步 在给二郎神新增一个属性 eyesNum
+        erLangSheng.eyesNum = 3;
+        console.log(erLangSheng);
+
+
+        console.log(xiaoMing, jianGuo, xiaoFang);
+
+        console.log(xiaoFang.eyesNum);
+        console.log(jianGuo.eyesNum);
+        console.log(xiaoMing.eyesNum);
+
+
+
+    </script>
+</body>
+
+</html>

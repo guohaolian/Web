@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /**
+         *
+         由【对象的__proto__属性】和
+         【对象的构造函数的原型的__proto__属性】构成的链式结构称为原型链。
+    
+         原型链的终点是 Object的原型  null
+         */
+        function Person(userName, age) {
+            this.userName = userName;
+            this.age = age;
+        }
+        var p1 = new Person('李白', 18);
+        console.log(Person.prototype);
+        console.log(p1.__proto__);
+        //p1的原型的原型
+        console.log(p1.__proto__.__proto__);
+        console.log(p1.__proto__.__proto__.constructor);
+        //p1的原型的原型的原型
+        console.log(p1.__proto__.__proto__.__proto__);
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

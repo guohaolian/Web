@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            width: 79px;
+            height: 108px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            background: url("img/girl.png") no-repeat;
+            background-position: 0px -216px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var box = document.querySelector('.box');
+        var ids = 0;
+        var tempLeft = 100;
+        var timer = setInterval(function () {
+            //left值不停改变
+            tempLeft += 5;
+            if (tempLeft > 1000) {
+                clearInterval(timer);
+            }
+            box.style.left = tempLeft + 'px';
+            //position left不停改变
+            ids++;
+            if (ids > 7) {
+                ids = 0;
+            }
+            box.style.backgroundPosition = -79 * ids + 'px -216px';
+        }, 50);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /**
+         * 原型是一个对象，在原型中通常拥有两个属性：
+         (1)构造器constructor：该属性指向了这个类(构造函数)本身
+         (2)原型指向__proto__:该属性指向原型本身，提供给通过类创建的对象使用。
+         */
+        function Person(userName, age) {
+            this.userName = userName;
+            this.age = age;
+        }
+        /**
+         * 原型中不要使用引用类型数据作为原型的值
+         * 因为引用类型传递的是地址值
+         */
+        Person.prototype.girlFriends = ['杨幂', '韩红', '赵丽颖'];
+        var p1 = new Person('李白', 89);
+        var p2 = new Person('杜甫', 89);
+        p1.girlFriends[0] = '范冰冰';
+
+        console.log(p1.girlFriends);
+        console.log('-->', p2.girlFriends);
+
+
+        console.log(Person.prototype);
+        console.log(Person.prototype.constructor);//构造器
+        console.log(p1.__proto__);
+
+        
+
+        
+
+    </script>
+
+</body>
+
+</html>

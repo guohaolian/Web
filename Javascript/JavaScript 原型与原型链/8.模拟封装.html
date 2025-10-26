@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+    <script>
+        /**
+         * 特权函数：可以获取或者修改构造函数内部局部变量值的函数；
+         * 实际是在模拟 面向对象的封装
+         */
+        function Person(userName, sex) {
+            var meng = '写代码';
+            this.userName = userName;
+            this.sex = sex;
+            this.setMeng = function (newMeng) {
+                meng = newMeng;
+            };
+            this.getMeng = function () {
+                return meng;
+            }
+        }
+
+        var p1 = new Person('李白', '男');
+
+        p1.setMeng('找仙人 采仙草 炼仙丹');
+        var result = p1.getMeng();
+        console.log(result);
+
+        var p2 = new Person('杜甫', '男');
+
+        p2.setMeng('我要上春晚');
+
+        console.log(p2.getMeng());
+        console.log(p1, p2);
+
+
+    </script>
+
+</body>
+
+</html>
