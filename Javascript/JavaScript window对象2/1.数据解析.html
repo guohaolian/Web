@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
-<form action="#" method="get">
-    <span>姓名:</span><input type="text" name="userName" class="userName"/><br>
-    <span>年龄:</span><input type="text" name="userAge" class="userAge"/><br>
-    <span>性别:</span><input type="text" name="userSex" class="userSex"/><br>
-    <span>身高:</span><input type="text" name="userHight" class="userHight"/><br>
-    <input type="submit">
-</form>
-<button class="getMessage">获取信息</button>
-<script>
-    var get = document.querySelector('button');
-    console.log(get);
-   /* var obj = {
-        'userName': 'zhangSan',
-        'userAge': 18,
-        'userSerx': '男'
-    }*/
-    get.onclick = function () {
-        //获取地址栏搜索的表单值
-          var result = document.location.search;
-        //?userName=222&userAge=18&userSex=%E7%94%B7
-       // var result = '?userName=222&userAge=18&userSex=male';
-        var obj2 = getMessage(result);
-        console.log('obj2',obj2);
-    };
-    function getMessage(searchValue) {
-        var r1 = searchValue.substring(1);//userName=222&userAge=18&userSex=male
-        console.log(r1);
-        var r2 = r1.split('&');//["userName=222", "userAge=18", "userSex=male"]
-        console.log(r2);
-        //遍历数组进行‘=’切割
-        var obj1 = {};
-        for (var i = 0; i < r2.length; i++) {
-            var r3 = r2[i].split('=');
-            console.log(r2[i], r3);
-            obj1[r3[0]] = r3[1];
-        }
-       // console.log(obj1);//{userName: "222", userAge: "18", userSex: "male"}
-        return obj1;
-    }
 
-</script>
+<body>
+    <form action="#" method="get">
+        <span>姓名:</span><input type="text" name="userName" class="userName" /><br>
+        <span>年龄:</span><input type="text" name="userAge" class="userAge" /><br>
+        <span>性别:</span><input type="text" name="userSex" class="userSex" /><br>
+        <span>身高:</span><input type="text" name="userHight" class="userHight" /><br>
+        <input type="submit">
+    </form>
+    <button class="getMessage">获取信息</button>
+    <script>
+        var get = document.querySelector('button');
+        console.log(get);
+        /* var obj = {
+             'userName': 'zhangSan',
+             'userAge': 18,
+             'userSerx': '男'
+         }*/
+        get.onclick = function () {
+            //获取地址栏搜索的表单值
+            var result = document.location.search;
+            //?userName=222&userAge=18&userSex=%E7%94%B7
+            // var result = '?userName=222&userAge=18&userSex=male';
+            var obj2 = getMessage(result);
+            console.log('obj2', obj2);
+        };
+        function getMessage(searchValue) {
+            var r1 = searchValue.substring(1);//userName=222&userAge=18&userSex=male为了去掉问号
+            console.log(r1);
+            var r2 = r1.split('&');//["userName=222", "userAge=18", "userSex=male"]
+            console.log(r2);
+            //遍历数组进行‘=’切割
+            var obj1 = {};
+            for (var i = 0; i < r2.length; i++) {
+                var r3 = r2[i].split('=');
+                console.log(r2[i], r3);
+                obj1[r3[0]] = r3[1];
+            }
+            // console.log(obj1);//{userName: "222", userAge: "18", userSex: "male"}
+            return obj1;
+        }
+
+    </script>
 </body>
+
 </html>

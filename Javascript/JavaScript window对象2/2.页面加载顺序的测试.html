@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
     <link type="text/css" href="css/out.css" rel="stylesheet">
     <style>
-
         .box {
             height: 200px;
             width: 200px;
             background-color: orange;
         }
-
     </style>
 </head>
+
 <body>
-<img src="img/3.jpg">
+    <img src="img/3.jpg">
 
-<div class="box"></div>
-<button>点我</button>
-<script>
-    /**
-     * 页面的加载顺序
-     * 1.请求html页面
-     * 2.加载外部资源
-     *
-     */
-    var button = document.querySelector('button');
-    var box = document.querySelector('.box');
-    button.onclick = function () {
-        box.style.display = 'none';
-    }
+    <div class="box"></div>
+    <button>点我</button>
+    <script>
+        /**
+         * 页面的加载顺序
+         * 1.请求html页面
+         * 2.加载外部资源
+         *
+         */
+        var button = document.querySelector('button');
+        var box = document.querySelector('.box');
+        button.onclick = function () {
+            box.style.display = 'none';
+        }
 
-</script>
+    </script>
 
 </body>
+
 </html>

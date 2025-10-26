@@ -26,9 +26,7 @@
     minNum = Math.min.apply(null, arr);
     console.log('----> '+ minNum);
 
-    var result = arr.map(function (ele,index) {
-        return ele*ele;
-    });
+    var result = arr.map(ele=> ele*ele);
     console.log(result);
 
     /*  minNum = arr[0];
