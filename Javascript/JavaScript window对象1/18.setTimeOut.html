@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -54,55 +55,56 @@
         .down div.select {
             display: block;
         }
-
     </style>
 </head>
+
 <body>
-<div class="box">
-    <div class="head">
-        <ul>
-            <li class="select">腾讯</li>
-            <li>百度</li>
-            <li>淘宝</li>
-            <li>微信</li>
-        </ul>
+    <div class="box">
+        <div class="head">
+            <ul>
+                <li class="select">腾讯</li>
+                <li>百度</li>
+                <li>淘宝</li>
+                <li>微信</li>
+            </ul>
+        </div>
+        <div class="down">
+            <div class="select">腾讯腾讯腾讯腾讯</div>
+            <div>百度百度百度百度</div>
+            <div>淘宝淘宝淘宝淘宝</div>
+            <div>微信微信微信微信</div>
+        </div>
     </div>
-    <div class="down">
-        <div class="select">腾讯腾讯腾讯腾讯</div>
-        <div>百度百度百度百度</div>
-        <div>淘宝淘宝淘宝淘宝</div>
-        <div>微信微信微信微信</div>
-    </div>
-</div>
-<script>
-    var lis = document.querySelectorAll('li');
-    var divs = document.querySelectorAll('.down div');
-    var timer = null;
-    for (var i = 0; i < lis.length; i++) {
+    <script>
+        var lis = document.querySelectorAll('li');
+        var divs = document.querySelectorAll('.down div');
+        var timer = null;
+        for (var i = 0; i < lis.length; i++) {
 
-        lis[i].onmouseover = function (event) {
-            var event = event || window.event;
-            //setTimeout()中 this指向window
-            var that = this;
-            timer= setTimeout(function () {
-                //清除掉之前的记录 在当下点击的li上添加下划线
-                for (var j = 0; j < lis.length; j++) {
-                    //清除历史记录
-                    lis[j].className = '';
-                    divs[j].className = '';
-                    console.log(this);
-                    if (lis[j] == that) {
-                        lis[j].className = 'select';
-                        divs[j].className = 'select';
+            lis[i].onmouseover = function (event) {
+                var event = event || window.event;
+                                                                //setTimeout()中 this指向window
+                var that = this;
+                timer = setTimeout(function () {
+                    //清除掉之前的记录 在当下点击的li上添加下划线
+                    for (var j = 0; j < lis.length; j++) {
+                        //清除历史记录
+                        lis[j].className = '';
+                        divs[j].className = '';
+                        console.log(this);
+                        if (lis[j] == that) {
+                            lis[j].className = 'select';
+                            divs[j].className = 'select';
+                        }
                     }
-                }
-            }, 500);
+                }, 200);
+            }
+            lis[i].onmouseout = function () {
+                clearTimeout(timer);
+            }
         }
-        lis[i].onmouseout = function () {
-            clearTimeout(timer);
-        }
-    }
 
-</script>
+    </script>
 </body>
+
 </html>
