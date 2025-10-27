@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<script>
-    /**
-     * 快速排序“的思想很简单，整个排序过程只需要三步：
-     　　（1）在数据集之中，选择一个元素作为“基准”（pivot）。
-     　　（2）所有小于“基准”的元素，都移到“基准”的左边；所有大于“基准”的元素，都移到“基准”的右边。
-     　　（3）对"基准"左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。
-     */
-    var arr = [55, 66, 18, 10, 20, 30, 1, 2, 3, 12, 2];
-    var result = quickSort(arr);
-    console.log('结果: ' + result);
-    function quickSort(tempArr) {
-        if (tempArr.length <= 1) {
-            return tempArr;
-        }
-        //第一步取基准值
-        var midIndex = Math.floor(tempArr.length / 2);
-        var midValue = tempArr.splice(midIndex, 1);
-        console.log(midValue);
-        //第二步分左右
-        var left = [];
-        var right = [];
-        for (var i = 0; i < tempArr.length; i++) {
-            if (midValue > tempArr[i]) {
-                left.push(tempArr[i]);
-            } else {
-                right.push(tempArr[i]);
+    <script>
+        /**
+         * 快速排序“的思想很简单，整个排序过程只需要三步：
+           （1）在数据集之中，选择一个元素作为“基准”（pivot）。
+           （2）所有小于“基准”的元素，都移到“基准”的左边；所有大于“基准”的元素，都移到“基准”的右边。
+           （3）对"基准"左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。
+         */
+        var arr = [55, 66, 18, 10, 20, 30, 1, 2, 3, 12, 2];
+        var result = quickSort(arr);
+        console.log('结果: ' + result);
+        function quickSort(tempArr) {
+            if (tempArr.length <= 1) {
+                return tempArr;
             }
+            //第一步取基准值
+            var midIndex = Math.floor(tempArr.length / 2);
+            var midValue = tempArr.splice(midIndex, 1);
+            console.log(midValue);
+            //第二步分左右
+            var left = [];
+            var right = [];
+            for (var i = 0; i < tempArr.length; i++) {
+                if (midValue > tempArr[i]) {
+                    left.push(tempArr[i]);
+                } else {
+                    right.push(tempArr[i]);
+                }
+            }
+            console.log('left:', left, 'midValue:' + midValue, 'right:', right);
+            //第三步 重复第一步和第二步
+            // console.log(left.concat(midValue, right));
+            return quickSort(left).concat(midValue, quickSort(right));//将左右子集排序后合并
         }
-        console.log('left:',left, 'midValue:' + midValue, 'right:', right);
-        //第三步 重复第一步和第二步
-       // console.log(left.concat(midValue, right));
-        return quickSort(left).concat(midValue, quickSort(right));
-    }
-</script>
+    </script>
 
 </body>
+
 </html>

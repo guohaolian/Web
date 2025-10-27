@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<script>
-    /**
-     * 贪婪模式：尽可能多的匹配
-     * 懒惰模式：尽可能少的匹配
-     *
-     */
-    var regExp = /8[a-zA-Z0-9]*7/;
-    var string = 'abc8defghij7klngon8qrstwxy7';
-    var result = string.match(regExp);
-    console.log(result);
-    console.log('-------------------------');
-    /*  var regExp = /8[a-zA-Z0-9]*?7/;
-     var string = 'abc8defghij7klngon8qrstwxy7';
-     var result = string.match(regExp);
-     console.log(result);*/
-    var test = "<img width='200px;'/><img width='300px;'/><img width='400px;'/>";
-    var regExp = /<img[^>]*\/>/gi //声明<img和/>之间的字符只要不是>就继续判断。
-    var result = test.match(regExp);
-    console.log(result);
+    <script>
+        /**
+         * 贪婪模式：尽可能多的匹配
+         * 懒惰模式：尽可能少的匹配
+         *
+         */
+        var regExp = /8[a-zA-Z0-9]*7/;
+        var string = 'abc8defghij7klngon8qrstwxy7';
+        var result = string.match(regExp);
+        console.log(result);
+        console.log('-------------------------');
+        /*  var regExp = /8[a-zA-Z0-9]*?7/;
+         var string = 'abc8defghij7klngon8qrstwxy7';
+         var result = string.match(regExp);
+         console.log(result);*/
+        var test = "<img width='200px;'/><img width='300px;'/><img width='400px;'/>";
+        var regExp = /<img[^>]*\/>/gi //声明<img和/>之间的字符只要不是>就继续判断。当且仅当^符号在中括号的首位时为脱字符
+        var result = test.match(regExp);
+        console.log(result);
 
 
-</script>
+    </script>
 
 </body>
+
 </html>
