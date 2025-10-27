@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 注册
+     * 登陆
+     * 退出
+     */
+    function HTTPRequest(){
+    }
+    HTTPRequest.prototype.HTTPGET = function () {
+        console.log('GET');
+    };
+    HTTPRequest.prototype.HTTPPOST = function () {
+        console.log('POST');
+    }
+
+    var httpRequest = new HTTPRequest();
+    //注册
+    function Register(){
+    }
+    Register.prototype = httpRequest;
+    //登陆
+    function Login(){
+    }
+    Login.prototype = httpRequest;
+    //退出
+    function Logout(){
+    }
+    Logout.prototype = httpRequest;
+    /**
+     * 注册
+     */
+    var reg = new Register();
+    reg.HTTPGET();
+    reg.HTTPPOST();
+
+
+</script>
+<script>
+  /*  /!**
+     * 注册
+     * 登陆
+     * 退出
+     *!/
+    function HTTPRequest(){
+    }
+    HTTPRequest.prototype.HTTPGET = function () {
+        console.log('GET');
+    };
+    HTTPRequest.prototype.HTTPPOST = function () {
+        console.log('POST');
+    }
+
+    //注册
+    function Register(){
+    }
+    Register.prototype.HTTPGET = function () {
+        console.log('GET');
+    };
+    Register.prototype.HTTPPOST = function () {
+        console.log('POST');
+    }
+    //登陆
+    function Login(){
+    }
+    Login.prototype.HTTPGET = function () {
+        console.log('GET');
+    };
+    Login.prototype.HTTPPOST = function () {
+        console.log('POST');
+    }
+    //退出
+    function Logout(){
+    }
+    Logout.prototype.HTTPGET = function () {
+        console.log('GET');
+    };
+    Logout.prototype.HTTPPOST = function () {
+        console.log('POST');
+    }
+    /!**
+     * 注册
+     *!/
+    var reg = new Register();
+    reg.HTTPGET();
+    reg.HTTPPOST();*/
+
+
+</script>
+
+</body>
+</html>

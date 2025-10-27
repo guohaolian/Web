@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    Object.prototype.tt = function () {
+        console.log('我是一个测试方法');
+    };
+    function Person(userName, age, sex) {
+        this.userName = userName;
+        this.age = age;
+        this.sex = sex;
+    }
+    
+    var p1 = new Person('李白', 18, '男');
+    console.log(p1.__proto__);
+    console.log(p1);
+    console.log(p1.toString());
+    Function.prototype.aa = function () {
+        console.log(100);
+    }
+    Person.aa();
+    //p1.aa is not a function
+   // p1.tt();
+    Person.tt();
+
+</script>
+
+</body>
+</html>

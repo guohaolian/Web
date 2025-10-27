@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * ^:判断是否以某个字符开头
+     * $:判断是否以某个字符结束
+     var str = 'abc123abc';
+     var reg = new RegExp('c$','g');
+     var reg1 = new RegExp('^a','g');
+     var flag =  reg.test(str);
+     console.log(flag);
+     */
+    var str = 'abc123abc';
+    var reg = new RegExp('^abc$', 'g');
+    // var reg1 = new RegExp('^a','g');
+    var flag = reg.test(str);
+    console.log(flag);
+</script>
+</body>
+</html>

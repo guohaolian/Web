@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //准备数据源
+    var dataArr = [];
+    for(var i = 0;i<10000000;i++){
+        dataArr.push(Math.floor(Math.random()*10000+1));
+    }
+    var oldTime = new Date();
+    var result = [];
+   var obj = {};
+   var type = '';
+    for(var i = 0;i<dataArr.length;i++){
+        type = typeof dataArr[i];
+        if(!obj[dataArr[i]+type]){
+            result.push(dataArr[i]);
+            obj[dataArr[i]+type] = true;
+        }
+    }
+    var newTime = new Date();
+    /* for(var i = 0;i<dataArr.length;i++){
+     if(result.indexOf(dataArr[i])==-1){
+     result.push(dataArr[i]);
+     }
+     }*/
+    console.log(result,newTime-oldTime);//11442  571 5669  113258
+</script>
+</body>
+</html>

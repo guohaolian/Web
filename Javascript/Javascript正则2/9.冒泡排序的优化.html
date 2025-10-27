@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 1.数列分为两部分 一部分有序 一部分无序
+     * 2.非最差情况 可以减少排序的次数
+     * 3.当数列已经有序的时候不需要再进行排序直接结束程序即可
+     *   思路：假设此数列有序 但是当有前一个数大于后一个数的情况产生 则判断此数列无序
+     */
+   // var arr = [7, 6, 5, 4, 3, 2, 1];
+    var arr = [1,2,3,4,7, 6, 5];
+    console.log(4 > undefined);
+    console.log('排序前：',arr.join('-'))
+    //控制循环的次数 含有n个元素的数列 最多n-1次即可有序
+    for (var i = 0; i < arr.length - 1; i++) {
+        //假设此数列已经有序
+        var flag = true;
+        //避免出现undefined   -i的作用只需要排序无序的部分
+        for (var j = 0; j < arr.length - 1 - i; j++) {
+            //判断是否出现前一个数大于后一个数的情况产生 俩数交换位置
+            if (arr[j] > arr[j + 1]) {
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                //当有前一个数大于后一个数情况产生 数列无序
+                flag = false;
+            }
+        }
+        if(flag){
+            break;
+        }
+        console.log('排序中：',arr.join('-'))
+    }
+    console.log('排序后：',arr.join('-'))
+
+
+</script>
+
+</body>
+</html>

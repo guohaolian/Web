@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * ^脱字符：
+     * 1.当且仅当其位于中括号的首位表示脱字符
+     * 2.如果中括号内仅有[^]则 表示匹配所有的内容  .
+     * 例子：
+     var str = 'abcdefghijk';
+     var reg = /[^]/ig;
+     console.log(str.match(reg));
+     通过正则对象的test函数也是可以改变正则对象内lastIndex的值
+     因为 lastIndex 位于正则构造函数的原型上
+     通过正则字面量方式创建的对象同上
+     */
+
+    var str = 'abcdefghijkabc';
+    // var reg = new RegExp('abc', 'ig');
+    var reg = /abc/ig;
+    console.log(reg.lastIndex);
+    console.log(reg instanceof RegExp);
+    var result = reg.test(str);
+    console.log(result);
+    console.log(reg.lastIndex);
+    result = reg.test(str);
+    console.log(result);
+    console.log(reg.lastIndex);
+    result = reg.test(str);
+    console.log(result);
+
+    /*  console.log(reg.lastIndex);
+
+     var result = reg.exec(str);
+     console.log(result);
+     console.log(reg.lastIndex);
+     result = reg.exec(str);
+     console.log(result);*/
+
+</script>
+</body>
+</html>

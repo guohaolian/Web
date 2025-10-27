@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /**
+         *
+    
+         虽然工厂模式能够快速的创建对象，但是通过工厂模式创建出来的对象却不能确定属于哪个类
+         function Car(lun1, lun2) {
+            var car = {};
+            car.lun1 = lun1;
+            car.lun2 = lun2;
+            return car;
+        }
+         var car1 = Car('前','后');
+         var car2 = Car('前','后');
+         console.log(car1 instanceof  Car);
+         console.log(car2 instanceof  Car);
+    
+         function Car(lun1, lun2) {
+            this.lun1 = lun1;
+            this.lun2 = lun2;
+            this.ability = function () {
+            }
+        }
+         var c1 = new  Car('前','后');
+         var c2 = new  Car('前','后');
+         console.log(c1);
+    
+         console.log(c1 instanceof  Car);
+         */
+        function Car() {
+        }
+        Car.prototype.lun1 = '左前轮';
+        Car.prototype.lun2 = '右前轮';
+        Car.prototype.lun3 = '左后轮';
+        Car.prototype.lun4 = '右后轮';
+        Car.prototype.ability = '上天入地';
+
+        var car1 = new Car();
+        var car2 = new Car();
+        car1.lun1 = '哇哈哈轮胎';
+        console.log(car1.lun1);//哇哈哈轮胎
+        console.log(car2.lun1);//左前轮
+        console.log(car1);
+        console.log(car2);
+
+    </script>
+
+</body>
+
+</html>

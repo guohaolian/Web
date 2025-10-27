@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 元字符模式：某些字符具有特定的含义
+     *1.\d匹配所有的数字
+     *  \D匹配所有的非数字
+     *2.\s 匹配空白
+     *  \S 匹配非空白
+     *3.\b 匹配单词边界  中文特殊字符 不能成功匹配
+     *  \B 匹配非单词边界
+     *4.\w 匹配数字和字母
+     *  \W 匹配非数字和字母
+     */
+    var str = 'abca2c4g哈@哈6y22[,?';
+    var reg = /\W/g;
+    var result = str.replace(reg, '（你好）');
+    console.log(result);
+
+    /**
+     * 首位必须是1
+     * 第二位 3,5,7,8,4
+     * 此后只要是数字即可 9
+     */
+    var phoneNum = /1[34578]\d\d\d\d\d\d\d\d\d/;
+    var phone = '214678967892';
+    result = phone.replace(phoneNum, '(你好)');
+    console.log(result);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 1.创建一个父类，名字叫做Animal。
+     拥有一个公共属性name，默认值是’动物’；
+     拥有一个公共方法howl，默认行为能打印出动物的名字和叫声；
+     拥有一个私有属性jiaosheng。
+     再创建一个Animal的子类，名字叫Dog
+     要求:
+     (1)创建一个Dog的实例叫旺财，直接执行旺财的howl方法
+     (2)给旺财的name属性和jiaosheng属性赋值，然后执行旺财的howl方法
+     (3)在创建一个Animal的实例，执行这个实例的howl方法
+     */
+
+    /*function Animal(jiaosheng){
+        this.jiaosheng = jiaosheng;
+    }*/
+    function Animal(){
+        var jiaosheng;
+        this.setJiaoSheng = function (voice) {
+            jiaosheng = voice;
+        }
+        this.getJiaoSheng = function () {
+            return jiaosheng;
+        }
+    }
+    Animal.prototype.name = '动物';
+    Animal.prototype.howl = function () {
+        console.log(this);
+        console.log(this.name + this.getJiaoSheng());
+    };
+
+    var dog = new Animal();
+    dog.name = '旺财';
+
+    dog.setJiaoSheng('哈哈哈');
+
+
+    dog.howl();
+
+
+</script>
+</body>
+</html>

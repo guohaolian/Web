@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 使用构造函数创建正则对象
+     * 语法：new RegExp('正则主体','修饰符');
+     * 注意：所有的参数都是字符串
+     * 例子：
+     *  var str = 'abcdAefg';
+     var reg1 = /a/ig;
+     console.log(typeof reg1);
+     console.log(reg1 instanceof RegExp);
+     var reg = new RegExp('a','ig');
+     console.log(typeof  reg);
+     console.log(reg instanceof RegExp);
+     var result = str.replace(reg, '(你好)');
+     console.log(result);
+
+     注意：使用构造函数生成的正则对象 书写正则主体时  如果使用了元字符 则需要多加一个\ 进行转义
+     例子：
+     var str = 'abc1d2Ae12f]g';
+     //var reg = /\d/g;
+     var reg = new RegExp('\\d','g');
+     //   var result = reg.test(str);
+     var result = str.replace(reg,'(你好)');
+     console.log(result);
+
+
+     2.正则对象.exec()
+     描述：本方法是RegExp对象中提供的一个方法，用来查找在【指定字符串中】【第一个】【满足正则表达式规则】的子字符串出现的【下标和内容】。
+
+     lastIndex:记录的是下一次查找开始的下标
+     lastIndex：此属性 可读可写
+例子：
+     var str = '2abc1d2Ae12f]Abcg';
+     //var reg = /\d/g;
+     var reg = new RegExp('abc', 'gi');
+     console.log(reg.lastIndex);
+     //   var result = reg.test(str);
+     var result = reg.exec(str);
+     console.log(reg.lastIndex);//3 4
+     console.log(result);
+     //reg.lastIndex = 0;
+     result = reg.exec(str);
+     console.log('length',result.length);
+     console.log(reg.lastIndex);
+     */
+    var str = '2abc1d2Ae12f]Abcg';
+    var reg = new RegExp('(a)(b)(c)', 'gi');
+    var result = reg.exec(str);
+    console.log(result);
+    console.log(result.length);
+
+
+
+
+</script>
+
+</body>
+</html>

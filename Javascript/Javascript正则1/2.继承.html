@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /**
+         * js中实现继承 通过将子类的原型设置为父类的对象
+         * 属性的查找规则：
+         *    1.优先在子类的属性中查找
+         *    2.当子类不包含此属性时 去子类的原型中查找
+         *    3.当子类的原型中没有此属性 去父类的属性中查找
+         *    4.当父类不包含次属性 则去父类的原型中查找
+         *    。。。。。。
+         */
+        function Father() {
+        }
+        Father.prototype.userName = '马云';
+        Father.prototype.money = '很多亿';
+
+        function Son(userName) {
+            this.userName = userName;
+        }
+        Son.prototype = new Father();
+        var son = new Son('马小云');
+        console.log(son.money, son.userName);
+    </script>
+
+</body>
+
+</html>

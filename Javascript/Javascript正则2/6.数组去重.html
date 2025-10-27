@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //str = 'dgayusdhoisajdoisaodasDSAdas';
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3];
+    //定义数组存储新的元素
+    var result = [];
+    for (var i = 0; i < arr.length; i++) {
+        /*
+         对要放入result数组内的元素进行校验 如果result数组内没有的话 放入 否则不放入
+         */
+        if (result.lastIndexOf(arr[i]) == -1) {
+            result.push(arr[i]);
+        }
+    }
+    console.log('result：', result);
+    console.log('=====================================================');
+    var obj = {
+        '?a': '男',
+        'userName': '李白',
+        'userAge': 18,
+        'userHeight': '180cm',
+        'weight': '80kg'
+    };
+    console.log(obj);
+    console.log(obj['userName']);
+    console.log(obj.userAge);
+    /**
+     * hash去重：不是自己去写hash算法  利用对象属性的添加内部应用了hash算法
+     *
+     * 思路：将元素 作为对象的属性进行添加 当对象内没有此属性时   将此元素作为属性添加
+     *       否则不添加
+     * hash表：线性表+链表
+     * 功能：无论查找还是添加都非常快
+     */
+    arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, '1', '2'];
+    result = [];
+    var hash = {};
+    //无法识别 number1和string1
+    for (var i = 0; i < arr.length; i++) {
+        if (!hash[arr[i]]) {
+            result.push(arr[i]);
+            hash[arr[i]] = 200;
+        }
+    }
+    console.log(result);
+    console.log( hash);//{1: 200, 2: 200, 3: 200, 4: 200, 5: 200, 6: 200, 7: 200, 8: 200}
+    console.log('---------------------------------------------');
+    console.log(typeof 1);
+    console.log(typeof '1');
+    arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, '1', '2'];
+    result = [];
+    hash = {};
+    var type = '';
+    /**
+     * 解决无法识别字符串和number类型的数据
+     */
+    for (var i = 0; i < arr.length; i++) {
+        type = typeof arr[i];
+        if (!hash[arr[i]+type]) {
+            result.push(arr[i]);
+            hash[arr[i]+type] = 200;
+        }
+    }
+    console.log(result);
+    console.log(hash);//{1number: 200, 2number: 200, 3number: 200, 4number: 200, 5number: 200, …}
+</script>
+</body>
+</html>

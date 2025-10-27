@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     *
+     量词：表示要检索的字符或字符串出现的次数的词组称为量词
+     n+: 1个或多个
+     n*：0个或多个
+     n?：0个或1个
+     注意：单个字符进行匹配时 使用？ * 会多匹配一次
+     */
+    var str = 'abcabcdaabbcaabcd你b好';
+    // var reg = /a*b/g;//(你好)c(你好)cd(你好)(你好)c(你好)cd你(你好)好
+    var reg = /a?b/g;//(你好)c(你好)cda(你好)(你好)ca(你好)cd你(你好)好
+    //var reg = /a+b/g;//(你好)cd(你好)c(你好)cd你好
+    var result = str.replace(reg, '(你好)');
+    console.log(result);
+    str2 = 'ab';
+    reg = /a?/g;
+   // result = str2.match(/a*/g);
+    result = str2.replace(/a*/g,'(11)');
+    console.log(result);
+</script>
+</body>
+</html>

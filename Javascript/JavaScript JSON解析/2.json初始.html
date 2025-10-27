@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 1.json是一门独立的语言
+     * 2.json是数据的载体
+     * 3.JSON语言采用了JavaScript的语法，这意味着在 JavaScript 中处理 JSON数据不须要任何特殊的 API 或工具包
+     *
+     *
+     * (1)JSON.parse(后台传输过来的数据)
+     *      将一个满足json格式的字符串转为json对象
+     * (2)JSON.stringify(要往后台传输的数据)
+     *      将一个对象转为字符串
+     */
+    var data = '{"stuInfo":[{"name":"frank"},{"name":"bill"},{"name":"jobs"}],"feature":["英俊潇洒","富可敌国","英年早逝"]}';
+
+
+    var jsonObj = JSON.parse(data);
+    console.log(jsonObj.stuInfo[0].name);
+    console.log(typeof  data,jsonObj);
+    var obj = {
+        'userName':'李白',
+        'passWord':'123456',
+        'sex':'男'
+    };
+    var json = JSON.stringify(obj);
+    console.log(typeof json,json);
+
+</script>
+
+</body>
+</html>

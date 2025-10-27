@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bookInfo {
+            width: 25%;
+            display: inline-block;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .shoppingCar {
+            width: 88%;
+            margin: 0 auto;
+            border: 5px solid skyblue;
+            border-radius: 25px;
+            min-height: 30px;
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+<h1 align="center">尚学堂书城</h1>
+<hr/>
+<div class="box"></div>
+<hr/>
+<div class="shoppingCar"></div>
+
+
+<script>
+    var data = '{' +
+            '"img":["d1.jpg","d2.jpg","d3.jpg","d4.jpg","d5.jpg","d6.jpg","d7.jpg","d8.jpg"],' +
+            '"name":[' +
+            '"仍然",' +
+            '"此刻花开（一本精美绝伦的手工纸雕书）",' +
+            '"进击的局座：悄悄话（当当独家附赠精美小册子）",' +
+            '"股票短线交易的24堂精品课（第二版）",' +
+            '"锦绣旗袍 (全二册)",' +
+            '"大暴雪",' +
+            '"男孩的冒险书（少儿绘图版，全三册）",' +
+            '"古龙作品集套装72册（大陆正版合法授权）"],' +
+            '"author":[' +
+            '"庆山",' +
+            '"徐静",' +
+            '"徐静",' +
+            '"徐静",' +
+            '"徐静",' +
+            '"徐静",' +
+            '"徐静",' +
+            '"徐静"], ' +
+            '"newprice":["63.60","33.30","12","15","20","3","8","0.6"],' +
+            '"oldprice":["660","330","120","105","200","30","80","6000"]' +
+            '}';
+    //将字符串数据转换为对象
+    var jsonObj = JSON.parse(data);
+
+    /**
+     * 将对象转换为json格式的字符串
+     *  var strJson = JSON.stringify(jsonObj);
+     console.log(strJson);
+     */
+
+    //获取界面元素
+    var box = document.querySelector('.box');
+    var shoppingCar = document.querySelector('.shoppingCar');
+
+
+    for (var i = 0; i < jsonObj.img.length; i++) {
+        var div = document.createElement('div');
+        div.setAttribute('class', 'bookInfo');
+        //添加图片
+        var img = document.createElement('img');
+        img.src = 'img/' + jsonObj.img[i];
+        div.appendChild(img);
+        //添加书名
+        var p_bookName = document.createElement('p');
+        p_bookName.innerHTML = jsonObj.name[i];
+        div.appendChild(p_bookName);
+        //添加作者
+        var p_author = document.createElement('p');
+        p_author.innerHTML = jsonObj.author[i];
+        div.appendChild(p_author);
+        //添加价格 新价格 old价格
+        var p_price = document.createElement('p');
+        var n_price = document.createElement('span');
+        n_price.innerHTML = '￥' + jsonObj.newprice[i];
+        var o_price = document.createElement('del');
+        o_price.innerHTML = '￥' + jsonObj.oldprice[i];
+        p_price.appendChild(n_price);
+        p_price.appendChild(o_price);
+        div.appendChild(p_price);
+        //添加按钮
+        var btn_add = document.createElement('button');
+        btn_add.innerHTML = '添加到购物车';
+        div.appendChild(btn_add);
+
+        btn_add.onclick = function (event) {
+            /**
+             * 通过搜索获取的节点页面上同一时刻只能显示在一个位置
+             */
+            var event = event || window.event;
+            var parentNode = this.parentNode;
+            var newNode = parentNode.cloneNode(true);
+           // console.log(newNode.childNodes);
+            newNode.removeChild(newNode.lastChild);
+            shoppingCar.appendChild(newNode);
+            console.log(this.parentNode);
+        };
+        box.appendChild(div);
+    }
+</script>
+
+</body>
+</html>

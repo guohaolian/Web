@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     *  var str = 'abcdefabc';
+     var reg = new RegExp('^abc$','igm');//只能匹配abc
+     //var reg = new RegExp('^abc','igm');
+     console.log(reg.test(str));
+
+     扩展：.匹配任意字符
+     var str = 'abcde21313]21fabc';
+     var reg = new RegExp('^abc.*abc$','igm');
+     console.log(reg.test(str));
+     注意：匹配单独的. 需要转义
+     var str = 'abcde2131.3]21fabc';
+     var reg = /\./ig;
+     console.log(str.match(reg));
+     */
+    var str = 'abcde2131.3]21fabc';
+    var reg = /\./ig;
+    console.log(str.match(reg));
+
+
+
+</script>
+
+</body>
+</html>

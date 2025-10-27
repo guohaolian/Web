@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 递归：函数自己调用自己
+     * 注意点：1.有出口
+     *         2.不停的向出口靠近
+     *         3.不建议使用递归
+     */
+    //1~100的和
+/*    function getSum(num){
+        //出口
+        if(num==1){
+            return 1;
+        }
+        return num+getSum(num-1);
+    }
+    var result = getSum(5);
+    console.log(result);//5050*/
+
+   /* function getSum(num){
+        //出口
+        if(num==1){
+            return 1;
+        }
+        return num+getSum(num-1);
+    }
+    var result = getSum(100000000);
+    console.log(result);*/
+
+    //6!阶乘
+    //斐波那契数列 1 1 2 3 5 8 13 21
+    //传入的参数是位置
+    function feibo(index){
+        if(index==1||index==2){
+            return 1;
+        }
+        return feibo(index-1)+feibo(index-2);
+    }
+    console.log(feibo(3));
+</script>
+
+</body>
+</html>

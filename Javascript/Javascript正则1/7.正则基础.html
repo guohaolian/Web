@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    /**
+     * 正则：表现为一个字符串
+     *      用途：字符串检索 字符串替换  字符串校验
+     *      注意：1.正则不是js的语法 是一门独立的语言
+     *            2.正则的本质是一个对象
+     *
+     *  1.正则的基本语法
+     *  创建正则对象： var  reg =  /正则主体/修饰符
+     *  注意：不是所有的字符串方法都可以使用正则  参数中 含有regexp才可以
+     *        search
+     *        match
+     *        replace
+     */
+    var str = 'abCdefg';
+    console.log(typeof str);
+    var reg = /c/i;
+    console.log(typeof reg);
+    var index = str.search(reg);
+    //  str.match()
+    index = str.match(reg);
+    console.log(index);
+    /**
+     * 修饰符：
+     * i:忽略大小写
+     * g:全局\全部替换
+     * m: 多行 multiple
+     * 注意：修饰符写在正则主体的后面 可以存在一个也可以存在多个
+     */
+    var str1 = 'bcdAefag';
+    reg = /a/ig;
+    var result = str1.replace(reg, '李白');
+    console.log(result);
+    str1 = 'bcdA\nBefag';
+    reg = /^b/igm;
+
+    result = str1.replace(reg, '杜甫');
+
+    console.log(result);
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 2000px;
+            background-color: skyblue;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            position: absolute;
+            bottom: 100px;
+            left: 300px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    //获取视口的宽高 不含滚动条
+    var viewClientWidth = document.documentElement.clientWidth;
+    var viewClientHeight = document.documentElement.clientHeight;
+    var viewWidth = window.innerWidth;
+    var viewHeight = window.innerHeight;
+    //获取滚动距离
+    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    var box = document.querySelector('.box');
+    console.log(box.clientHeight);
+    console.log(box.clientWidth);
+
+    console.log(box.offsetHeight);
+    console.log(box.offsetWidth);
+
+    console.log(box.offsetTop);
+    console.log(box.offsetLeft);
+
+</script>
+
+</body>
+</html>
