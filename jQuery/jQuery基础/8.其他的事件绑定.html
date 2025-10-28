@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -9,40 +10,40 @@
             width: 200px;
             background-color: orange;
         }
-
     </style>
 </head>
 <script src="js/jquery-1.12.3.min.js"></script>
+
 <body>
-<div class="box">
-    <h1 class="h1">1</h1>
-</div>
-<script>
-    var num = 1;
-    /**
-     * bind:事件绑定
-     *      可以一次绑定多个事件
-     */
-    /* $('.box').bind('mouseenter mouseleave', function () {
-     num++;
-     $('.h1').html(num);
-     })*/
-    $('.box').bind({
-        'mouseenter': function () {
-            console.log('aaaaaaaaaaaaa');
-        },
-        'mouseleave': function () {
-            console.log('bbbbbbbbbbbbbbb');
-        }
-    })
-    /**
-     * one：事件绑定
-     *       只有一次机会执行 执行过后就解除绑定
-     * 例子：
-     *   $('.box').one('click', function () {
-        console.log('hehe');
-    })
-     */
+    <div class="box">
+        <h1 class="h1">1</h1>
+    </div>
+    <script>
+        var num = 1;
+        /**
+         * bind:事件绑定
+         *      可以一次绑定多个事件
+         */
+        /* $('.box').bind('mouseenter mouseleave', function () {
+         num++;
+         $('.h1').html(num);
+         })*/
+        $('.box').bind({
+            'mouseenter': function () {
+                console.log('aaaaaaaaaaaaa');
+            },
+            'mouseleave': function () {
+                console.log('bbbbbbbbbbbbbbb');
+            }
+        })
+        /**
+         * one：事件绑定
+         *       只有一次机会执行 执行过后就解除绑定
+         * 例子：
+         *   $('.box').one('click', function () {
+            console.log('hehe');
+        })
+         */
 
 
 
@@ -51,7 +52,8 @@
 
 
 
-</script>
+    </script>
 
 </body>
+
 </html>

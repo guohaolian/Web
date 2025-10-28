@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 类：对一类抽象事物共同特征的描述
+     * 对象：一个具体的实例
+     *构造函数：快速创建对象
+     *  function Person(userName,passWord,....){
+     *  this.userName = userName;
+     *  ....
+     *  var meng;
+     *  }
+     *  特权函数：用于修改和获取当前类中的局部变量
+     *  原型：1.每个函数都具有的属性
+     *        2.默认存在不需要创建
+     *        3.给每一个通过该构造函数创建的对象开辟一款公共的空间
+     *  原型链：
+     *        每一个对象的原型指向指向创建当前对象的构造函数的原型
+     *        构造函数原型的原型指向 指向创建当前构造函数的函数的原型
+     *        此种 通过原型指向一层层查找的链式结构 称为原型链
+     *  继承： 将儿子的原型设置为父类的一个实例
+     *
+     *
+     *  设计模式：
+     *
+     *
+     */
+    function Test() {
+    }
+    var test = new Test();
+    console.log(test.__proto__.__proto__.__proto__);
+
+
+
+</script>
+
+</body>
+</html>

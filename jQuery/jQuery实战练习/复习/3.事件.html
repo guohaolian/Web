@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 事件传递/事件流/事件传播：
+     * html
+     * dom0
+     * dom2
+     * 兼容性写法：
+     * 滑块 验证码  div跟随移动
+     *事件不冒泡： enter leave focus blur
+     *
+     * 鼠标事件 :
+     * 文档事件：
+     * 键盘事件：
+     * 滚动事件：
+     * 滚轮事件：兼容性写法
+     var box = document.querySelector('.box');
+     function handlerMouseMiddle(event) {
+        var event = event || window.event;
+        var direction = 0;
+        //判断在哪个浏览器下
+        if (event.wheelDelta) {
+            direction = event.wheelDelta > 0 ? 1 : -1;
+        } else {
+            //火狐浏览器
+            direction = event.detail < 0 ? 1 : -1;
+        }
+        console.log(direction);
+    }
+     box.onmousewheel = handlerMouseMiddle;
+     try{
+        box.addEventListener('DOMMouseScroll',handlerMouseMiddle);
+    }catch (error){
+    }
+     *
+     *
+     * this:谁调用就是谁
+     *     html window
+     *     dom0 事件触发者
+     *     dom2 事件触发者
+     *         IE window
+     *         非IE 事件触发者
+     *     定时器延时执行  window
+     *     闭包： window
+     *     改变this指向 call
+     *                  apply(null，this)
+     * event :事件对象
+     *       event:兼容性
+     *       冒泡和取消默认行为的兼容性
+     *
+     * 异常捕获
+     *   try{
+     *    }catch(error){
+     *    }
+     *
+     *
+     *
+     *
+     *
+     */
+
+</script>
+</body>
+</html>

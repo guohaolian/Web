@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+            position: absolute;
+        }
+
+        body {
+            height: 1000px;
+            width: 1000px;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.easie.js"></script>
+<body>
+<div class="box"></div>
+<script>
+
+    $('.box').animate({'left': 600, 'top': 500}, 2000, $.easie(1, 0, 0.044, 1));
+
+
+    /*$(".box").draggable({
+     containment: "parent",
+     //  axis: "x",
+     cursor:'pointer',
+
+     drag: function(event, ui){
+     //console.log(event);
+     // console.log(ui.position, ui.offset);
+     //指向移动的元素的坐标
+     console.log(ui.position.top, ui.position.left);
+     }
+
+     });*/
+</script>
+</body>
+</html>

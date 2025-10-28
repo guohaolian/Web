@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .swiper-container {
+            width: 560px;
+            height: 300px;
+            margin: 100px auto;
+            border: 1px solid red;
+        }
+    </style>
+    <link href="css/swiper.min.css" rel="stylesheet">
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/0.jpg"></div>
+        <div class="swiper-slide"><img src="img/1.jpg"></div>
+        <div class="swiper-slide"><img src="img/2.jpg"></div>
+        <div class="swiper-slide"><img src="img/3.jpg"></div>
+        <div class="swiper-slide"><img src="img/4.jpg"></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
+</div>
+<script>
+    /**
+     * 如果一个页面需要多个轮播图 则可以根据css选择器的不同进行区分
+     */
+    var mySwiper = new Swiper ('.swiper-container', {
+        //direction: 'vertical',
+        loop: true,
+        effect:'cube',
+        autoplay:2000,
+        // 如果需要分页器
+        pagination: '.swiper-pagination',
+        // 如果需要前进后退按钮
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        // 如果需要滚动条
+        scrollbar: '.swiper-scrollbar'
+    })
+
+</script>
+
+</body>
+</html>

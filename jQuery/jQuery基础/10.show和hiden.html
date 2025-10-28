@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -13,52 +14,53 @@
             top: 100px;
             display: none;
         }
-
     </style>
 </head>
 <script src="js/jquery-1.12.3.min.js"></script>
+
 <body>
-<div class="box">
-</div>
-<button>干嘣显示</button>
-<button>干嘣隐藏</button>
-<button>慢慢显示</button>
-<button>慢慢隐藏</button>
-<script>
+    <div class="box">
+    </div>
+    <button>干嘣显示</button>
+    <button>干嘣隐藏</button>
+    <button>慢慢显示</button>
+    <button>慢慢隐藏</button>
+    <script>
 
-    /**
-     * show():展示  display:block;
-     *
-     * hide():隐藏 display:none;
-     * 可以在方法内写一个回调函数，即当jq对象的状态到达最终状态值时触发
-     *
-     */
-    $('button:first').click(function () {
-        console.log('干嘣显示');
-        $('.box').show(function () {
-            console.log('显示完毕');
+        /**
+         * show():展示  display:block;
+         *
+         * hide():隐藏 display:none;
+         * 可以在方法内写一个回调函数，即当jq对象的状态到达最终状态值时触发
+         *
+         */
+        $('button:first').click(function () {
+            console.log('干嘣显示');
+            $('.box').show(function () {
+                console.log('显示完毕');
+            });
         });
-    });
-    $('button:eq(1)').click(function () {
-        console.log('干嘣隐藏');
-        $('.box').hide(function () {
-            console.log('hidden');
+        $('button:eq(1)').click(function () {
+            console.log('干嘣隐藏');
+            $('.box').hide(function () {
+                console.log('hidden');
 
+            });
         });
-    });
-    $('button:eq(2)').click(function () {
-        console.log('慢慢显示');
-        $('.box').show(2000, function () {
-            console.log('显显示完毕');
+        $('button:eq(2)').click(function () {
+            console.log('慢慢显示');
+            $('.box').show(2000, function () {
+                console.log('显显示完毕');
 
+            });
         });
-    });
-    $('button:eq(3)').click(function () {
-        console.log('慢慢隐藏');
-        $('.box').hide(2000);
-        console.log(' 慢慢隐藏  hidden');
-    })
+        $('button:eq(3)').click(function () {
+            console.log('慢慢隐藏');
+            $('.box').hide(2000);
+            console.log(' 慢慢隐藏  hidden');
+        })
 
-</script>
+    </script>
 </body>
+
 </html>

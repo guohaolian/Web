@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<p>
+    体育: <input type="checkbox" checked="checked"/>
+    唱歌: <input type="checkbox" checked="checked"/>
+    舞蹈: <input type="checkbox"/>
+    打篮球: <input type="checkbox"/>
+</p>
+<h1>你好 中国</h1>
+<script>
+    /**
+     * is：表示判断
+     * 1.判断checkbox 是否被选中
+     * 2.判断节点是否被隐藏
+     * 3.判断当前节点是不是目标节点类型
+     */
+    console.log($('h1').is(':hidden'));
+    console.log($('h1').is('h1'));
+    //console.log($('input:first').is(':checked'));
+  //  console.log($('input:checked'));
+</script>
+</body>
+</html>

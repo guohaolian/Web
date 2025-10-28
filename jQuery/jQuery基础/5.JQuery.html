@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -12,44 +13,46 @@
     </style>
 </head>
 <script src="js/jquery-1.12.3.min.js"></script>
+
 <body>
-<div class="box">
-    <p class="p1">111111111111111</p>
+    <div class="box">
+        <p class="p1">111111111111111</p>
 
-    <p>22222222222222</p>
+        <p>22222222222222</p>
 
-    <p>33333333333333</p>
+        <p>33333333333333</p>
 
-    <p>44444444444444</p>
+        <p>44444444444444</p>
 
-</div>
-<script>
-    /**
-     * $ is not defined:没有引入jq文件
-     *
-     * $ 和 jQuery 是等效的
-     * 为什么定义两种方式？
-     *   因为要防止和其他引入的jar包冲突 如果冲突后 可以使用 jQuery
-     *
-     *var box1 = $('.box');
-     console.log(box1);
-     var box2 = jQuery('.box');
-     console.log(box2);
-     */
-    /**
-     * jq对象转换为原生js对象
-     * []:
-     * get():
-     * 从0开始
-     var ps = $('p');
-     console.log(ps);
-     console.log(ps[0]);
-     console.log(ps.get(2));
-     var p1 = $('.p1');
-     console.log(p1);
-     console.log(p1[0]);
-     console.log(p1.get(0));
-     */
-</script>
+    </div>
+    <script>
+        /**
+         * $ is not defined:没有引入jq文件
+         *
+         * $ 和 jQuery 是等效的
+         * 为什么定义两种方式？
+         *   因为要防止和其他引入的jar包冲突 如果冲突后 可以使用 jQuery
+         *
+         *var box1 = $('.box');
+         console.log(box1);
+         var box2 = jQuery('.box');
+         console.log(box2);
+         */
+        /**
+         * jq对象转换为原生js对象
+         * []:
+         * get():
+         * 从0开始
+         var ps = $('p');
+         console.log(ps);
+         console.log(ps[0]);
+         console.log(ps.get(2));
+         var p1 = $('.p1');
+         console.log(p1);
+         console.log(p1[0]);
+         console.log(p1.get(0));
+         */
+    </script>
 </body>
+
 </html>

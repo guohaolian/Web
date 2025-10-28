@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -10,50 +11,52 @@
     </style>
 </head>
 <script src="js/jquery-1.12.3.min.js"></script>
+
 <body>
-<div class="box">
-    <p>000000000000000000000000000</p>
+    <div class="box">
+        <p>000000000000000000000000000</p>
 
-    <p>11111111111111111111111111</p>
+        <p>11111111111111111111111111</p>
 
-    <p>2222222222222222222222222</p>
+        <p>2222222222222222222222222</p>
 
-    <p>333333333333333333333333333</p>
+        <p>333333333333333333333333333</p>
 
-    <p>44444444444444444444444444</p>
+        <p>44444444444444444444444444</p>
 
-    <p>5555555555555555555555555555</p>
+        <p>5555555555555555555555555555</p>
 
-    <p>666666666666666666666666666</p>
+        <p>666666666666666666666666666</p>
 
-    <p>777777777777777777777777777</p>
-</div>
-<script>
-    /**
-     10>10
-     9<9
-     选择器:first    选中指定元素集合中的第一个元素
-     选择器:last        选中指定元素集合中的最后一个元素
-     选择器:eq(n)        选中指定元素集合中从0开始，第n个元素
-     选择器:lt(n)        选中指定元素集合中从0开始，第n个元素之前的所有元素
-     选择器:gt(n)    选中指定元素集合中从0开始，第n个元素之后的所有元素
-     选择器:odd        选中指定元素集合中从0开始，所有奇数序号的元素
-     选择器:even    选中指定元素集合中从0开始，所有偶数序号的元素
-     */
-    document.write('&lt;');//<
-    document.write('&gt;');//>
-    $('.box').click(function () {
-        //  var result = $('.box p').first()
-        // var result  = $('.box p').last();
-        // var result  = $('.box p').eq(3);
-        //  var result  = $('.box p:lt(3)').css('background-color','red');
-        // var result  = $('.box p:eq(3)').css('background-color','red');
-        // var result  = $('.box p:odd').css('background-color','red');
-        var result = $('.box p:even').css('background-color', 'red');
-        console.log(result);
-    })
-     $('.box').hover()
+        <p>777777777777777777777777777</p>
+    </div>
+    <script>
+        /**
+         10>10
+         9<9
+         选择器:first    选中指定元素集合中的第一个元素
+         选择器:last        选中指定元素集合中的最后一个元素
+         选择器:eq(n)        选中指定元素集合中从0开始，第n个元素
+         选择器:lt(n)        选中指定元素集合中从0开始，第n个元素之前的所有元素
+         选择器:gt(n)    选中指定元素集合中从0开始，第n个元素之后的所有元素
+         选择器:odd        选中指定元素集合中从0开始，所有奇数序号的元素
+         选择器:even    选中指定元素集合中从0开始，所有偶数序号的元素
+         */
+        document.write('&lt;');//<
+        document.write('&gt;');//>
+        $('.box').click(function () {
+            //  var result = $('.box p').first()
+            // var result  = $('.box p').last();
+            // var result  = $('.box p').eq(3);
+            //  var result  = $('.box p:lt(3)').css('background-color','red');
+            // var result  = $('.box p:eq(3)').css('background-color','red');
+            // var result  = $('.box p:odd').css('background-color','red');
+            var result = $('.box p:even').css('background-color', 'red');
+            console.log(result);
+        })
+        $('.box').hover()//作用是鼠标移入移出事件
 
-</script>
+    </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -13,56 +14,57 @@
             top: 100px;
 
         }
-
     </style>
 </head>
 <script src="js/jquery-1.12.3.min.js"></script>
+
 <body>
-<div class="box">
-</div>
-<button>点我有惊喜</button>
-<br>
-<button>前进一大步</button>
-<br>
-<script>
-    $('button:last').click(function () {
-        $('.box').css('left', '+=40');
-    });
-    /*  var box = document.querySelector('.box');
-     box.style.cssText = 'background-color';
-     box.style.backgroundColor*/
-    /**
-     * 1.css
-     *  描述：设置或者获取对应的jq对象的style属性值
-     *  获取：jq.css('属性')
-     *         可以获取内部样式的属性值
-     *         原生js只能获取行内样式
-     *    例子：
-     *     $('button').click(function () {
-        console.log($('.box').css('width'));
-        console.log($('.box').css('background-color'));
-    })
-     *   设置：
-     *      1.设置尺寸时 加或者不加单位都可以
-     *           $('.box').css('width',400);
-     *      2.当设置多个属性值时 需要将其数据封装为一个json
-     *           $('.box').css({
-                    'width': 400, 'height': 400, 'background-color': 'red'
-                })
-     3.设置属性值时 不仅支持原生的写法 也支持 style.属性的方式书写
-     'width': 400, 'height': 400, 'background-color': 'red'
-     'width': 400, 'height': 400, 'backgroundColor': 'red'
-
-     4.属性值可以在原有的基础上直接相加
-     例子：
-     $('button').click(function () {
-        /* $('.box').css('width',400);
-         $('.box').css('height',400);
-
-    $('.box').css({
-        'width': '+=20', 'height': 400, 'backgroundColor': 'red'
-    })
-    })*/
-</script>
+    <div class="box">
+    </div>
+    <button>点我有惊喜</button>
+    <br>
+    <button>前进一大步</button>
+    <br>
+    <script>
+        $('button:last').click(function () {
+            $('.box').css('left', '+=40');
+        });
+        /*  var box = document.querySelector('.box');
+         box.style.cssText = 'background-color';
+         box.style.backgroundColor*/
+        /**
+         * 1.css
+         *  描述：设置或者获取对应的jq对象的style属性值
+         *  获取：jq.css('属性')
+         *         可以获取内部样式的属性值
+         *         原生js只能获取行内样式
+         *    例子：
+         *     $('button').click(function () {
+            console.log($('.box').css('width'));
+            console.log($('.box').css('background-color'));
+        })
+         *   设置：
+         *      1.设置尺寸时 加或者不加单位都可以
+         *           $('.box').css('width',400);
+         *      2.当设置多个属性值时 需要将其数据封装为一个json
+         *           $('.box').css({
+                        'width': 400, 'height': 400, 'background-color': 'red'
+                    })
+         3.设置属性值时 不仅支持原生的写法 也支持 style.属性的方式书写
+         'width': 400, 'height': 400, 'background-color': 'red'
+         'width': 400, 'height': 400, 'backgroundColor': 'red'
+    
+         4.属性值可以在原有的基础上直接相加
+         例子：
+         $('button').click(function () {
+            /* $('.box').css('width',400);
+             $('.box').css('height',400);
+    
+        $('.box').css({
+            'width': '+=20', 'height': 400, 'backgroundColor': 'red'
+        })
+        })*/
+    </script>
 </body>
+
 </html>

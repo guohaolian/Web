@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>案例：放大镜</title>
+    <style>
+        *{  margin: 0; padding: 0;  }
+        body{
+            height: 2000px;
+            width: 2000px;
+        }
+        .small {
+            float: left;
+            background-image: url("img.png");
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+        .small .fangdajing{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(185,65,64,0.7);
+            position: absolute;
+            display: none;
+        }
+        .big {
+            float: left;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            display: none;
+        }
+        img{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="small">
+    <div class="fangdajing"></div>
+</div>
+<div class="big">
+    <img src="img.png" width="2000" height="2000" alt=""/>
+</div>
+<script>
+
+    var smallDiv = document.querySelector('.small');
+    var fangDiv = document.querySelector('.fangdajing');
+    var bigDiv = document.querySelector('.big');
+    var img = document.querySelector('img');
+    smallDiv.onmouseover = function () {
+        fangDiv.style.display = 'block';
+        bigDiv.style.display = 'block';
+    }
+    smallDiv.onmousemove = function (eve) {
+        var e = eve||window.event;
+        console.log(e.clientX+'<----->'+e.clientY);
+        //获取卷动值
+        var scrollT = document.body.scrollTop || document.documentElement.scrollTop;
+        var scrollL = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+        //获取鼠标坐标
+        var shubiaoLeft = e.clientX - (getAllLeft(smallDiv)- scrollL )- 50;
+        var shubiaoTop = e.clientY - (getAllTop(smallDiv) -scrollT)- 50;
+        console.log(shubiaoLeft+'-----'+shubiaoTop);
+
+        fangDiv.innerHTML='(x,y):'+'('+shubiaoLeft+','+shubiaoTop+')';
+        //设置鼠标坐标的边界
+        if(shubiaoLeft<0){shubiaoLeft = 0;}
+        if(shubiaoLeft>300){shubiaoLeft = 300;}
+        if(shubiaoTop<0){shubiaoTop = 0;}
+        if(shubiaoTop>300){shubiaoTop = 300;}
+        //赋值给【放大镜】定位
+        fangDiv.style.left = shubiaoLeft + 'px';
+        fangDiv.style.top = shubiaoTop  + 'px';
+
+        //让img跟随放大镜移动，
+        var rate = 1600/300;
+        img.style.left = -rate*shubiaoLeft + 'px';
+        img.style.top = -rate*shubiaoTop + 'px';
+    };
+    smallDiv.onmouseleave = function () {
+        bigDiv.style.display = 'none';
+        fangDiv.style.display = 'none';
+    }
+    function getAllLeft(obj) {
+        var left = 0;
+        while (obj) {
+            left += obj.offsetLeft;
+            obj = obj.offsetParent;
+        }
+        return left;
+    }
+    function getAllTop(obj) {
+        var top = 0;
+        while (obj) {
+            top += obj.offsetTop;
+            obj = obj.offsetParent;
+        }
+        return top;
+    }
+</script>
+</body>
+</html>
