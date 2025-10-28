@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .box {
+            width: 672px;
+            height: 320px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .imgs {
+            position: relative;
+            width: 672px;
+            height: 320px;
+        }
+
+        .box .imgs li {
+            position: absolute;
+            display: none;
+        }
+
+        .box .imgs li.select {
+            display: block;
+        }
+
+        .btns span {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            top: 137.5px;
+        }
+
+        .btns .left {
+            left: 10px;
+            background-image: url("img/slide-btnL.png");
+        }
+
+        .btns .right {
+            right: 10px;
+            background-image: url("img/slide-btnR.png");
+        }
+
+        .circles {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .circles li {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            background-color: orange;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .circles li.select {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<div class="box">
+    <div class="imgs">
+        <ul>
+            <li class="select"><a href="#"><img src="img/aaa.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/bbb.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/ccc.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/ddd.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/eee.jpg" alt=""/></a></li>
+        </ul>
+    </div>
+    <div class="btns">
+        <span class="left"></span>
+        <span class="right"></span>
+    </div>
+    <div class="circles">
+        <ul>
+            <li class="select"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<script>
+    var lis = $('.circles li');
+    var imgs = $('.imgs li');
+    var ids = 0;
+
+    setInterval(function () {
+        if (imgs.is(':animated')) {
+            return;
+        }
+        imgs.eq(ids).fadeOut(2000);
+        ids++;
+        changeImg();
+    },2000);
+    lis.mouseenter(function () {
+        if (imgs.is(':animated')) {
+            return;
+        }
+        imgs.eq(ids).fadeOut(2000);
+        //  console.log(this);
+        ids = $(this).index();
+        changeImg();
+    });
+    $('.right').click(function () {
+        //判断是否处于动画状态 如果处于动画状态则不再继续向下执行
+        if (imgs.is(':animated')) {
+            return;
+        }
+        //id改变之前图片淡出
+        imgs.eq(ids).fadeOut(2000);
+        ids++;
+        changeImg();
+    });
+    $('.left').click(function () {
+        if (imgs.is(':animated')) {
+            return;
+        }
+        imgs.eq(ids).fadeOut(2000);
+        ids--;
+        changeImg();
+    });
+    function changeImg() {
+        //范围校验
+        if (ids > imgs.length - 1) {
+            ids = 0;
+        }
+        if (ids < 0) {
+            ids = lis.length - 1;
+        }
+        imgs.eq(ids).fadeIn(2000);
+        //清除样式
+        lis.removeClass('select');
+        lis.eq(ids).addClass('select');
+    }
+
+
+</script>
+<script>
+    /*  //获取页面元素
+     var btnLeft = document.querySelector('.left');
+     var btnRight = document.querySelector('.right');
+     var imgLis = document.querySelectorAll('.imgs li');
+     var circleLis = document.querySelectorAll('.circles li');
+     // console.log(imgLis,circleLis,btnLeft,btnRight);
+
+     //定义变量 表示从第一个位置开始
+     var ids = 0;
+     //对按钮进行事件绑定
+     btnLeft.onclick = function () {
+     ids--;
+     changStyle();
+     };
+     btnRight.onclick = function () {
+     ids++;
+     changStyle();
+     };
+     //对li进行事件绑定
+     for(var j = 0;j<imgLis.length;j++){
+     circleLis[j].index = j;
+     circleLis[j].onmouseover = function () {
+     ids = this.index;
+     changStyle();
+     }
+
+     }
+     //自己执行页面的切换
+
+     setInterval(function () {
+     ids++;
+     changStyle();
+
+     },2000);
+     function changStyle() {
+     //范围校验
+     if (ids < 0) {
+     ids = imgLis.length - 1;
+     }
+     if (ids > imgLis.length - 1) {
+     ids = 0;
+     }
+     //清除所有的样式
+     for (var i = 0; i < imgLis.length; i++) {
+     imgLis[i].className = '';
+     circleLis[i].className = '';
+     }
+     //给对应的li进行赋值
+     imgLis[ids].className = 'select';
+     circleLis[ids].className = 'select';
+     }
+     */
+</script>
+</body>
+</html>

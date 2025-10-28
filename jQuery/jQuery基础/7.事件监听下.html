@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<div class="box">
+    <p class="p1">111111111111111111</p>
+
+    <p>22222222222222222</p>
+
+    <p class="p1">333333333333333333</p>
+
+    <p>444444444444444444</p>
+</div>
+<button class="btn">点我取消事件绑定</button>
+<script>
+
+    /*    $('p').on('click', {'userName': '李白'}, function (event) {
+     console.log(event, event.data.userName);
+     $(this).css('background-color', 'red');
+     });*/
+    /**
+     * 使用on进行事件绑定
+     * 语法：jq对象.on(a,b,c,d);
+     * 1.使用on可以一次性绑定多个不同类型的事件
+     *  例子：
+     *   $('.box').on('click mouseenter mouseleave', function () {
+                 console.log('box被点击了');
+         });
+     注意：此种事件绑定 存在弊端  无法做到对应事件类型的一个精细处理
+
+
+     * 2.使用off可以进行事件的解绑
+     *   jq对象.off();
+     *   注意：1.jq.off();移除当前jq对象上所有的事件
+     *         2.jq.off('事件类型') 移除当前jq对象上对应的事件
+     *    例子：
+     *      $('.btn').click(function () {
+     //   $('.box').off();
+        $('.box').off('click');
+    });
+     3.on支持json类型的数据传入 可以将事件封装为一个对象
+     $('.box').on({
+            'click': function () {
+                $(this).css('background-color','red');
+            },'mouseenter': function () {
+                console.log('鼠标进行box');
+            },'mouseleave': function () {
+                console.log('鼠标离开box');
+            }
+        });
+     4.支持 将json类型的数据直接绑定到event.data上
+     在函数的内部可以直接通过event.data 获取数据
+     注意：1.只有一种事件绑定 或者所有的事件类型都由一个函数处理
+     $('p').on('click', {'userName': '李白'}, function (event) {
+             console.log(event, event.data.userName);
+             $(this).css('background-color', 'red');
+             });
+     2.每一种事件类型都有自己独有的函数处理
+     $('.box').on({
+        'click': function (event) {
+            console.log(event.data, event.data.userName);
+            $(this).css('background-color', 'red');
+        }, 'mouseenter': function (event) {
+            console.log(event.data, event.data.userName);
+            console.log('鼠标进行box');
+        }, 'mouseleave': function (event) {
+            console.log(event.data, event.data.userName);
+            console.log('鼠标离开box');
+        }
+    }, {'userName': '杜甫'});
+
+     5.可以对后代元素进行筛选
+     $('.box').on({
+        'click': function (event) {
+            console.log(event.data,event.data.userName);
+            $(this).css('background-color', 'red');
+        }, 'mouseenter': function (event) {
+            console.log(event.data,event.data.userName);
+            console.log('鼠标进行box');
+        }, 'mouseleave': function (event) {
+            console.log(event.data,event.data.userName);
+            console.log('鼠标离开box');
+        }
+    }, '.p1',{'userName': '杜甫'});
+     */
+    $('.box').on({
+        'click': function (event) {
+            console.log(event.data, event.data.userName);
+            $(this).css('background-color', 'red');
+        }, 'mouseenter': function (event) {
+            console.log(event.data, event.data.userName);
+            console.log('鼠标进行box');
+        }, 'mouseleave': function (event) {
+            console.log(event.data, event.data.userName);
+            console.log('鼠标离开box');
+        }
+    }, {'userName': '杜甫'});
+</script>
+</body>
+</html>

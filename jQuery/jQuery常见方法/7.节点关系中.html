@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            border: 1px solid skyblue;
+        }
+
+        .box1 {
+            border: 1px solid skyblue;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<button>点我</button>
+<div class="box">
+
+    <p>你好世界！！</p>
+
+    <p>你好美国！！</p>
+
+    <p class="p1">你好日本！！</p>
+
+    <p>你好中国！！</p>
+
+    <p>你好加拿大！</p>
+</div>
+<div class="box1">
+    <p>你好世界！！</p>
+
+    <p>你好美国！！</p>
+
+    <p>你好日本！！</p>
+
+    <p>你好中国！！</p>
+
+    <p>你好加拿大！</p>
+</div>
+<button>点我</button>
+<script>
+    $('button').click(function () {
+        $('.box .p1').nextAll().css('backgroundColor','pink');
+    });
+
+
+    /**
+     * siblings() *****
+     * 描述：查找所有处本身以外的兄弟节点
+     * 例子：
+     $('.box p').click(function () {
+        $(this).html('我们很好').css('background-color', 'yellow').siblings().html('我们很好').css('background-color', '').parent().siblings().find('p').html('大家好才是真的好！！！');
+    });
+     */
+    /**
+     * next() 后一个亲兄弟
+     *    $('.box .p1').next().css('backgroundColor','pink');
+     prev() 前一个亲兄弟
+     $('.box .p1').prev().css('backgroundColor','pink');
+     nextAll() 后所有亲兄弟
+     $('.box .p1').nextAll().css('backgroundColor','pink');
+     prevAll() 前所有亲兄弟
+     $('.box .p1').prevAll().css('backgroundColor','pink');
+     */
+</script>
+</body>
+</html>

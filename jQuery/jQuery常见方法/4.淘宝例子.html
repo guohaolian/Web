@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            height: 400px;
+            width: 400px;
+            margin: 50px auto;
+            border: 1px solid red;
+            position: relative;
+        }
+
+        .head {
+            height: 50px;
+            width: 400px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            float: left;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .down {
+            position: relative;
+            height: 350px;
+            width: 400px;
+        }
+
+        .down div {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            display: none;
+        }
+
+        .head ul li.select {
+            border-bottom: 2px solid orange;
+        }
+
+        .down div.select {
+            display: block;
+        }
+
+    </style>
+    <script src="js/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+<div class="box">
+    <div class="head">
+        <ul>
+            <li class="select">腾讯</li>
+            <li>百度</li>
+            <li>淘宝</li>
+            <li>微信</li>
+        </ul>
+    </div>
+    <div class="down">
+        <div class="select">腾讯腾讯腾讯腾讯</div>
+        <div>百度百度百度百度</div>
+        <div>淘宝淘宝淘宝淘宝</div>
+        <div>微信微信微信微信</div>
+    </div>
+</div>
+
+<script>
+    var lis = $('.head li');
+    var divs = $('.down div');
+    console.log(lis, divs);
+    var timer = null;
+
+    lis.mouseenter(function () {
+        var that = this;
+        timer = setTimeout(function () {
+            var index = $(that).index();
+            //去除class
+            lis.removeClass('select');
+            divs.removeClass('select');
+            //让对应的元素进行展示
+            $(that).addClass('select');
+            divs.eq(index).addClass('select');
+        }, 1000);
+    }).mouseleave(function () {
+        clearTimeout(timer);
+    })
+</script>
+<script>
+    /* var lis = document.querySelectorAll('li');
+     var divs = document.querySelectorAll('.down div');
+
+     for(var i = 0;i<lis.length;i++){
+
+     lis[i].onmouseover = function (event) {
+     var event = event||window.event;
+     //清除掉之前的记录 在当下点击的li上添加下划线
+     for(var j = 0;j<lis.length;j++){
+     //清除历史记录
+     lis[j].className='';
+     divs[j].className='';
+     if(lis[j]==this){
+     lis[j].className='select';
+     divs[j].className='select';
+     }
+     }
+     }
+     }
+     */
+</script>
+</body>
+</html>

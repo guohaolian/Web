@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+            position: absolute;
+            left: 10px;
+            top: 30px;
+        }
+
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<button>stop()</button>
+<button>stop(false,false)</button>
+<button>stop(true,false)</button>
+<button>stop(true,true)</button>
+<button>stop(false,true)</button>
+<div class="box"></div>
+<script>
+    /**
+     * stop(是否清除所有动画（可选的）,'是否立即完成当前动画'（可选的）)
+     * 注意：
+     *     1.当stop()不写参数时  默认值都为false
+     *     2.第一个参数false     立即结束当前动画
+     */
+    $('.box').animate({'left':800,'top':40,'height':50},2000).animate({'left':10,'top':400,'height':100},2000);
+
+    $('button').eq(0).click(function () {
+
+        $('.box').stop();
+
+    })
+    $('button').eq(1).click(function () {
+
+        $('.box').stop(false,false);
+
+    })
+    $('button').eq(2).click(function () {
+
+        $('.box').stop(true,false);
+    })
+    $('button').eq(3).click(function () {
+        $('.box').stop(true,true);
+
+    })
+    $('button').eq(4).click(function () {
+        $('.box').stop(false,true);
+
+    })
+
+
+
+</script>
+</body>
+</html>

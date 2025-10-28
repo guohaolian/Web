@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 600px;
+            height: 300px;
+            border: 1px solid deepskyblue;
+            margin: 20px;
+        }
+
+        p {
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+            float: left;
+            margin: 30px;
+        }
+
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<div class="box">
+    <p></p>
+
+    <p></p>
+
+    <p></p>
+</div>
+<div class="box1">
+    <p></p>
+
+    <p></p>
+
+    <p></p>
+</div>
+<script>
+ /*
+   //对应效果：
+  $('.box p').mouseenter(function () {
+        /!*  var index = $(this).index();
+         $(this).css('backgroundColor','pink').siblings().css('background-color','');
+         $('.box1 p').eq(index).css('backgroundColor','pink').siblings().css('background-color','');*!/
+        $(this).css('backgroundColor', 'pink').siblings().css('background-color', '').parent().siblings().children().eq($(this).index()).css('background-color', 'pink').siblings().css('backgroundColor', '');
+    })*/
+
+ /**
+  * each：节点的遍历
+  *
+  * 语法：jq对象.each(function(index,ele)){
+  *         index:下标
+  *         ele:遍历时的元素
+  *         $(this)<===>$(ele)
+  * }
+  */
+    $('div').each(function (index,ele) {
+        console.log(this)
+        console.log(index,ele);
+        $(ele).children().eq(1).css('backgroundColor','red');
+    })
+</script>
+
+</body>
+</html>

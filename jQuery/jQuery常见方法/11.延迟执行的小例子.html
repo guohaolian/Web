@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img {
+            position: absolute;
+            display: none;
+        }
+
+        /*
+                .i1 {
+                    left: 200px;
+                    top: 10px;
+                }
+
+                .i2 {
+                    left: 100px;
+                    top: 600px;
+                }
+
+                .i3 {
+                    left: 400px;
+                    top: 300px;
+                }
+
+                .i4 {
+                    left: 600px;
+                    top: 100px;
+                }*/
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<img class="i1" src="img/0.jpg">
+<img class="i2" src="img/1.jpg">
+<img class="i3" src="img/2.jpg">
+<img class="i4" src="img/3.jpg">
+<img src="img/4.jpg">
+<img src="img/aaa.jpg">
+<img src="img/bbb.jpg">
+<img src="img/ccc.jpg">
+<img class="i1" src="img/0.jpg">
+<img class="i2" src="img/1.jpg">
+<img class="i3" src="img/2.jpg">
+<img class="i4" src="img/3.jpg">
+<img src="img/4.jpg">
+<img src="img/aaa.jpg">
+<img src="img/bbb.jpg">
+<img src="img/ccc.jpg">
+<img class="i1" src="img/0.jpg">
+<img class="i2" src="img/1.jpg">
+<img class="i3" src="img/2.jpg">
+<img class="i4" src="img/3.jpg">
+<img src="img/4.jpg">
+<img src="img/aaa.jpg">
+<img src="img/bbb.jpg">
+<img src="img/ccc.jpg">
+<img class="i1" src="img/0.jpg">
+<img class="i2" src="img/1.jpg">
+<img class="i3" src="img/2.jpg">
+<img class="i4" src="img/3.jpg">
+<img src="img/4.jpg">
+<img src="img/aaa.jpg">
+<img src="img/bbb.jpg">
+<img src="img/ccc.jpg">
+
+<script>
+
+    // $('img').delay(1000).fadeIn();
+    /*$('img').each(function (index) {//0 1 2 3....
+        $(this).delay(1000 * index).fadeIn();
+    })*/
+
+    $('img').each(function (index) {
+        //随机生成坐标
+        var left = Math.floor(Math.random()*780);
+        var top = Math.floor(Math.random()*400)
+        //将值赋给animate
+        $(this).delay(1000*index).animate({'left':left,'top':top}).fadeIn();
+    })
+</script>
+
+
+</body>
+</html>

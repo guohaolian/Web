@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<div class="box"></div>
+<script>
+    /**
+     * 1.jq事件没有兼容性问题
+     * 2.基本语法：$('css选择器').事件名（回调函数）;
+     * 3.如果一个元素绑定了相同类型的多个事件 则会按照绑定的顺序 依次向下执行
+     * 4.jq对象进行事件绑定支持 链式绑定
+     * 5.只需要在链式绑定的最后一个事件的结尾 +，中间的事件通过.运算符连接
+     * 6.链式调用时 事件可以存在多种
+     * 7.无论是链式绑定还是单个声明 相同类型的事件都会按照事件绑定的顺序依次向下执行
+     *
+     */
+    $('.box').click(function () {
+        console.log('111111111111111111');
+    });
+    $('.box').mouseover(function () {
+        //$(this).css('background-color','red');
+        console.log('mouseover');
+    }).click(function () {
+        console.log('2222222222222222222222');
+    }).click(function () {
+        console.log('3333333333333333333333333');
+    }).mouseleave(function () {
+        console.log('mouseleave');
+    });
+/*
+    $('.box').click(function () {
+        //$(this).css('background-color','red');
+
+        console.log('2222222222222222222222');
+    });
+
+    $('.box').click(function () {
+        //$(this).css('background-color','red');
+
+        console.log('3333333333333333333333333');
+    });*/
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<div class="box">
+    <p>123456</p>
+
+    <p class="p1">56789</p>
+
+    <p id="p2">56789</p>
+</div>
+<script>
+    var p1 = $('.box .p1');
+    console.log(p1);
+    var p2 = $('p [id="p2"]');
+    console.log(p2);
+
+    /**
+     * size() 方法
+     * length 属性
+     * 获取满足选择器要求的元素的数量
+     * 注意：jq进行页面选择时操作的是批量元素  即使只有一个元素满足 也会将其存到数组内
+     * 例子：
+     var ps = $('p');
+     console.log(ps);
+     console.log(ps.size());
+     console.log(ps.length);
+     var p1 = $('.p1');
+     console.log(p1);
+     console.log(p1.size());
+     console.log(p1.length);
+     */
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<div class="box"></div>
+<p>111111111111111111</p>
+<p>222222222222222222</p>
+<p>333333333333333333</p>
+<button>点我</button>
+<script>
+    /**
+     * index()方法用来获取当前元素在其【兄弟节点中】的排名，从0开始
+     */
+    $('button').click(function () {
+        var index = $('p:eq(1)').index();
+        console.log(index);//2
+    });
+</script>
+</body>
+</html>

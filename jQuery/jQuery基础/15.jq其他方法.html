@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box {
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+        }
+
+        .cc {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<div id="box" class="cc">
+    <p>1111111111111111111</p>
+    <p>222222222222222222</p>
+    <p>333333333333333333</p>
+    <p>4444444444444444444</p>
+</div>
+<script>
+
+
+    $('p').click(function () {
+       console.log(this);
+        console.log($(this).index());
+
+    });
+    /**
+     * addClass(类名):给jq对象追加类  支持链式调用
+     * removeClass(类名)：删除jq对象上指定的类名  支持链式调用
+     *例子：
+     $('#box').addClass('cc').addClass('dd');
+     $('#box').removeClass('dd').removeClass('cc');
+     *
+     * 注意：原生js 会覆盖之前的类名
+     *     var box = document.querySelector('#box');
+     box.setAttribute('class','dd');
+     box.className = 'ff';
+
+    2. attr（‘key’,'value'）
+     描述：获取或者更改元素的属性值
+      1.获取属性值：
+            $('选择器').attr('属性')
+            var result = $('#box').attr('class');
+     2.更改属性值
+     $('选择器').attr('属性'，'属性值')
+     $('#box').attr('id','cc');
+
+     补充：可以使用更改属性的方式删除所有的类名
+       $('#box').attr('class'，'');
+     例子：
+     var result = $('#box').attr('class');
+     $('#box').attr('id','');
+     console.log(result);
+     */
+
+
+
+</script>
+</body>
+</html>

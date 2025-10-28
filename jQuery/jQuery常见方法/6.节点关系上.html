@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+
+        .box {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<div class="box">
+    <p class="p1">111111111111111</p>
+
+    <p>22222222222222</p>
+
+    <p class="p2">33333333333333</p>
+
+    <p>窗前明月光</p>
+
+    <p>举头望明月</p>
+
+    <p class="p3">鹅鹅鹅</p>
+
+    <p>少小离家胖了回</p>
+
+    <p class="p4">
+
+    <div class="s1">呵呵呵
+        <p class="u">uuuuuuuuuuuuuuuuuuu</p>
+    </div>
+    </p>
+</div>
+<button>点我</button>
+<script>
+    $('button').click(function () {
+        $('.box').find('.u').parent().css('backgroundColor', 'red');
+    });
+    /**
+     * 1.children()
+     * 描述：1.获取当前jq对象所有的子元素
+     *       2.children(css选择器)  如果是多个选择器 则 选择器与选择器之间使用,分割
+     *       3.只能获取直接子元素
+     * 例子：
+     * $('button').click(function () {
+                $('.box').children('.p4,.p1').css('backgroundColor','red');
+            })
+     2.find('css选择器')
+     描述：获取当前jq对象的子元素
+     1. 获取指定选择器的元素  可以一次性查找多个jq对象
+     $('.box').find('.p3,.p1').css('backgroundColor','red');
+     2.find()可以找到当前jq对象的孙子元素
+     $('button').click(function () {
+        $('.box').find('.u').css('backgroundColor', 'red');
+    })
+     注意：
+     1.children（）可以不写参数
+     find()必须写指定的css选择器
+     2.children（）无法获取孙子元素
+     find（）可以获取孙子元素
+
+
+     3.parent()/parents()
+     描述：查找自己的直接父元素
+     注意： p标签不是父元素
+     例子：
+     $('button').click(function () {
+        $('.box').find('.u').parent().css('backgroundColor', 'red');
+    });
+     parents()
+     描述：从父元素一直找到祖先元素 html
+     注意：
+            使用parents()更改样式 所有的祖先元素都会更改 杀伤力太大 慎用
+    例子：
+     $('button').click(function () {
+        $('.box').find('.u').parents().css('backgroundColor', 'red');
+    });
+     */
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+            display: none;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<button>下拉加载</button>
+<button>上拉消失</button>
+<div class="box">
+</div>
+
+<script>
+    /**
+     * slideDown(毫秒数,回调函数);下拉加载
+     * slideUp（毫秒数,回调函数）：上拉消失
+     * 注意：1.两个参数都是可选的
+     *       2.当动画结束才执行回调函数
+     *         如果当前jq对象处于动画的终极状态 比如：当前div状态是display:block 则执行slideDown（）会直接执行回调函数
+     *       3.终极状态是 slideDown（） display:block
+     *                    slideUp() display:none;
+     */
+    $('button:first').click(function () {
+        $('.box').slideDown(2000, function () {
+            console.log('Down success')
+        });
+    });
+    $('button:last').click(function () {
+        $('.box').slideUp(2000, function () {
+            console.log('Up success')
+        });
+    });
+
+
+</script>
+</body>
+</html>

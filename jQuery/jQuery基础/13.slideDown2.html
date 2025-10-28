@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            height: 300px;
+            width: 100px;
+            border: 1px solid deepskyblue;
+            position: relative;
+            margin: 50px auto;
+        }
+        .div1 {
+            height: 200px;
+            width: 100px;
+            background-color: deepskyblue;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: none;
+        }
+    </style>
+    <script src="js/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+<div class="box">
+    <div class="div1"></div>
+</div>
+<script>
+    /**
+     * 1.slideDown()将jq对象进行展示
+     * 2.控制滑动的方向需要使用定位
+     */
+    $('.box').mouseenter(function () {
+        $('.div1').stop(true).slideDown(1000);
+    }).mouseleave(function () {
+        $('.div1').stop(true).slideUp(1000);
+    });
+</script>
+</body>
+</html>

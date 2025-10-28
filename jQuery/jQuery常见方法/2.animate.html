@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1 {
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+
+        }
+
+        .div2 {
+            position: absolute;
+            top: 240px;
+            left: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<input type="text" name="a"/>
+
+<p name="a">11111111111</p>
+<button>点我</button>
+<div class="div1"></div>
+<div class="div2"></div>
+<script>
+    alert($("input [name='a']"));
+    /**
+     * animate：动画
+     * 1.语法：jq对象.animate({动画终点},毫秒数（可选）);
+     *  例子：$('.div1').animate({'width':100,'top':400,'left':400},4000);
+     * 2.有些属性无法使用animate动画
+     *      比如background
+     *   jq能够改变的属性都是数值型的，比如width、height、font-size、opacity等
+     *    $('.div1').animate({'backgroundColor':rgb(100,100,225)},4000);
+     *  3.动画执行的顺序
+     *      1.将所有要变化的值封装到一个json内 则所有的值同步改变
+     *           $('.div1').animate({'width':100,'top':400,'left':400},4000);
+     *      2.如果采用链式调用 则动画的执行顺序按照绑定的顺序依次执行
+     *           $('.div1').animate({'width':100},2000).animate({'top':400},2000).animate({'left':400},2000);
+     *      3.动画的执行是异步的
+     *          即所有的动画同时开始执行 而不是等到上个动画执行完毕后再执行
+     *          之前学过的三个动画也是动画
+     *      4.回调函数 可选的 当动画执行完毕后 执行的函数
+     *        例子：
+     *           $('.div1').animate({'width':100,'top':400,'left':400},4000, function () {
+                       $(this).css('background-color','red');
+                   });
+     *      5.运动的速度（可选）：
+     *          swing:中间快 两边慢 默认
+     *          linear:匀速运动
+     */
+
+    $('button').click(function () {
+        console.log($(this));
+        console.log(this);
+        $('.div1').animate({'width': 100, 'top': 400, 'left': 600}, 4000, 'swing', function () {
+            $(this).css('background-color', 'red');
+        });
+        /*  $('.div1').animate({'width':100},2000).animate({'top':400},2000).animate({'left':400},2000);
+         $('.div2').fadeOut(3000);
+         console.log('hehehe');*/
+    });
+
+    (function ($) {
+        $.newFunc = function () {
+            console.log('我是一个新的函数！！');
+        }
+    })(jQuery);
+    $.newFunc();//我是一个新的函数
+
+
+
+
+</script>
+</body>
+</html>

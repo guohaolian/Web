@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1 {
+            height: 200px;
+            width: 300px;
+            background-color: orange;
+        }
+    </style>
+    <script src="js/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+<button>淡入</button>
+<button>淡出</button>
+<div class="div1"></div>
+<script>
+    /**
+     * fadeIn（毫秒数，回调函数）淡入 display: block
+     * fadeOut(毫秒数，回调函数)淡出  display: none
+     * 实质是透明度的变化：
+     * 例子：
+     *   $('button:first').click(function () {
+        $('.div1').fadeIn();
+    });
+     $('button:last').click(function () {
+        $('.div1').fadeOut();
+    });
+    回调函数的执行：
+      1.当jq对象此时处于动画的终极状态 则 直接执行回调函数
+      2.当jq对象此时没有处于动画的终极状态 则 等动画执行完毕后再执行回调函数
+     */
+    $('button:first').click(function () {
+        $('.div1').fadeIn(2000, function () {
+            console.log('fadeIn success');
+        });
+    });
+    $('button:last').click(function () {
+        $('.div1').fadeOut(2000, function () {
+            console.log('fadeOut success');
+        });
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<body>
+<div class="box">
+    <p>明天 你好</p>
+</div>
+<script>
+    /**
+     * 内部插入/添加
+     A.append(B);		//向【A节点内部现有内容之后】追加【B节点】
+     B.appendTo(A);	//将【B节点】追加到【A节点内部现有内容之后】
+     A.prepend(B);		//向【A节点内部现有内容之前】追加【B节点】
+     B.prependTo(A);	//将【B节点】追加到【A节点内部的现有内容之前】
+     注意：
+          1.jq创建页面元素 非常简单 直接通过  $('<标签名 style='对应的style属性'>标签内容</标签名>')
+               $('.box').append($('<p style="background-color: deeppink">ok</p>'));
+     */
+   /* var ele = document.createElement('p');
+    ele.innerHTML = 'kkkk';*/
+
+    $('.box').prepend($('<p style="background-color: deeppink">ok</p>'));
+
+
+
+</script>
+
+</body>
+</html>
