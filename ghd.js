@@ -1,4 +1,4 @@
-function add(...args) {
+function add(...args){
     let n=args.reduce((a,b)=>a+b,0);
     return (...rest)=>{
         if(rest.length===0){

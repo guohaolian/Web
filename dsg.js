@@ -1,10 +1,10 @@
-/* const list=[1,2,3,4,5];
+const list=[1,2,3,4,5];
 
 const callback=item=>{
     item=item+1;
     console.log(item);
 }
-list.forEach(callback); */
+list.forEach(callback);
 /* var arr = ['李白', '杜甫'];
 
         console.log('函数调用前arr[0]', arr[0]);//李白
