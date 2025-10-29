@@ -1,4 +1,4 @@
-/* class Example{
+class Example{
     constructor(name){
         this.name = name;
     }
@@ -6,12 +6,13 @@
         const fun=()=>{
             console.log(this.name);
         };
+        console.log(fun);
         fun();
     }
 }
 const e=new Example('ES6 Example');
 e.init();
- */
+
 /* function Example(name) {
     this.name = name;
 }
@@ -24,12 +25,12 @@ Example.prototype.init = function() {
     };
     fun();
 }; */
-function Example(name) {
+/* function Example(name) {
     this.name = name;this .init=function(){console.log(this.name);};
-}
+} */
 
-var e = new Example('ES6 Example');
-e.init();
+/* var e = new Example('ES6 Example');
+e.init(); */
 /* 类定义转为构造函数： 
 ES6 使用 class 关键字定义类，而在 ES5 中，我们使用构造函数来创建对象。
 class Example { ... } 转换为 function Example(name) { ... }，并在构造函数中初始化 this.name。
