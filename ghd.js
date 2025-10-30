@@ -1,5 +1,5 @@
 function add(...args){
-    let n=args.reduce((a,b)=>a+b,0);
+    let n=args.reduce((a,b)=>a+b,0);//array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
     return (...rest)=>{
         if(rest.length===0){
             return n;
