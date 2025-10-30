@@ -16,7 +16,7 @@ function ReadFileFun(path) {
 
 //3、调用
 ReadFileFun('./resource/1.txt').then(value => {
-    console.log(value.toString());
+    console.log(value.toString());//转换为字符串输出
 }, reason => {
     console.log(reason);
 })
