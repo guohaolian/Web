@@ -7,7 +7,7 @@ const url = require('url');
 const server = http.createServer((request, response) => {
   //2. 解析 request.url 
   // console.log(request.url);
-  let res = url.parse(request.url, true);
+  let res = url.parse(request.url, true);//true表示将查询字符串转为对象
   //路径
   let pathname = res.pathname;
   //查询字符串
