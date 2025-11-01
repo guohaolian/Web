@@ -28,7 +28,7 @@ const fs = require('fs');
 //   console.log(data);
 // });
 
-// fs.readdir('./', (err, data) => {
+// fs.readdir('./', (err, data) => {//读取当前文件夹
 //   if(err){
 //     console.log('读取失败');
 //     return;
