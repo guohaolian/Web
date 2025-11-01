@@ -1,5 +1,0 @@
-<?php
-
-	$frank = 'frank';
-
-?>
