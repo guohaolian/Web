@@ -10,6 +10,7 @@ const server = http.createServer((request, response) => {
   response.end(html); //设置响应体
 });
 
+
 //监听端口, 启动服务
 server.listen(9000, () => {
   console.log('服务已经启动....')

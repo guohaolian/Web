@@ -38,10 +38,31 @@ const server = http.createServer((request, response) => {
         let tds = document.querySelectorAll('td');
         //遍历
         tds.forEach(item => {
+          let color = item.style.backgroundColor;
           item.onclick = function(){
+            
             this.style.background = '#222';
-          }
+          };
+          item.onmouseout = function(){
+            this.style.background = color;
+          };
         })
+          /* let tds = document.querySelectorAll('td');
+let lastClickedItem = null;
+
+tds.forEach(item => {
+    item.onclick = function() {
+        if (lastClickedItem) {
+            // 恢复上一个点击的单元格的颜色
+            lastClickedItem.style.background = '';
+        }
+        // 改变当前点击的单元格的颜色
+        this.style.background = '#222';
+        // 更新上一个点击的单元格
+        lastClickedItem = this;
+    };
+}); */
+
       </script>
     </body>
     </html>

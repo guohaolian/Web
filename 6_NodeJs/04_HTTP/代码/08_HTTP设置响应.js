@@ -14,11 +14,11 @@ const server = http.createServer((request, response) => {
   // response.setHeader('myHeader', 'test test test');
   // response.setHeader('test', ['a','b','c']);
   //4. 响应体的设置
+  response.write('love');//可以多次调用
   response.write('love');
   response.write('love');
   response.write('love');
-  response.write('love');
-  response.end('love'); //设置响应体
+  response.end('love'); //设置响应体，不可以多次
   response.end('xxx'); //设置响应体
 });
 

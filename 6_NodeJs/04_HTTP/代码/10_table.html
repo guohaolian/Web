@@ -54,10 +54,15 @@
     let tds = document.querySelectorAll('td');
     //遍历
     tds.forEach(item => {
-      item.onclick = function () {
-        this.style.background = '#222';
-      }
-    })
+          let color = item.style.backgroundColor;
+          item.onclick = function(){
+            
+            this.style.background = '#222';
+          };
+          item.onmouseout = function(){
+            this.style.background = color;
+          };
+        })
   </script>
 </body>
 
