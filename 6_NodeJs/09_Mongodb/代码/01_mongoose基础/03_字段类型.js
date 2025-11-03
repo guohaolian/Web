@@ -24,7 +24,7 @@ mongoose.connection.once('open', () => {
   });
 
   //6. 创建模型对象  对文档操作的封装对象
-  let BookModel = mongoose.model('books', BookSchema);
+  let BookModel = mongoose.model('books1', BookSchema);
 
   //7. 新增
   BookModel.create({

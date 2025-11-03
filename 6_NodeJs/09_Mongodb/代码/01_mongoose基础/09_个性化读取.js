@@ -53,6 +53,7 @@ mongoose.connection.once('open', () => {
       return;
     }
     console.log(data);
+    mongoose.disconnect();
   })
 
 });
