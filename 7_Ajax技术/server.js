@@ -19,7 +19,7 @@ app.all('/server', (request, response) => {
     //设置响应头  设置允许跨域
     response.setHeader('Access-Control-Allow-Origin', '*');
     //响应头
-    response.setHeader('Access-Control-Allow-Headers', '*');
+    response.setHeader('Access-Control-Allow-Headers', '*');//允许所有的请求头
     //设置响应体
     response.send('HELLO AJAX POST');
 });
