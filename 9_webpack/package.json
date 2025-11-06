@@ -4,28 +4,46 @@
   "description": "",
   "main": "./src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack serve --config ./config/webpack.dev.js",
+    "build": "webpack --config ./config/webpack.prod.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
     "@eslint/js": "^9.39.1",
+    "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
     "eslint": "^9.39.1",
     "eslint-plugin-vue": "^10.5.1",
     "eslint-webpack-plugin": "^5.0.2",
     "globals": "^16.5.0",
+    "html-webpack-plugin": "^5.6.4",
     "i": "^0.3.7",
     "less": "^4.4.2",
     "less-loader": "^12.3.0",
+    "mini-css-extract-plugin": "^2.9.4",
     "npm": "^11.6.2",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.2.0",
+    "postcss-preset-env": "^10.4.0",
     "sass": "^1.93.3",
     "sass-loader": "^16.0.6",
     "style-loader": "^4.0.0",
     "stylus-loader": "^8.1.2",
     "typescript-eslint": "^8.46.3",
     "webpack": "^5.102.1",
-    "webpack-cli": "^6.0.1"
-  }
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "not dead"
+  ]
 }
