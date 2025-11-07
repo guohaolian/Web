@@ -1,9 +1,9 @@
 // Node.js的核心模块，专门用来处理文件路径
 const ESLintPlugin = require("eslint-webpack-plugin");
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");// 自动生成html文件
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");// 提取css成单独文件
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");// css压缩
 // 获取处理样式的Loaders
 const getStyleLoaders = (preProcessor) => {
   return [
@@ -103,4 +103,5 @@ module.exports = {
   ],
   // 模式
   mode: "production", // 生产模式
+  devtool: "source-map", // 生产模式下的source map
 };

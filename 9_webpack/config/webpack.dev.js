@@ -12,7 +12,7 @@ module.exports = {
     // path: 文件输出目录，必须是绝对路径
     // path.resolve()方法返回一个绝对路径
     // __dirname 当前文件的文件夹绝对路径
-    path: undefined,//开发模式没有输出
+    path: undefined, //开发模式没有输出
     // filename: 输出文件名 入口文件输出目录
     filename: "static/js/main.js",
     // clean: true, // 开发模式没有输出，不需要清空输出结果
@@ -20,53 +20,59 @@ module.exports = {
   // 加载器
   module: {
     rules: [
-        {
-        // 用来匹配 .css 结尾的文件
-        test: /\.css$/,
-        // use 数组里面 Loader 执行顺序是从右到左
-        use: ["style-loader",// 将 CSS 代码注入到 DOM 样式中
-             "css-loader"],//将 CSS 编译成 CommonJS 模块
-      },
       {
-        test: /\.less$/,
-        use: ["style-loader", "css-loader", "less-loader"],
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.styl$/,
-        use: ["style-loader", "css-loader", "stylus-loader"],
-      },
-      {
-        test: /\.(png|jpe?g|gif|webp)$/,
-        type: "asset",
-        parser: {
-          dataUrlCondition: {
-            maxSize: 0, // 禁止内联
+        oneof: [
+          {
+            // 用来匹配 .css 结尾的文件
+            test: /\.css$/,
+            // use 数组里面 Loader 执行顺序是从右到左
+            use: [
+              "style-loader", // 将 CSS 代码注入到 DOM 样式中
+              "css-loader",
+            ], //将 CSS 编译成 CommonJS 模块
           },
-        },
-        generator: {
-          // 将图片文件输出到 static/imgs 目录中
-          // 将图片文件命名 [hash:8][ext][query]
-          // [hash:8]: hash值取8位
-          // [ext]: 使用之前的文件扩展名
-          // [query]: 添加之前的query参数
-          filename: "static/imgs/[hash:8][ext][query]",
-        },
-      },
-      {
-        test: /\.(ttf|woff2?|map4|map3|avi)$/,
-        type: "asset/resource",
-        generator: {
-          filename: "static/media/[hash:8][ext][query]",
-        },
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/, // 排除node_modules代码不编译
-        loader: "babel-loader",
+          {
+            test: /\.less$/,
+            use: ["style-loader", "css-loader", "less-loader"],
+          },
+          {
+            test: /\.s[ac]ss$/,
+            use: ["style-loader", "css-loader", "sass-loader"],
+          },
+          {
+            test: /\.styl$/,
+            use: ["style-loader", "css-loader", "stylus-loader"],
+          },
+          {
+            test: /\.(png|jpe?g|gif|webp)$/,
+            type: "asset",
+            parser: {
+              dataUrlCondition: {
+                maxSize: 0, // 禁止内联
+              },
+            },
+            generator: {
+              // 将图片文件输出到 static/imgs 目录中
+              // 将图片文件命名 [hash:8][ext][query]
+              // [hash:8]: hash值取8位
+              // [ext]: 使用之前的文件扩展名
+              // [query]: 添加之前的query参数
+              filename: "static/imgs/[hash:8][ext][query]",
+            },
+          },
+          {
+            test: /\.(ttf|woff2?|map4|map3|avi)$/,
+            type: "asset/resource",
+            generator: {
+              filename: "static/media/[hash:8][ext][query]",
+            },
+          },
+          {
+            test: /\.js$/,
+            exclude: /node_modules/, // 排除node_modules代码不编译
+            loader: "babel-loader",
+          },
+        ],
       },
     ],
   },
@@ -75,7 +81,7 @@ module.exports = {
     new ESLintPlugin({
       // 指定检查文件的根目录
       context: path.resolve(__dirname, "../src"),
-      overrideConfigFile: 'eslint.config.js',
+      overrideConfigFile: "eslint.config.js",
     }),
     new HtmlWebpackPlugin({
       // 以 public/index.html 为模板创建文件
@@ -88,7 +94,9 @@ module.exports = {
     host: "localhost", // 启动服务器域名
     port: "3000", // 启动服务器端口号
     open: true, // 是否自动打开浏览器
+    hot: true, // 开启HMR功能
   },
   // 模式
   mode: "development", // 开发模式
+  devtool: "cheap-module-source-map", // 开发模式下的source map
 };
