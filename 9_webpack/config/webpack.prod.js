@@ -31,8 +31,9 @@ module.exports = {
   entry: "./src/main.js",
   output: {
     path: path.resolve(__dirname, "../dist"), // 生产模式需要输出
-    filename: "static/js/[name].js", // 将 js 文件输出到 static/js 目录中
-    chunkFilename: "static/js/[name].chunk.js", // 给分割出来的代码块命名
+    // [contenthash:8]使用contenthash，取8位长度
+    filename: "static/js/[name].[contenthash:8].js", // 入口文件打包输出资源命名方式
+    chunkFilename: "static/js/[name].[contenthash:8].chunk.js", // 动态导入输出资源命名方式
     assetModuleFilename: "static/media/[name].[hash][ext]", // 图片、字体等资源命名方式（注意用hash）
     clean: true,
   },
@@ -128,8 +129,8 @@ module.exports = {
     // 提取css成单独文件
     new MiniCssExtractPlugin({
       // 定义输出文件名和目录
-      filename: "static/css/[name].css",
-      chunkFilename: "static/css/[name].chunk.css",
+      filename: "static/css/[name].[contenthash:8].css",
+      chunkFilename: "static/css/[name].[contenthash:8].chunk.css",
     }),
     // css压缩
     //new CssMinimizerPlugin(),
@@ -153,6 +154,10 @@ module.exports = {
     splitChunks: {
       chunks: "all", // 对所有模块都进行分割
       // 其他内容用默认配置即可
+    },
+    // 提取runtime文件
+    runtimeChunk: {
+      name: (entrypoint) => `runtime~${entrypoint.name}`, // runtime文件命名规则
     },
   },
   // 模式
