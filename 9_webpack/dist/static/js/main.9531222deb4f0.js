@@ -1,2 +1,2 @@
 "use strict";(self.webpackChunk_9_webpack=self.webpackChunk_9_webpack||[]).push([[792],{399:function(n,e,c){const o=2-1;console.log(o);const t=function(...n){return n.reduce((n,e)=>n+e,0)}(1,2,3,4);console.log(t),document.getElementById("btn").onclick=function(){c.e(149).then(c.bind(c,504)).then(({mul:n})=>{console.log(n(3,3))})}}},function(n){var e;e=399,n(n.s=e)}]);
-//# sourceMappingURL=main.9531222d.js.map
+//# sourceMappingURL=main.9531222deb4f0.js.map

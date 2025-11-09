@@ -32,8 +32,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "../dist"), // 生产模式需要输出
     // [contenthash:8]使用contenthash，取8位长度
-    filename: "static/js/[name].[contenthash:8].js", // 入口文件打包输出资源命名方式
-    chunkFilename: "static/js/[name].[contenthash:8].chunk.js", // 动态导入输出资源命名方式
+    filename: "static/js/[name].[contenthash:13].js", // 入口文件打包输出资源命名方式
+    chunkFilename: "static/js/[name].[contenthash:13].chunk.js", // 动态导入输出资源命名方式
     assetModuleFilename: "static/media/[name].[hash][ext]", // 图片、字体等资源命名方式（注意用hash）
     clean: true,
   },
