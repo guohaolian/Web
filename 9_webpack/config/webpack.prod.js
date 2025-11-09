@@ -1,9 +1,12 @@
 // Node.js的核心模块，专门用来处理文件路径
+const os = require("os");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // 自动生成html文件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 提取css成单独文件
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin"); // css压缩
+const TerserPlugin = require("terser-webpack-plugin"); // js压缩
+const threads = os.cpus().length;
 // 获取处理样式的Loaders
 const getStyleLoaders = (preProcessor) => {
   return [
@@ -33,7 +36,7 @@ module.exports = {
   module: {
     rules: [
       {
-        oneof: [
+        oneOf: [
           {
             // 用来匹配 .css 结尾的文件
             test: /\.css$/,
@@ -79,7 +82,22 @@ module.exports = {
           {
             test: /\.js$/,
             exclude: /node_modules/, // 排除node_modules代码不编译
-            loader: "babel-loader",
+            use: [
+              {
+                loader: "thread-loader", // 开启多进程
+                options: {
+                  workers: threads, // 数量
+                },
+              },
+              {
+                loader: "babel-loader",
+                options: {
+                  cacheDirectory: true, // 开启babel编译缓存
+                  cacheCompression: false, // 关闭缓存文件压缩
+                  plugins: ["@babel/plugin-transform-runtime"], // 减少代码体积
+                },
+              },
+            ],
           },
         ],
       },
@@ -91,6 +109,13 @@ module.exports = {
       // 指定检查文件的根目录
       context: path.resolve(__dirname, "../src"),
       overrideConfigFile: "eslint.config.js",
+      cache: true, // 开启缓存
+      // 缓存目录
+      cacheLocation: path.resolve(
+        __dirname,
+        "../node_modules/.cache/.eslintcache"
+      ),
+      threads, // 开启多进程
     }),
     new HtmlWebpackPlugin({
       // 以 public/index.html 为模板创建文件
@@ -103,8 +128,19 @@ module.exports = {
       filename: "static/css/main.css",
     }),
     // css压缩
-    new CssMinimizerPlugin(),
+    //new CssMinimizerPlugin(),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      // css压缩也可以写到optimization.minimizer里面，效果一样的
+      new CssMinimizerPlugin(),
+      // 当生产模式会默认开启TerserPlugin，但是我们需要进行其他配置，就要重新写了
+      new TerserPlugin({
+        parallel: threads, // 开启多进程
+      }),
+    ],
+  },
   // 模式
   mode: "production", // 生产模式
   devtool: "source-map", // 生产模式下的source map

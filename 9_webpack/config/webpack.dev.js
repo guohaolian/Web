@@ -1,4 +1,9 @@
 // Node.js的核心模块，专门用来处理文件路径
+// nodejs核心模块，直接使用
+const os = require("os");
+// cpu核数
+const threads = os.cpus().length;
+
 const ESLintPlugin = require("eslint-webpack-plugin");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -21,7 +26,7 @@ module.exports = {
   module: {
     rules: [
       {
-        oneof: [
+        oneOf: [
           {
             // 用来匹配 .css 结尾的文件
             test: /\.css$/,
@@ -70,7 +75,20 @@ module.exports = {
           {
             test: /\.js$/,
             exclude: /node_modules/, // 排除node_modules代码不编译
-            loader: "babel-loader",
+            use: [
+              {
+                loader: "thread-loader", // 开启多进程
+                options: {
+                  workers: threads, // 数量
+                },
+              },
+              {
+                loader: "babel-loader",
+                options: {
+                  cacheDirectory: true, // 开启babel编译缓存
+                },
+              },
+            ],
           },
         ],
       },
@@ -82,6 +100,13 @@ module.exports = {
       // 指定检查文件的根目录
       context: path.resolve(__dirname, "../src"),
       overrideConfigFile: "eslint.config.js",
+      cache: true, // 开启缓存
+      // 缓存目录
+      cacheLocation: path.resolve(
+        __dirname,
+        "../node_modules/.cache/.eslintcache"
+      ),
+      threads, // 开启多进程
     }),
     new HtmlWebpackPlugin({
       // 以 public/index.html 为模板创建文件
