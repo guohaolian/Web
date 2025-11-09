@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin"); // 自动生成html文
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 提取css成单独文件
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin"); // css压缩
 const TerserPlugin = require("terser-webpack-plugin"); // js压缩
+const PreloadWebpackPlugin = require("@vue/preload-webpack-plugin");
 const threads = os.cpus().length;
 // 获取处理样式的Loaders
 const getStyleLoaders = (preProcessor) => {
@@ -30,7 +31,9 @@ module.exports = {
   entry: "./src/main.js",
   output: {
     path: path.resolve(__dirname, "../dist"), // 生产模式需要输出
-    filename: "static/js/main.js", // 将 js 文件输出到 static/js 目录中
+    filename: "static/js/[name].js", // 将 js 文件输出到 static/js 目录中
+    chunkFilename: "static/js/[name].chunk.js", // 给分割出来的代码块命名
+    assetModuleFilename: "static/media/[name].[hash][ext]", // 图片、字体等资源命名方式（注意用hash）
     clean: true,
   },
   module: {
@@ -63,21 +66,21 @@ module.exports = {
                 maxSize: 10 * 1024, // 小于10kb的图片会被base64处理
               },
             },
-            generator: {
+            /* generator: {
               // 将图片文件输出到 static/imgs 目录中
               // 将图片文件命名 [hash:8][ext][query]
               // [hash:8]: hash值取8位
               // [ext]: 使用之前的文件扩展名
               // [query]: 添加之前的query参数
               filename: "static/imgs/[hash:8][ext][query]",
-            },
+            }, */
           },
           {
             test: /\.(ttf|woff2?)$/,
             type: "asset/resource",
-            generator: {
+            /* generator: {
               filename: "static/media/[hash:8][ext][query]",
-            },
+            }, */
           },
           {
             test: /\.js$/,
@@ -125,10 +128,16 @@ module.exports = {
     // 提取css成单独文件
     new MiniCssExtractPlugin({
       // 定义输出文件名和目录
-      filename: "static/css/main.css",
+      filename: "static/css/[name].css",
+      chunkFilename: "static/css/[name].chunk.css",
     }),
     // css压缩
     //new CssMinimizerPlugin(),
+    new PreloadWebpackPlugin({
+      rel: "preload", // preload兼容性更好
+      as: "script",
+      // rel: 'prefetch' // prefetch兼容性更差
+    }),
   ],
   optimization: {
     minimize: true,
@@ -140,6 +149,11 @@ module.exports = {
         parallel: threads, // 开启多进程
       }),
     ],
+    // 代码分割配置
+    splitChunks: {
+      chunks: "all", // 对所有模块都进行分割
+      // 其他内容用默认配置即可
+    },
   },
   // 模式
   mode: "production", // 生产模式

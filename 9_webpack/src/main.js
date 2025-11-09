@@ -11,3 +11,8 @@ const result1 = count(2, 1);
 console.log(result1);
 const result2 = sum(1, 2, 3, 4);
 console.log(result2);
+document.getElementById("btn").onclick = function () {
+  import(/* webpackChunkName: "math" */ "./js/math.js").then(({ mul }) => {
+    console.log(mul(3, 3));
+  });
+};
