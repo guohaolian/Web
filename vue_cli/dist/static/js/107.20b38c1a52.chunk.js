@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkvue_cli=self.webpackChunkvue_cli||[]).push([[107],{107:function(u,e,n){n.r(e),n.d(e,{default:function(){return a}});var r=n(641);var t={name:"AboutPage"};var a=(0,n(262).A)(t,[["render",function(u,e,n,t,a,c){return(0,r.uX)(),(0,r.CE)("h1",null,"About")}]])}}]);
+//# sourceMappingURL=107.20b38c1a52.chunk.js.map
