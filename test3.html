@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Click me</button>
+  </body>
+  <script>
+    /* const btn = document.getElementById("btn");
+    btn.addEventListener("click", function () {
+      console.log(this);
+      console.log("Button clicked!");
+    }); */
+
+    document.getElementById("btn").addEventListener("click", function () {
+      console.log(this); // undefined（this 指向按钮元素）
+    });
+  </script>
+</html>
