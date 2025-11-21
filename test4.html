@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>滚动抵消折叠位移示例</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        line-height: 1.6;
+      }
+
+      .spacer {
+        height: 800px;
+        background: linear-gradient(#fff, #eee);
+      }
+
+      #panel {
+        background: #f0f0f0;
+        padding: 16px;
+        margin: 16px 0;
+        border: 1px solid #ccc;
+      }
+
+      /* 折叠后直接 display: none，简单粗暴 */
+      #panel.collapsed {
+        display: none;
+      }
+
+      #target {
+        margin-top: 16px;
+        padding: 24px;
+        background: #d0eaff;
+        border: 1px solid #7aaeea;
+      }
+
+      button {
+        padding: 6px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="spacer">上面很多内容（只是用来撑高页面，让你能滚动）……</div>
+
+    <button id="toggle">折叠 / 展开上面的面板</button>
+
+    <div id="panel">
+      <p>这里是可以折叠的内容。</p>
+      <p>折叠 / 展开时，页面布局会变，下方元素会移动。</p>
+      <p>我们会用滚动，把这种移动抵消掉。</p>
+    </div>
+
+    <div id="target">
+      <h2>我是下面的内容</h2>
+      <p>
+        当你点击“折叠 /
+        展开”按钮时，<strong>我的视觉位置会尽量保持不变</strong>。
+      </p>
+      <p>但请先把我滚动到屏幕中间附近再尝试，这样上下都有余量。</p>
+    </div>
+
+    <script>
+      const toggleBtn = document.getElementById("toggle");
+      const panel = document.getElementById("panel");
+      const target = document.getElementById("target");
+
+      toggleBtn.addEventListener("click", () => {
+        // 1. 折叠前：记录 target 在视口里的位置（相对于窗口）
+        const beforeTop = target.getBoundingClientRect().top;
+
+        // 2. 真正切换折叠（这里直接用 display: none）
+        panel.classList.toggle("collapsed");
+
+        // 3. 等浏览器完成这次布局调整（下一帧再测）
+        requestAnimationFrame(() => {
+          const afterTop = target.getBoundingClientRect().top;
+          const diff = afterTop - beforeTop;
+          console.log(diff);
+
+          // 4. 用滚动来抵消这次差值
+          //    内容往上移动了 -100px -> diff 是 -100
+          //    scrollBy(0, diff) 让视口也往上/下挪同样的量
+          window.scrollBy(0, diff);
+        });
+      });
+    </script>
+  </body>
+</html>
