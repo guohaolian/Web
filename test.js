@@ -11,8 +11,21 @@ function isOdd(n){
     return n%2===1||n%2===-1;   
 } */
 
-/* console.log(p1);
-const p3=new Promise((resolve,reject)=>{resolve(p1)});//resolve(p1) 已经调用，但 p1 的解析过程还没有被处理，因此 p3 仍然是 pending 状态
+console.log(p1);
+const p3 = new Promise((resolve, reject) => {
+  resolve(p1); //已经调用，但 p1 的解析过程还没有被处理，因此 p3 仍然是 pending 状态，状态改变也是微任务，打印的时候还没来得及执行
+  //resolve(1);
+});
+console.log(p3);
+/* setTimeout(() => console.log("later:", p3), 0);
+p3.then((v) => console.log("value:", v));
+ */
+
+/* let p3 = Promise.resolve(
+  new Promise((resolve, reject) => {
+    resolve("success");
+  })
+);
 console.log(p3); */
 
 /* const p1=Promise.resolve(1);
