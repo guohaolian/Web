@@ -14,23 +14,22 @@ const e=new Example('ES6 Example');
 e.init();
  */
 function Example(name) {
-    this.name = name;
+  this.name = name;
 }
 
-Example.prototype.init = function() {
-    var self = this;
-    
-    var fun = function() {
-        
-        console.log(self.name);
-    };
-    fun();
+Example.prototype.init = function () {
+  var self = this;
+
+  var fun = function () {
+    console.log(self.name);
+  };
+  fun();
 };
 /* function Example(name) {
-    this.name = name;this .init=function(){console.log(this.name);};
+    this.name = name;this .init=function(){console.log(this.name);};//这么写不对
 } */
 
-var e = new Example('ES6 Example');
+var e = new Example("ES6 Example");
 e.init();
 /* 类定义转为构造函数： 
 ES6 使用 class 关键字定义类，而在 ES5 中，我们使用构造函数来创建对象。

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .accordion {
+        width: 300px;
+      }
+      .accordion-item {
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+      }
+      .accordion-header {
+        background-color: #f1f1f1;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .accordion-content {
+        padding: 10px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+      }
+      .accordion-item.open .accordion-content {
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header">标题1</div>
+        <div class="accordion-content"><p>这是内容1</p></div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">标题2</div>
+        <div class="accordion-content"><p>这是内容2</p></div>
+      </div>
+    </div>
+    <script>
+      const accordionHeaders = document.querySelectorAll(".accordion-header");
+      accordionHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+          const item = header.parentElement;
+          item.classList.toggle("open");
+        });
+      });
+    </script>
+  </body>
+</html>
