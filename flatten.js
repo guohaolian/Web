@@ -70,6 +70,5 @@ function buildTree(list) {
   return roots;
 }
 
-// 使用函数并打印结果
 const tree = buildTree(list);
 console.log(JSON.stringify(tree, null, 2));
